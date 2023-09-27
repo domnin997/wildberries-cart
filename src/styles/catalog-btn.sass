@@ -1,0 +1,40 @@
+@import "variables.sass"
+
+@media (min-width: 321px)
+
+@media (min-width: 1024px)
+    .catalog-btn
+        width: 48px
+        height: 48px
+        border: 1px solid rgba(255, 255, 255, 0.45)
+        border-radius: 8px
+        position: relative
+        .catalog-btn__burger
+            position: absolute
+            top: 12px
+            left: 9px
+            height: 24px
+            width: 28px
+            .catalog-btn__burger-item
+                width: 28px
+                height: 4px
+                border-radius: 8px
+                position: absolute
+                top: 9px
+                background-color: $white
+            .catalog-btn__burger-item::before,
+            .catalog-btn__burger-item::after
+                content: ' '
+                position: absolute
+                width: 28px
+                height: 4px
+                border-radius: 8px
+                background-color: $white
+            .catalog-btn__burger-item::before
+                top: 10px
+            .catalog-btn__burger-item::after
+                top: -10px
+    .catalog-btn:hover
+        border-color: $white
+
+@media (min-width: 1400px)

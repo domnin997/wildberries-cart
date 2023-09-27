@@ -1,0 +1,45 @@
+header {
+  background-color: rgb(103, 37, 168);
+}
+header .header-wrapper {
+  display: flex;
+  gap: 15px;
+}
+
+@media (min-width: 1024px) {
+  header {
+    height: 112px;
+  }
+  header .header-wrapper {
+    padding: 16px 3px 16px 24px;
+    height: 88px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  header .header-wrapper .catalog-logo {
+    width: 170px;
+    height: 56px;
+    display: flex;
+    gap: 14px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header .header-wrapper .catalog-logo .logo {
+    width: 106px;
+    height: 56px;
+    font-size: 22px;
+    font-weight: 600;
+    color: white;
+    line-height: 23px;
+  }
+  header .header-rounding {
+    height: 24px;
+  }
+  header .header-rounding .header-rounding__rectangle {
+    height: 100%;
+    top: 88px;
+    border-radius: 24px 24px 0px 0px;
+    background-color: rgb(246, 246, 250);
+  }
+}
