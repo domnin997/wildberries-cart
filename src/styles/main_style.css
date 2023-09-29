@@ -257,6 +257,13 @@ header .header-wrapper {
     gap: 27px;
     flex: 1 0 0;
   }
+  .wrapper {
+    display: flex;
+    width: 891px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
   .cart-order {
     max-width: 429px;
     padding-left: 32px;
@@ -407,6 +414,7 @@ header .header-wrapper {
 }
 
 .quantity-container {
+  width: 100px;
   display: flex;
   padding-top: 3px;
   flex-direction: column;
@@ -475,6 +483,17 @@ header .header-wrapper {
   top: 50%;
   right: 4%;
   transform: translateY(-50%);
+}
+
+.unavailable-header {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.unavailable-info {
+  max-width: 309px;
 }
 
 @media (min-width: 1px) {
@@ -558,6 +577,7 @@ header .header-wrapper {
     gap: 16px;
   }
   .product-price {
+    min-width: 110px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
