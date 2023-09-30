@@ -5,17 +5,11 @@
     border: none;
     position: relative;
   }
-  .mobile-logo {
-    display: flex;
-    padding: 11px 4px 21px 4px;
-    justify-content: center;
-    align-items: center;
-    flex: 1 0 0;
-    align-self: stretch;
-    text-align: center;
-  }
 }
 @media (min-width: 1024px) {
+  .catalog-btn-mobile-only {
+    display: none;
+  }
   .catalog-btn {
     width: 48px;
     height: 48px;
@@ -40,7 +34,7 @@
     height: 24px;
     width: 28px;
   }
-  .catalog-btn__burger .catalog-btn__burger-item {
+  .catalog-btn__burger-item {
     width: 28px;
     height: 4px;
     border-radius: 8px;
@@ -48,8 +42,8 @@
     top: 9px;
     background-color: rgb(255, 255, 255);
   }
-  .catalog-btn__burger .catalog-btn__burger-item::before,
-  .catalog-btn__burger .catalog-btn__burger-item::after {
+  .catalog-btn__burger-item::before,
+  .catalog-btn__burger-item::after {
     content: " ";
     position: absolute;
     width: 28px;
@@ -57,10 +51,10 @@
     border-radius: 8px;
     background-color: rgb(255, 255, 255);
   }
-  .catalog-btn__burger .catalog-btn__burger-item::before {
+  .catalog-btn__burger-item::before {
     top: 10px;
   }
-  .catalog-btn__burger .catalog-btn__burger-item::after {
+  .catalog-btn__burger-item::after {
     top: -10px;
   }
   .catalog-btn:hover {

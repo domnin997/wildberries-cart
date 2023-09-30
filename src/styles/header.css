@@ -8,13 +8,25 @@
     align-self: stretch;
     padding: 0px 13px;
     gap: 16px;
-    max-width: 1500px;
+    max-width: 1440px;
     margin: 0 auto;
   }
   .catalog-and-logo {
     display: flex;
     align-items: flex-start;
     gap: 24px;
+  }
+  .desktop-logo {
+    display: none;
+  }
+  .mobile-logo {
+    display: flex;
+    padding: 11px 4px 21px 4px;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 0;
+    align-self: stretch;
+    text-align: center;
   }
   .logo {
     color: rgb(255, 255, 255);
@@ -27,9 +39,6 @@
   }
 }
 @media (min-width: 1024px) {
-  header {
-    height: 112px;
-  }
   .header-wrapper {
     padding: 16px 3px 16px 24px;
     height: 88px;
@@ -40,6 +49,12 @@
     height: 56px;
     align-items: center;
     gap: 16px;
+  }
+  .desktop-logo {
+    display: block;
+  }
+  .mobile-logo {
+    display: none;
   }
   .logo {
     font-size: 28px;
