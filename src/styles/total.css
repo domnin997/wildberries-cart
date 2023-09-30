@@ -8,7 +8,7 @@
 }
 
 .total {
-  width: 429px;
+  min-width: 303px;
   display: flex;
   padding: 16px 24px 24px 24px;
   flex-direction: column;

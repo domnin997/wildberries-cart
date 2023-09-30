@@ -296,7 +296,8 @@ body {
     align-items: center;
     flex-direction: column;
     gap: 32px;
-    background-color: rgb(246, 246, 250);
+    margin: 0 auto;
+    max-width: 1440px;
   }
 }
 @media (min-width: 1024px) {
@@ -1114,7 +1115,7 @@ body {
 }
 
 .total {
-  width: 429px;
+  min-width: 303px;
   display: flex;
   padding: 16px 24px 24px 24px;
   flex-direction: column;
@@ -1406,6 +1407,9 @@ body {
   url: "../fonts/Segoe_UI" format("ttf");
 }
 @media (min-width: 1px) {
+  body {
+    background-color: rgb(246, 246, 250);
+  }
   .desktop-only {
     display: none;
   }
