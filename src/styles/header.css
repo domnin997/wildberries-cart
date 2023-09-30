@@ -8,6 +8,8 @@
     align-self: stretch;
     padding: 0px 13px;
     gap: 16px;
+    max-width: 1500px;
+    margin: 0 auto;
   }
   .catalog-and-logo {
     display: flex;
@@ -34,22 +36,21 @@
     gap: 32px;
   }
   .catalog-and-logo {
-    width: 170px;
+    width: 171px;
+    height: 56px;
     align-items: center;
     gap: 16px;
   }
   .logo {
     font-size: 28px;
-    line-height: 23px;
-    font-size: 28px;
+    line-height: 24px;
     letter-spacing: 0.56px;
+    max-width: 107px;
+    flex-shrink: 0;
+    padding-bottom: 5px;
   }
   .header-rounding {
     height: 24px;
-  }
-  .header-rounding__rectangle {
-    height: 100%;
-    top: 88px;
     border-radius: 24px 24px 0px 0px;
     background-color: rgb(246, 246, 250);
   }

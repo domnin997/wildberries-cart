@@ -1,44 +1,48 @@
 @import "variables.sass"
 
-@media (min-width: 321px)
+@media (min-width: 1px)
+    .search-panel
+        display: none
 
 @media (min-width: 1024px)
     .search-panel
-        width: 100%
+        display: flex
         height: 48px
+        padding: 0px 20px
+        align-items: center
+        flex: 1 0 0
         border-radius: 36px
         background-color: rgba(255, 255, 255, 0.2)
-        padding: 0px 20px 0px 20px
-        .search-panel__wrapper
-            width: 100%
-            height: 100%
-            position: relative
-            display: flex
-            align-items: center
-            gap: 8px
-            .search-panel__input
-                width: 100%
-                height: 28px
-                padding: 0px 0px 4px 0px
-                color: rgba(255, 255, 255, 1)
-                font-size: 18px
-                font-weight: 400
-                line-height: 24px
-                letter-spacing: 0px
-                text-align: left
-                opacity: 50%
-            input[type=text]
-                color: rgba(255, 255, 255, 1)
-            input[type=text]::placeholder
-                color: rgba(255, 255, 255, 1)
-            .search-panel__img_container
-                width: 24px
-                height: 24px
-                opacity: 40%
-                position: relative  
-                img
-                    display: block
-                    position: absolute
-                    top: 50%
-                    left: 50%
-                    transform: translate(-50%, -50%)
+    .search-panel__wrapper
+        display: flex
+        align-items: center
+        gap: 8px
+        flex: 1 0 0
+        align-self: stretch
+    .search-panel__input
+        display: flex
+        padding-bottom: 4px
+        align-items: center
+        gap: 4px
+        flex: 1 0 0
+        opacity: 0.5
+    input[type=text]
+        color: rgba(255, 255, 255, 1)
+        color: $system-white
+        font-size: 18px
+        font-style: normal
+        font-weight: 400
+        line-height: 24px
+    input[type=text]::placeholder
+        color: rgba(255, 255, 255, 1)
+    .search-panel__img_container
+        width: 24px
+        height: 24px
+        opacity: 40%
+        position: relative  
+        img
+            display: block
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)

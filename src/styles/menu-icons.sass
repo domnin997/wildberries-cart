@@ -1,59 +1,74 @@
 @import "variables.sass"
 
-@media (min-width: 321px)
+@media (min-width: 1px)
+    .menu-icons
+        display: none
 
 @media (min-width: 1024px)
+    
     .menu-icons
         display: flex
-        align-items: center
+        padding-right: 17px
+        justify-content: center
+        align-items: flex-end
         gap: 40px
-        width: 169px
-        height: 56px
-        padding: 0px 17px 0px 0px
-        .menu-icons__icon
-            width: 56px
-            height: 56px
-            padding: 0px, 0px, 3px, 0px
-            display: flex
-            flex-direction: column
-            gap: 6px
-            .menu-icons__img-container
-                height: 30px
-                position: relative
-                img
-                    position: absolute
-                .menu-icons__cart-img
-                    top: 1px
-                    left: 10px
-                .menu-icons__profile-img
-                    top: 1px
-                    left: 15px
-                .menu-icons__label-img
-                    top: -5px
-                    left: 31px
+        align-self: stretch
+
+    .menu-icons__icon
+        display: flex
+        width: 56px
+        padding-bottom: 0px
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        gap: 6px
+        align-self: stretch
+
+    .menu-icons__icon-container
+        width: 56px
+        height: 30px
+        display: flex
+        padding: 1px 13px 1px 15px
+        justify-content: center
+        align-items: center
+        flex-shrink: 0
+    
+    .menu-icons__icon-cart-container
+        width: 56px
+        height: 30px
+        padding: 1px 13px 1px 15px
+        position: relative
+    
+    .menu-icons__cart-icon
+        position: absolute
+        width: 28px
+        height: 28px
+        left: 10px
+        top: 1px
+
+    .menu-icons__profile-icon
+        width: 28px
+        height: 28px
+        flex-shrink: 0
+
+    .menu-icons__label-img
+        top: -5px
+        left: 31px
                 
-            .menu-icons__text
-                height: 16px
-                color: $system-white
-                font-size: 13px
-                font-weight: 400
-                line-height: 16px
-                letter-spacing: 0px
-                text-align: left
+    .menu-icons__text
+        height: 16px
+        color: $system-white
+        font-size: 13px
+        font-weight: 400
+        line-height: 16px
+        letter-spacing: 0px
+        text-align: left
 
-
-        .menu-icons__cart
-            width: 56px
-            height: 56px
-            padding: 0px, 0px, 3px, 0px
-            gap: 6px
-            .menu-icons__img-container
-                height: 30px
-            .menu-icons__text
-                height: 16px
-                color: $system-white
-                font-size: 13px
-                font-weight: 400
-                line-height: 16px
-                letter-spacing: 0px
-                text-align: left
+    .menu-icons__text
+        height: 16px
+        color: $system-white
+        font-size: 13px
+        font-weight: 400
+        line-height: 16px
+        letter-spacing: 0px
+        text-align: left
