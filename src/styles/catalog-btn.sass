@@ -1,40 +1,66 @@
 @import "variables.sass"
 
-@media (min-width: 321px)
+@media (min-width: 1px)
+    .catalog-btn
+       width: 28px
+       height: 28px
+       border: none
+       position: relative
+    
+    .mobile-logo
+        display: flex
+        padding: 11px 4px 21px 4px
+        justify-content: center
+        align-items: center
+        flex: 1 0 0
+        align-self: stretch
+        text-align: center
 
 @media (min-width: 1024px)
+    
     .catalog-btn
         width: 48px
         height: 48px
+        display: flex
+        padding: 12px 10px
+        justify-content: center
+        align-items: center
         border: 1px solid rgba(255, 255, 255, 0.45)
         border-radius: 8px
         position: relative
-        .catalog-btn__burger
-            position: absolute
-            top: 12px
-            left: 9px
-            height: 24px
+    
+    .catalog-btn__burger
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        gap: 6px
+        
+    .catalog-btn__burger
+        position: absolute
+        top: 12px
+        left: 9px
+        height: 24px
+        width: 28px
+        .catalog-btn__burger-item
             width: 28px
-            .catalog-btn__burger-item
-                width: 28px
-                height: 4px
-                border-radius: 8px
-                position: absolute
-                top: 9px
-                background-color: $white
-            .catalog-btn__burger-item::before,
-            .catalog-btn__burger-item::after
-                content: ' '
-                position: absolute
-                width: 28px
-                height: 4px
-                border-radius: 8px
-                background-color: $white
-            .catalog-btn__burger-item::before
-                top: 10px
-            .catalog-btn__burger-item::after
-                top: -10px
+            height: 4px
+            border-radius: 8px
+            position: absolute
+            top: 9px
+            background-color: $system-white
+        .catalog-btn__burger-item::before,
+        .catalog-btn__burger-item::after
+            content: ' '
+            position: absolute
+            width: 28px
+            height: 4px
+            border-radius: 8px
+            background-color: $system-white
+        .catalog-btn__burger-item::before
+            top: 10px
+        .catalog-btn__burger-item::after
+            top: -10px
     .catalog-btn:hover
-        border-color: $white
+        border-color: $system-white
 
 @media (min-width: 1400px)

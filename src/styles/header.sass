@@ -1,43 +1,57 @@
 @import "variables.sass"
 
-header
-    background-color: $violet
+@media (min-width: 1px)
+    .header
+        background-color: $violet
+
     .header-wrapper
         display: flex
-        gap: 15px
+        align-items: center
+        align-self: stretch
+        padding: 0px 13px
+        gap: 16px
+    
+    .catalog-and-logo
+        display: flex
+        align-items: flex-start
+        gap: 24px
 
-@media (min-width: 321px)
-
+    .logo
+        color: $system-white
+        font-size: 26px
+        font-style: normal
+        font-weight: 600
+        line-height: 24px
+        font-variant: all-small-caps
+        letter-spacing: 0.52px
+        
 @media (min-width: 1024px)
     header
         height: 112px
-        .header-wrapper
-            padding: 16px 3px 16px 24px
-            height: 88px
-            display: flex
-            align-items: center
-            gap: 32px
-            .catalog-logo
-                width: 170px
-                height: 56px
-                display: flex
-                gap: 14px
-                justify-content: space-between
-                align-items: center
-                .logo
-                    width: 106px
-                    height: 56px
-                    font-size: 22px
-                    font-weight: 600
-                    color: white
-                    line-height: 23px
-        .header-rounding
-            height: 24px
-            .header-rounding__rectangle
-                height: 100%
-                top: 88px
-                border-radius: 24px 24px 0px 0px
-                background-color: rgba(246, 246, 250, 1)
+
+    .header-wrapper
+        padding: 16px 3px 16px 24px
+        height: 88px
+        gap: 32px
+
+    .catalog-and-logo
+        width: 170px
+        align-items: center
+        gap: 16px
+
+    .logo
+        font-size: 28px
+        line-height: 23px
+        font-size: 28px
+        letter-spacing: 0.56px
+
+    .header-rounding
+        height: 24px
+    .header-rounding__rectangle
+        height: 100%
+        top: 88px
+        border-radius: 24px 24px 0px 0px
+        background-color: rgba(246, 246, 250, 1)
 
 @media (min-width: 1400px)
     

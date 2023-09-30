@@ -2,67 +2,105 @@ body {
   font-family: "Segoe UI";
 }
 
-header {
-  background-color: rgb(103, 37, 168);
+@media (min-width: 1px) {
+  .header {
+    background-color: rgb(103, 37, 168);
+  }
+  .header-wrapper {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    padding: 0px 13px;
+    gap: 16px;
+  }
+  .catalog-and-logo {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .logo {
+    color: rgb(255, 255, 255);
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    font-variant: all-small-caps;
+    letter-spacing: 0.52px;
+  }
 }
-header .header-wrapper {
-  display: flex;
-  gap: 15px;
-}
-
 @media (min-width: 1024px) {
   header {
     height: 112px;
   }
-  header .header-wrapper {
+  .header-wrapper {
     padding: 16px 3px 16px 24px;
     height: 88px;
-    display: flex;
-    align-items: center;
     gap: 32px;
   }
-  header .header-wrapper .catalog-logo {
+  .catalog-and-logo {
     width: 170px;
-    height: 56px;
-    display: flex;
-    gap: 14px;
-    justify-content: space-between;
     align-items: center;
+    gap: 16px;
   }
-  header .header-wrapper .catalog-logo .logo {
-    width: 106px;
-    height: 56px;
-    font-size: 22px;
-    font-weight: 600;
-    color: white;
+  .logo {
+    font-size: 28px;
     line-height: 23px;
+    font-size: 28px;
+    letter-spacing: 0.56px;
   }
-  header .header-rounding {
+  .header-rounding {
     height: 24px;
   }
-  header .header-rounding .header-rounding__rectangle {
+  .header-rounding__rectangle {
     height: 100%;
     top: 88px;
     border-radius: 24px 24px 0px 0px;
     background-color: rgb(246, 246, 250);
   }
 }
+@media (min-width: 1px) {
+  .catalog-btn {
+    width: 28px;
+    height: 28px;
+    border: none;
+    position: relative;
+  }
+  .mobile-logo {
+    display: flex;
+    padding: 11px 4px 21px 4px;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 0;
+    align-self: stretch;
+    text-align: center;
+  }
+}
 @media (min-width: 1024px) {
   .catalog-btn {
     width: 48px;
     height: 48px;
+    display: flex;
+    padding: 12px 10px;
+    justify-content: center;
+    align-items: center;
     border: 1px solid rgba(255, 255, 255, 0.45);
     border-radius: 8px;
     position: relative;
   }
-  .catalog-btn .catalog-btn__burger {
+  .catalog-btn__burger {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .catalog-btn__burger {
     position: absolute;
     top: 12px;
     left: 9px;
     height: 24px;
     width: 28px;
   }
-  .catalog-btn .catalog-btn__burger .catalog-btn__burger-item {
+  .catalog-btn__burger .catalog-btn__burger-item {
     width: 28px;
     height: 4px;
     border-radius: 8px;
@@ -70,8 +108,8 @@ header .header-wrapper {
     top: 9px;
     background-color: rgb(255, 255, 255);
   }
-  .catalog-btn .catalog-btn__burger .catalog-btn__burger-item::before,
-  .catalog-btn .catalog-btn__burger .catalog-btn__burger-item::after {
+  .catalog-btn__burger .catalog-btn__burger-item::before,
+  .catalog-btn__burger .catalog-btn__burger-item::after {
     content: " ";
     position: absolute;
     width: 28px;
@@ -79,10 +117,10 @@ header .header-wrapper {
     border-radius: 8px;
     background-color: rgb(255, 255, 255);
   }
-  .catalog-btn .catalog-btn__burger .catalog-btn__burger-item::before {
+  .catalog-btn__burger .catalog-btn__burger-item::before {
     top: 10px;
   }
-  .catalog-btn .catalog-btn__burger .catalog-btn__burger-item::after {
+  .catalog-btn__burger .catalog-btn__burger-item::after {
     top: -10px;
   }
   .catalog-btn:hover {
@@ -1348,4 +1386,20 @@ header .header-wrapper {
   font-style: normal;
   src: local("Roboto");
   url: "../fonts/Segoe_UI" format("ttf");
+}
+@media (min-width: 1px) {
+  .desktop-only {
+    display: none;
+  }
+  .mobile-only {
+    display: block;
+  }
+}
+@media (min-width: 1024px) {
+  .desktop-only {
+    display: block;
+  }
+  .mobile-only {
+    display: none;
+  }
 }
