@@ -1127,6 +1127,88 @@ header .header-wrapper {
   line-height: 24px;
 }
 
+.total-delivery-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  align-self: stretch;
+}
+
+.total-delivery {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  align-self: stretch;
+}
+
+.total-delivery__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
+}
+
+.total-delivery__text {
+  width: 100%;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.total-delivery__address {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.total-delivery__date {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  color: rgb(203, 17, 171);
+}
+
+.total-delivery__date-text {
+  border-bottom: dashed;
+  border-color: rgba(203, 17, 171, 0.2);
+  border-width: 1px;
+}
+
+.total-back-delivery {
+  display: flex;
+  padding: 8px 8px 12px 8px;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  background-color: rgb(246, 246, 250);
+  border-radius: 8px;
+}
+
+.total-back-delivery__text-green {
+  color: rgb(12, 180, 119);
+  border-bottom: dashed;
+  border-color: rgb(12, 180, 119);
+  border-width: 1px;
+}
+
 @font-face {
   font-family: "Segoe UI";
   font-style: normal;
