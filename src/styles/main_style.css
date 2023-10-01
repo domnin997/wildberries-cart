@@ -299,6 +299,18 @@ body {
     margin: 0 auto;
     max-width: 1440px;
   }
+  .cart {
+    display: flex;
+    flex-direction: column;
+    padding-top: 9px;
+  }
+  .wrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 48px 32px;
+  }
 }
 @media (min-width: 1024px) {
   .main-field {
@@ -310,11 +322,10 @@ body {
   .cart {
     max-width: 891px;
     min-width: 640px;
-    display: flex;
-    flex-direction: column;
     align-items: flex-start;
     gap: 27px;
     flex: 1 0 0;
+    padding-top: 10px;
   }
   .wrapper {
     display: flex;
@@ -358,9 +369,6 @@ body {
   }
 }
 @media (min-width: 1400px) {
-  .cart {
-    padding-top: 11px;
-  }
   .added-products {
     margin-top: 27px;
   }
