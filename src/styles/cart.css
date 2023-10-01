@@ -47,6 +47,7 @@
   }
   .cart {
     max-width: 891px;
+    min-width: 640px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -55,7 +56,7 @@
   }
   .wrapper {
     display: flex;
-    width: 891px;
+    width: 100%;
     flex-direction: column;
     align-items: flex-start;
     gap: 40px;

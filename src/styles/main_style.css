@@ -309,6 +309,7 @@ body {
   }
   .cart {
     max-width: 891px;
+    min-width: 640px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -317,7 +318,7 @@ body {
   }
   .wrapper {
     display: flex;
-    width: 891px;
+    width: 100%;
     flex-direction: column;
     align-items: flex-start;
     gap: 40px;
@@ -369,7 +370,7 @@ body {
 }
 .products-container {
   display: flex;
-  width: 891px;
+  width: 100%;
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
@@ -423,6 +424,7 @@ body {
 }
 
 .product {
+  max-width: 397px;
   display: flex;
   padding-top: 12px;
   align-items: flex-start;
@@ -457,7 +459,7 @@ body {
 }
 
 .product-info {
-  max-width: 275px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -554,7 +556,7 @@ body {
 }
 
 .unavailable-info {
-  max-width: 309px;
+  width: 100%;
 }
 
 @media (min-width: 1px) {
@@ -564,6 +566,7 @@ body {
     align-items: center;
   }
   .product-info__name {
+    max-width: 275px;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -1006,13 +1009,13 @@ body {
 
 .client-form {
   display: flex;
-  width: 700px;
+  width: 100%;
   flex-direction: column;
   align-items: flex-start;
 }
 
 .client-inputs-wrap {
-  max-width: 700px;
+  max-width: 100%;
   display: flex;
   align-items: flex-start;
   gap: 24px;

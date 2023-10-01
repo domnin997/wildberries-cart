@@ -2,7 +2,7 @@
 
 .products-container
     display: flex
-    width: 891px
+    width: 100%
     flex-direction: column
     align-items: flex-start
     gap: 16px
@@ -49,6 +49,7 @@
     align-self: stretch
 
 .product
+    max-width: 397px
     display: flex
     padding-top: 12px
     align-items: flex-start
@@ -78,7 +79,7 @@
     height: 106px
 
 .product-info
-    max-width: 275px
+    width: 100%
     display: flex
     flex-direction: column
     align-items: flex-start
@@ -163,7 +164,7 @@
     line-height: 24px
 
 .unavailable-info
-    max-width: 309px
+    width: 100%
 
 @media (min-width: 1px)
     
@@ -172,6 +173,7 @@
         justify-content: center
         align-items: center
     .product-info__name
+        max-width: 275px
         font-size: 14px
         font-style: normal
         font-weight: 400
