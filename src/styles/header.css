@@ -38,7 +38,9 @@
     letter-spacing: 0.52px;
   }
   .header-rounding {
-    padding-bottom: 9px;
+    height: 15px;
+    border-radius: 24px 24px 0px 0px;
+    background-color: rgb(246, 246, 250);
   }
 }
 @media (min-width: 1024px) {
