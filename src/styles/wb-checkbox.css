@@ -36,7 +36,19 @@
 @media (min-width: 1px) and (max-width: 1023px) {
   .wb-checkbox + label, .wb-checkbox + label::before {
     position: absolute;
+  }
+  .product__checkbox + label::before, .product__checkbox + label {
+    background-color: white;
     top: 4px;
     left: 4px;
+  }
+  .product-header__checkbox + label {
+    width: auto;
+  }
+  .products-header__checkbox + label, products-header__checkbox + label::before {
+    position: static;
+  }
+  .products-header__checkbox {
+    width: 22px;
   }
 }
