@@ -1,6 +1,15 @@
+@media (min-width: 1px) {
+  .order-details {
+    display: none;
+  }
+}
+@media (min-width: 1023px) {
+  .order-details {
+    display: flex;
+  }
+}
 .order-details {
   max-width: 891px;
-  display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;

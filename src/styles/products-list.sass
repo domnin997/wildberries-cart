@@ -36,11 +36,6 @@
     gap: 16px
     flex: 1 0 0
 
-.product-checkbox-img
-    display: flex
-    align-items: center
-    gap: 12px
-
 .product-checkbox-cont
     display: flex
     width: 22px
@@ -49,7 +44,7 @@
     justify-content: center
     align-items: center
 
-.product__picture-desktop
+.product__picture
     width: 72px
     height: 96px
     border-radius: 8px
@@ -117,14 +112,6 @@
 .plus-button
     right: 3px
 
-.quantity-container__prod-left
-    width: 100%
-    font-size: 13px
-    font-weight: 400
-    line-height: 16px
-    letter-spacing: 0px
-    text-align: left
-    color: rgba(255, 59, 48, 1)
     
 .minus-img
     position: absolute
@@ -177,12 +164,74 @@
         gap: 12px
         align-self: stretch
 
+    .product-checkbox-img
+        display: flex
+        align-items: center
+        position: relative
+    
+    .product__picture
+        width: 80px
+        height: 106px
+        border-radius: 8px
+    
+    .product-checkbox-cont
+        width: 0px
+        height: 0px
+
+    .product__checkbox
+        top: 4px
+        left: 4px
+
+    .quantity-and-price
+        display: flex
+        width: 100%
+        min-height: 32px
+        justify-content: space-between
+        align-items: center
+        gap: 16px
+        align-self: stretch
+    
+    .counter
+        width: 80px
+        height: 32px
+
 
     .fav-del-container
-        display: flex
+        display: none
         justify-content: center
         align-items: center
     
+    .fav-del-mobile
+        display: flex
+        justify-content: center
+        align-items: center
+
+    .fav-del-mobile__icon-container
+        display: flex
+        width: 44px
+        height: 44px
+        padding: 12px
+        justify-content: center
+        align-items: center
+
+    .quantity-container
+        width: 100%
+        display: flex
+        padding-top: 3px
+        flex-direction: row
+        align-items: center
+        gap: 16px
+        align-self: stretch
+
+    .quantity-container__prod-left
+        width: auto
+        font-size: 13px
+        font-weight: 400
+        line-height: 16px
+        letter-spacing: 0px
+        text-align: left
+        color: rgba(255, 59, 48, 1)
+
     .product-info__name
         max-width: 275px
         font-size: 14px
@@ -190,9 +239,21 @@
         font-weight: 400
         line-height: 20px
 
+    .product-info__location-entity
+        display: none
+    
+    .product-info__location
+        color: rgb(151, 151, 175)
+        font-size: 13px
+        font-style: normal
+        font-weight: 400
+        line-height: 16px
+
 @media (min-width: 1024px)
     
-    
+    .quantity-container__prod-left
+        width: 100%
+
     .products-header
         align-self: stretch
 
@@ -214,11 +275,30 @@
         justify-content: space-between
         align-items: flex-start
         align-self: stretch
-
-    .product__checkbox-cont
+    
+    .product-checkbox-img
+        gap: 12px
+   
+    
+    .product__picture
+        width: 72px
+        height: 96px
+        border-radius: 8px
+    
+    .product-checkbox-cont
+        display: flex
         width: 22px
         height: 96px
+        flex-direction: column
+        justify-content: center
+        align-items: center
    
+    .quantity-container
+        width: 100px
+        align-items: flex-end
+        gap: 8px
+        flex-direction: column
+
     .product-info__name
         font-size: 16px
         font-style: normal
@@ -237,11 +317,6 @@
         align-items: flex-start
         gap: 4px
         align-self: stretch
-        color: rgb(151, 151, 175)
-        font-size: 13px
-        font-style: normal
-        font-weight: 400
-        line-height: 16px
 
     .product-info__location-entity
         display: flex
@@ -249,6 +324,7 @@
         align-items: center
         gap: 6px
         align-self: stretch
+
     .product-info__location-icon
         width: 20px
         height: 20px
@@ -273,7 +349,12 @@
         height: 20px
         text-align: center
         
+    
+    .fav-del-mobile
+        display: none
+
     .fav-del-container
+        display: flex
         gap: 16px
     
     .product-price
