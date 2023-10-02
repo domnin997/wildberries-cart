@@ -20,7 +20,7 @@
   flex-shrink: 0;
   flex-grow: 0;
   border: 1px solid #adb5bd;
-  border-radius: 0.25em;
+  border-radius: 6px;
   margin-right: 0.5em;
   background-repeat: no-repeat;
   background-position: center center;
@@ -37,10 +37,14 @@
   .wb-checkbox + label, .wb-checkbox + label::before {
     position: absolute;
   }
-  .product__checkbox + label::before, .product__checkbox + label {
+  .product__checkbox + label::before {
     background-color: white;
     top: 4px;
     left: 4px;
+  }
+  .product__checkbox + label {
+    top: 0px;
+    left: 0px;
   }
   .product-header__checkbox + label {
     width: auto;

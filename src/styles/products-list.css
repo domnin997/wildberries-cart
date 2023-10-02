@@ -15,17 +15,6 @@
   line-height: 24px;
 }
 
-.products-list {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 20px;
-  align-self: stretch;
-  border-top: solid;
-  border-width: 1px;
-  border-color: lightgrey;
-}
-
 .product {
   max-width: 397px;
   display: flex;
@@ -53,16 +42,6 @@
 .product__picture-mobile {
   width: 80px;
   height: 106px;
-}
-
-.product-info {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-  flex: 1 0 0;
-  align-self: stretch;
 }
 
 .product-info__specs-item {
@@ -152,6 +131,16 @@
     gap: 12px;
     align-self: stretch;
   }
+  .products-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+    border-top: solid;
+    border-width: 1px;
+    border-color: lightgrey;
+  }
   .product-checkbox-img {
     display: flex;
     align-items: center;
@@ -175,6 +164,33 @@
   .product__checkbox {
     top: 4px;
     left: 4px;
+  }
+  .product-size {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    bottom: 4px;
+    left: 4px;
+    border-radius: 8px;
+    background-color: white;
+    display: flex;
+    padding: 0px 5px 3px 3px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  .product-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    flex: 1 0 0;
+    align-self: stretch;
   }
   .quantity-and-price {
     display: flex;
@@ -305,6 +321,10 @@
     gap: 2px;
     align-self: stretch;
   }
+  .mobile-text-overflow {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 }
 @media (min-width: 1024px) {
   .quantity-container__prod-left {
@@ -332,10 +352,16 @@
     align-items: flex-start;
     align-self: stretch;
   }
+  .products-list {
+    gap: 20px;
+  }
   .product-checkbox-img {
     gap: 12px;
   }
   .product-price-mobile {
+    display: none;
+  }
+  .product-size {
     display: none;
   }
   .product__picture {
