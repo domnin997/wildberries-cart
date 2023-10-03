@@ -154,8 +154,16 @@
 
 .client-input-block__type-field::-moz-placeholder, .client-input-block__type-field[type=text]::-moz-placeholder {
   color: rgb(151, 151, 175);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
 }
 
 .client-input-block__type-field::placeholder, .client-input-block__type-field[type=text]::placeholder {
   color: rgb(151, 151, 175);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
 }

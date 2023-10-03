@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    
     <header class="header">
 
         <div class="header-wrapper">
@@ -980,12 +981,14 @@
                                             src="./img/mir.svg"
                                             alt="Payment system"
                                         >
-                                        <span class="card-number">
-                                            1234 56•• •••• 1234
-                                        </span>
-                                        <span class="card-expiration-date">
-                                            01/30
-                                        </span>
+                                        <div class="card-details">
+                                            <span class="card-number">
+                                                1234 56•• •••• 1234
+                                            </span>
+                                            <span class="card-expiration-date">
+                                                01/30
+                                            </span>
+                                        </div>
                                 </div>
                                 <div class="payment-details__outro">
                                     Спишем оплату с карты при получении
@@ -1055,7 +1058,9 @@
                                     <div class="client-input-block__wrap">
                                         <input  class="client-input-block__type-field"
                                             type="tel"
-                                            placeholder="Телефон">
+                                            placeholder="Телефон"
+                                            value="+7 988 123-45-67"
+                                            >
                                         <p class="client-input-block__down-label">
                                             Укажите телефон
                                         </p>

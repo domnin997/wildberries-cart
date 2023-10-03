@@ -291,6 +291,11 @@
     align-items: flex-start;
     gap: 10px;
     align-self: stretch;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
   }
   .pick-point-info__time-rating {
     display: flex;
@@ -302,6 +307,12 @@
     line-height: 16px;
   }
   .rating {
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+    align-self: stretch;
+  }
+  .rating-star-container {
     display: flex;
     padding: 2px 0px;
     align-items: center;
