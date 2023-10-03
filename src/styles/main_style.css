@@ -330,7 +330,7 @@ body {
     width: 100%;
     flex-direction: column;
     align-items: center;
-    gap: 32px;
+    gap: 48px;
   }
 }
 @media (min-width: 1024px) {
@@ -421,15 +421,6 @@ body {
   line-height: 24px;
 }
 
-.product {
-  max-width: 397px;
-  display: flex;
-  padding-top: 12px;
-  align-items: flex-start;
-  gap: 16px;
-  flex: 1 0 0;
-}
-
 .product-checkbox-cont {
   display: flex;
   width: 22px;
@@ -437,12 +428,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.product__picture {
-  width: 72px;
-  height: 96px;
-  border-radius: 8px;
 }
 
 .product__picture-mobile {
@@ -502,6 +487,14 @@ body {
 }
 
 @media (min-width: 1px) {
+  .product {
+    max-width: 397px;
+    display: flex;
+    padding-top: 12px;
+    align-items: flex-start;
+    gap: 16px;
+    flex: 1 0 0;
+  }
   .products-header {
     display: flex;
     align-items: center;
@@ -536,6 +529,46 @@ body {
     align-items: flex-start;
     gap: 12px;
     align-self: stretch;
+    border-top: solid;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+  .product__picture {
+    width: 72px;
+    height: 96px;
+    border-radius: 8px;
+    position: relative;
+  }
+  .product__picture-wrap {
+    position: relative;
+  }
+  .product__picture-wrap::after {
+    content: " ";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: 2;
+    border-radius: 8px;
+    background-color: rgba(41, 43, 83, 0.03);
+  }
+  .product__picture-wrap-unavail {
+    position: relative;
+  }
+  .product__picture-wrap-unavail::after {
+    content: " ";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: 2;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  .unavail {
+    filter: grayscale(100%);
   }
   .products-list {
     display: flex;
@@ -547,7 +580,7 @@ body {
     border-width: 1px;
     border-color: lightgrey;
   }
-  .product-checkbox-img {
+  .product-checkbox-pic {
     display: flex;
     align-items: center;
     position: relative;
@@ -757,11 +790,12 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     align-self: stretch;
+    border-top: none;
   }
   .products-list {
     gap: 20px;
   }
-  .product-checkbox-img {
+  .product-checkbox-pic {
     gap: 12px;
   }
   .product-price-mobile {
@@ -939,6 +973,7 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 50% 50%;
+  z-index: 3;
 }
 
 .wb-checkbox:checked + label::before {
