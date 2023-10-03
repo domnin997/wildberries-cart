@@ -78,6 +78,11 @@
 
 .unavailable-info {
   width: 100%;
+  color: rgb(151, 151, 175);
+}
+
+.unavailable {
+  color: rgb(151, 151, 175);
 }
 
 @media (min-width: 1px) {
@@ -234,6 +239,9 @@
     gap: 16px;
     align-self: stretch;
   }
+  .quantity-and-price-unavail {
+    height: 24px;
+  }
   .counter {
     display: flex;
     width: 80px;
@@ -298,7 +306,8 @@
     color: rgb(255, 59, 48);
   }
   .product-info__name {
-    max-width: 275px;
+    max-width: 290px;
+    max-height: 40px;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -423,6 +432,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
+    max-height: 100%;
   }
   .product-info__specs {
     display: flex;
@@ -459,6 +469,9 @@
     align-items: flex-start;
     gap: 16px;
     align-self: stretch;
+  }
+  .quantity-and-price-unavail {
+    height: auto;
   }
   .counter {
     width: 100px;
