@@ -38,7 +38,8 @@
     letter-spacing: 0.52px;
   }
   .header-rounding {
-    height: 15px;
+    height: 25.5px;
+    margin-bottom: -11px;
     border-radius: 26px 26px 0px 0px;
     background-color: rgb(246, 246, 250);
   }
@@ -73,6 +74,7 @@
     height: 24px;
     padding: 0px;
     border-radius: 24px 24px 0px 0px;
+    margin-bottom: 0px;
     background-color: rgb(246, 246, 250);
   }
 }

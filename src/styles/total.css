@@ -72,6 +72,7 @@
 @media (min-width: 1024px) {
   .total-cont {
     max-width: 429px;
+    margin-top: -2px;
   }
   .total {
     min-width: 303px;

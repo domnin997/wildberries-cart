@@ -42,7 +42,8 @@ body {
     letter-spacing: 0.52px;
   }
   .header-rounding {
-    height: 15px;
+    height: 25.5px;
+    margin-bottom: -11px;
     border-radius: 26px 26px 0px 0px;
     background-color: rgb(246, 246, 250);
   }
@@ -77,6 +78,7 @@ body {
     height: 24px;
     padding: 0px;
     border-radius: 24px 24px 0px 0px;
+    margin-bottom: 0px;
     background-color: rgb(246, 246, 250);
   }
 }
@@ -346,7 +348,7 @@ body {
     width: 100%;
     flex-direction: column;
     align-items: flex-start;
-    gap: 48px 32px;
+    gap: 32px;
   }
   .products-block {
     display: flex;
@@ -561,7 +563,7 @@ body {
     align-self: stretch;
     border-top: solid;
     border-width: 1px;
-    border-color: rgba(0, 0, 0, 0.1);
+    border-color: lightgrey;
   }
   .product__picture {
     width: 72px;
@@ -606,9 +608,6 @@ body {
     align-items: flex-start;
     gap: 16px;
     align-self: stretch;
-    border-top: solid;
-    border-width: 1px;
-    border-color: lightgrey;
   }
   .product-checkbox-pic {
     display: flex;
@@ -643,10 +642,10 @@ body {
     height: 22px;
     bottom: 4px;
     left: 4px;
-    border-radius: 8px;
+    border-radius: 6px;
     background-color: white;
     display: flex;
-    padding: 0px 5px 3px 3px;
+    padding: 1px 4px 3px 3px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -683,7 +682,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: rgb(255, 255, 255);
-    border-radius: 8px;
+    border-radius: 6px;
   }
   .counter__button {
     display: flex;
@@ -831,6 +830,11 @@ body {
   }
   .products-container {
     gap: 15px;
+  }
+  .products-container__products-list {
+    border-top: solid;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.1);
   }
   .products-list {
     gap: 20px;
@@ -1071,7 +1075,7 @@ body {
     align-items: center;
     gap: 24px;
     align-self: stretch;
-    padding: 16px 0px;
+    padding: 16px 0px 24px 0px;
     background-color: rgb(255, 255, 255);
     border-radius: 16px;
     background-color: white;
@@ -1201,6 +1205,13 @@ body {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
+  }
+  .delivery-date {
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
   }
   .product-img-delivery {
     width: 40px;
@@ -1796,6 +1807,7 @@ body {
 @media (min-width: 1024px) {
   .total-cont {
     max-width: 429px;
+    margin-top: -2px;
   }
   .total {
     min-width: 303px;

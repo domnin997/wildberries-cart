@@ -56,7 +56,7 @@
     width: 100%;
     flex-direction: column;
     align-items: flex-start;
-    gap: 48px 32px;
+    gap: 32px;
   }
   .products-block {
     display: flex;
