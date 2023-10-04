@@ -1,31 +1,8 @@
-let favIcons = document.querySelectorAll('.fav-icon'),
-    delIcons = document.querySelectorAll('.delete-icon');
+import { shirtPrice } from "./prices.js";
+import { addDecorationToFavI, addDecorationToDelI } from "./fav-del-decoration.js";
 
-    favIcons.forEach((icon) => {
-        icon.addEventListener('mouseover', (event) => {
-            icon.children[0].attributes.fill.value = "#CB11AB";
-        });
-        icon.addEventListener('mouseout', (event) => {
-            icon.children[0].attributes.fill.value = "black";
-        });
-    })
-    
-    delIcons.forEach((icon) => {
-        
-        icon.addEventListener('mouseover', (event) => {
-            icon.children[0].attributes.fill.value = "#F55123";
-            icon.children[1].attributes.fill.value = "#F55123";
-            icon.children[2].attributes.fill.value = "#F55123";
-        });
-
-        icon.addEventListener('mouseout', (event) => {
-            icon.children[0].attributes.fill.value = "black";
-            icon.children[1].attributes.fill.value = "black";
-            icon.children[2].attributes.fill.value = "black";
-        });
-
-    });
-
+addDecorationToFavI();
+addDecorationToDelI();
 
 // Блок с ценами
 
@@ -121,8 +98,7 @@ let headerLabel = document.querySelector('.header__label'),
     headerLabel.addEventListener('click', (event) => {
         event.preventDefault();
             changeChecked(headerCheckbox);
-        // updateHeaderCheck();
-            updateCheck();
+                updateCheck();
     })
 
     productLabels.forEach((checkbox, i) => checkbox.addEventListener('click', (event) => {
