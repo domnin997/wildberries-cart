@@ -42,12 +42,16 @@ let productsArr = [shirts, phoneCases, pencils];
 
 let counterFields = document.querySelectorAll('.counter__number'),
     currentPrices = document.querySelectorAll('.product-price__value'),
-    currentPricesMobile = document.querySelectorAll('.product-price__value-mobile');
+    currentPricesMobile = document.querySelectorAll('.product-price__value-mobile'),
+    oldPrices = document.querySelectorAll('.product-price__old-value-desktop'),
+    oldPricesMobile = document.querySelectorAll('.product-price__old-value-mobile');
 
 function updItem (index) {
     counterFields[index].innerText = `${productsArr[index].numberOfGoods}`;
     currentPrices[index].innerText = `${productsArr[index].totalPrice}`;
     currentPricesMobile[index].innerText = `${productsArr[index].totalPrice}`;
+    oldPrices[index].innerText = `${productsArr[index].totalOldPrice}`;
+    oldPricesMobile[index].innerText = `${productsArr[index].totalOldPrice}`;
 }
 
 document.querySelectorAll('.products-list-item').forEach((item, index) => {
@@ -64,17 +68,4 @@ document.querySelectorAll('.products-list-item').forEach((item, index) => {
 
 }
 
-function shirtsActivity () {
-    let shirts = new Product(1051, 522, 1, 2);
-    let shirtBlock = document.querySelector('.products-list-item');
-        shirtBlock.addEventListener('click', (event) => {
-            if (event.target.classList.contains('plus-button')) {
-                shirts.countPlus();
-            } else if (event.target.classList.contains('minus-button')) {
-                shirts.countMinus();
-            }
-        })
-}
-
-export const shirtsActivityF = shirtsActivity;
 export const countingFuncI = countingFunc;

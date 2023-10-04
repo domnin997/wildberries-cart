@@ -1,33 +1,10 @@
 import { shirtPrice } from "./prices.js";
 import { addDecorationToFavI, addDecorationToDelI } from "./fav-del-decoration.js";
-import { shirtsActivityF, countingFuncI } from "./list-item-sums.js";
+import { countingFuncI } from "./list-item-sums.js";
 
-shirtsActivityF();
 countingFuncI();
-
 addDecorationToFavI();
 addDecorationToDelI();
-
-// Блок с ценами
-
-const tShirtPrice = 522,
-      casePrice = 10500.235,
-      pencilPrice = 247;
-
-let tShirtNum = 1,
-    caseNum = 200,
-    pencilNum = 2;
-
-let totalPrice = 0; 
-
-function countTotalPrice (price, value) {
-    totalPrice += price*value;
-};
-
-countTotalPrice(tShirtPrice, tShirtNum);
-countTotalPrice(casePrice, caseNum);
-countTotalPrice(pencilPrice, pencilNum);
-
 
 // Блок с количеством продуктов
 
