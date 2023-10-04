@@ -32,13 +32,19 @@ class Product {
     }
 }
 
-function countingFunc() {
-
 let phoneCases = new Product (11500.235, 10500.235, 200, 3000);
 let shirts = new Product (1051, 522, 1, 2);
 let pencils = new Product (475, 247, 2, 2);
 
 let productsArr = [shirts, phoneCases, pencils];
+
+function countingFunc(productsArr) {
+
+// let phoneCases = new Product (11500.235, 10500.235, 200, 3000);
+// let shirts = new Product (1051, 522, 1, 2);
+// let pencils = new Product (475, 247, 2, 2);
+
+// let productsArr = [shirts, phoneCases, pencils];
 
 let counterFields = document.querySelectorAll('.counter__number'),
     currentPrices = document.querySelectorAll('.product-price__value'),
@@ -69,3 +75,4 @@ document.querySelectorAll('.products-list-item').forEach((item, index) => {
 }
 
 export const countingFuncI = countingFunc;
+export const goodsArr = productsArr;

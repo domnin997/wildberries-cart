@@ -1,8 +1,9 @@
 import { shirtPrice } from "./prices.js";
 import { addDecorationToFavI, addDecorationToDelI } from "./fav-del-decoration.js";
-import { countingFuncI } from "./list-item-sums.js";
+import { goodsArr, countingFuncI } from "./list-item-sums.js";
+import { updateTotalPrice } from "./total-sum.js";
 
-countingFuncI();
+countingFuncI(goodsArr);
 addDecorationToFavI();
 addDecorationToDelI();
 
@@ -80,6 +81,7 @@ let headerLabel = document.querySelector('.header__label'),
         event.preventDefault();
             changeChecked(headerCheckbox);
                 updateCheck();
+                updateTotalPrice(goodsArr);
     })
 
     productLabels.forEach((checkbox, i) => checkbox.addEventListener('click', (event) => {
@@ -88,4 +90,5 @@ let headerLabel = document.querySelector('.header__label'),
                 if (!productsCheckboxes[i].checked) {
                     removeHeaderCheck();
                 }
+            updateTotalPrice(goodsArr);
     }))
