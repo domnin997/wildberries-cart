@@ -1,5 +1,9 @@
 import { shirtPrice } from "./prices.js";
 import { addDecorationToFavI, addDecorationToDelI } from "./fav-del-decoration.js";
+import { shirtsActivityF, countingFuncI } from "./list-item-sums.js";
+
+shirtsActivityF();
+countingFuncI();
 
 addDecorationToFavI();
 addDecorationToDelI();
@@ -23,7 +27,7 @@ function countTotalPrice (price, value) {
 countTotalPrice(tShirtPrice, tShirtNum);
 countTotalPrice(casePrice, caseNum);
 countTotalPrice(pencilPrice, pencilNum);
-console.log(totalPrice);
+
 
 // Блок с количеством продуктов
 

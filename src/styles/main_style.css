@@ -760,18 +760,11 @@ body {
     display: flex;
     align-items: baseline;
   }
-  .product-price-mobile__current .product-price__value {
+  .product-price__value-mobile {
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
     line-height: 24px;
-  }
-  .product-price__value {
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 28px;
-    letter-spacing: -0.01em;
-    text-align: right;
   }
   .product-price__currency {
     font-size: 16px;
