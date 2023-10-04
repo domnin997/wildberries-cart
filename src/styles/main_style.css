@@ -1702,6 +1702,10 @@ body {
   line-height: 24px;
 }
 
+.hidden {
+  display: none;
+}
+
 .footer {
   display: flex;
   flex-direction: column;

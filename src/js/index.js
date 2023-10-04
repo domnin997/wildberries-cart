@@ -47,3 +47,34 @@ countTotalPrice(tShirtPrice, tShirtNum);
 countTotalPrice(casePrice, caseNum);
 countTotalPrice(pencilPrice, pencilNum);
 console.log(totalPrice);
+
+// Блок с количеством продуктов
+
+let availItems = document.querySelectorAll('.available-item');
+let productsNum = availItems.length;
+let prodNumIcon = document.querySelector('.menu-icons__number-of-items');
+
+availItems.forEach((item) => {
+    item.addEventListener('click', (event) => {
+        if (event.target.classList.contains('delete-icon')) {
+            item.remove();
+                updateProdNumIcon();
+        }
+    })
+})
+
+function updateProdNumIcon () {
+    
+    availItems = document.querySelectorAll('.available-item');
+    productsNum = availItems.length;
+
+    if (productsNum) {
+        prodNumIcon.classList.remove('hidden');
+        prodNumIcon.innerText = productsNum;
+    } else {
+        prodNumIcon.classList.add('hidden');
+    }
+};
+
+updateProdNumIcon();
+console.log(prodNumIcon);
