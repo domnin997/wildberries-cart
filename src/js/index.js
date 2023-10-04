@@ -78,3 +78,57 @@ function updateProdNumIcon () {
 
 updateProdNumIcon();
 console.log(prodNumIcon);
+
+// Чекбоксы
+
+let headerCheckbox = document.querySelector('.products-header__checkbox'),
+    productsCheckboxes = document.querySelectorAll('.product__checkbox');
+
+console.log(productsCheckboxes);
+
+function changeChecked (element) {
+    console.log('invoked');
+    if (element.checked) {
+        element.checked = false;
+    } else {
+        element.checked = true;
+    }
+}
+
+function updateHeaderCheck () {
+    if (headerCheckbox.checked) {
+        headerCheckbox.checked = false;
+    } else {
+        headerCheckbox.checked = true;
+    }
+}
+
+function removeHeaderCheck () {
+    headerCheckbox.checked = false;
+}
+
+function updateCheck () {
+    if (headerCheckbox.checked) {
+        productsCheckboxes.forEach((box)=>{
+            box.checked = 'true';
+        })
+    }
+}
+
+let headerLabel = document.querySelector('.header__label'),
+    productLabels = document.querySelectorAll('.product__label');
+
+    headerLabel.addEventListener('click', (event) => {
+        event.preventDefault();
+            changeChecked(headerCheckbox);
+        // updateHeaderCheck();
+            updateCheck();
+    })
+
+    productLabels.forEach((checkbox, i) => checkbox.addEventListener('click', (event) => {
+        event.preventDefault();
+            changeChecked(productsCheckboxes[i]);
+                if (!productsCheckboxes[i].checked) {
+                    removeHeaderCheck();
+                }
+    }))
