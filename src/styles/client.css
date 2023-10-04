@@ -150,6 +150,7 @@
   border-bottom: solid;
   border-width: 1px;
   border-color: rgba(0, 0, 0, 0.2);
+  padding-bottom: 3px;
 }
 
 .client-input-block__type-field::-moz-placeholder, .client-input-block__type-field[type=text]::-moz-placeholder {

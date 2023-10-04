@@ -361,7 +361,7 @@ body {
 }
 @media (min-width: 1024px) {
   .main-field {
-    padding: 0px 24px 16px 24px;
+    padding: 0px 24px 26px 24px;
     align-items: flex-start;
     flex-direction: row;
     align-self: stretch;
@@ -949,6 +949,12 @@ body {
   .fav-del-container {
     display: flex;
     gap: 16px;
+  }
+  .fav-icon:hover {
+    cursor: pointer;
+  }
+  .delete-icon {
+    cursor: pointer;
   }
   .product-price {
     min-width: 110px;
@@ -1677,6 +1683,7 @@ body {
   border-bottom: solid;
   border-width: 1px;
   border-color: rgba(0, 0, 0, 0.2);
+  padding-bottom: 3px;
 }
 
 .client-input-block__type-field::-moz-placeholder, .client-input-block__type-field[type=text]::-moz-placeholder {
@@ -1725,7 +1732,7 @@ body {
   align-items: center;
   gap: 2px;
   align-self: stretch;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.6);
   text-align: center;
   font-size: 13px;
   font-style: normal;
