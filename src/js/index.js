@@ -1,11 +1,22 @@
 import { shirtPrice } from "./prices.js";
 import { addDecorationToFavI, addDecorationToDelI } from "./fav-del-decoration.js";
-import { goodsArr, countingFuncI } from "./list-item-sums.js";
-import { updateTotalPrice } from "./total-sum.js";
+import { goodsArr } from "./list-item-sums.js";
+import {  changeSelectedF, updateTotalFunc, updateTotalOldFunc } from "./total-sum.js";
+import { updateListItem } from "./update-item-fields.js";
 
-countingFuncI(goodsArr);
+let localProdArr = goodsArr;
+
+// countingFuncI(localProdArr);
 addDecorationToFavI();
 addDecorationToDelI();
+
+// Блок обновления лист айтемов.
+
+let counterFields = document.querySelectorAll('.counter__number'),
+    currentPrices = document.querySelectorAll('.product-price__value'),
+    currentPricesMobile = document.querySelectorAll('.product-price__value-mobile'),
+    oldPrices = document.querySelectorAll('.product-price__old-value-desktop'),
+    oldPricesMobile = document.querySelectorAll('.product-price__old-value-mobile');
 
 // Блок с количеством продуктов
 
@@ -13,11 +24,27 @@ let availItems = document.querySelectorAll('.available-item');
 let productsNum = availItems.length;
 let prodNumIcon = document.querySelector('.menu-icons__number-of-items');
 
-availItems.forEach((item) => {
+let headerCheckbox = document.querySelector('.products-header__checkbox'),
+    productsCheckboxes = document.querySelectorAll('.product__checkbox');
+
+availItems.forEach((item, index) => {
     item.addEventListener('click', (event) => {
         if (event.target.classList.contains('delete-icon')) {
             item.remove();
                 updateProdNumIcon();
+                    if (productsCheckboxes[index].checked == true) {
+                        productsCheckboxes[index].checked = false;
+                        goodsArr[index].selected = false;
+                    }
+        }
+        if (event.target.classList.contains('plus-button')) {
+            goodsArr[index].countPlus();
+                updateListItem(counterFields, currentPrices, currentPricesMobile, oldPrices, oldPricesMobile, index, goodsArr)
+                    updateTotalFunc(goodsArr);
+        } else if (event.target.classList.contains('minus-button')) {
+            goodsArr[index].countMinus();
+                updateListItem(counterFields, currentPrices, currentPricesMobile, oldPrices, oldPricesMobile, index, goodsArr)
+                    updateTotalFunc(goodsArr);
         }
     })
 })
@@ -36,14 +63,8 @@ function updateProdNumIcon () {
 };
 
 updateProdNumIcon();
-console.log(prodNumIcon);
 
 // Чекбоксы
-
-let headerCheckbox = document.querySelector('.products-header__checkbox'),
-    productsCheckboxes = document.querySelectorAll('.product__checkbox');
-
-console.log(productsCheckboxes);
 
 function changeChecked (element) {
     console.log('invoked');
@@ -81,7 +102,7 @@ let headerLabel = document.querySelector('.header__label'),
         event.preventDefault();
             changeChecked(headerCheckbox);
                 updateCheck();
-                updateTotalPrice(goodsArr);
+                // updateTotalPrice(goodsArr);
     })
 
     productLabels.forEach((checkbox, i) => checkbox.addEventListener('click', (event) => {
@@ -90,5 +111,11 @@ let headerLabel = document.querySelector('.header__label'),
                 if (!productsCheckboxes[i].checked) {
                     removeHeaderCheck();
                 }
-            updateTotalPrice(goodsArr);
+            changeSelectedF(goodsArr, i);
+                updateTotalFunc(goodsArr);
+                updateTotalOldFunc(goodsArr);
+                console.log(goodsArr);
     }))
+
+
+headerCheckbox.checked = true;

@@ -1,21 +1,33 @@
-
-function updateTotalSum (productsArray) {
-    let totalSum = 0;
-    let checkboxes = document.querySelectorAll('.product__checkbox'),
-        totalPriceCont = document.querySelector('.total-price__value');
-
-    if (checkboxes.length === 0) {
-        totalPriceCont.innerText = totalSum;
-        console.log(totalSum)
-    } else {
-        checkboxes.forEach((checkbox, index) => {
-            if (checkbox.checked) {
-                totalSum += productsArray[index].totalPrice;
+function updateTotal (arrOfGoods) {
+    let total = 0;
+        arrOfGoods.forEach((good) => {
+            if (good.selected) {
+                total += good.totalPrice;
             }
-        });
-        console.log(totalSum)
-        totalPriceCont.innerText = totalSum;
+        })
+
+    document.querySelector('.total-price__value').innerText = `${total}`;
+}
+
+function updateTotalOld (arrOfGoods) {
+    let totalOld = 0;
+        arrOfGoods.forEach((good) => {
+            if (good.selected) {
+                totalOld += good.totalOldPrice;
+            }
+        })
+    console.log(totalOld);
+    return totalOld;
+}
+
+function changeSelected (arrOfGoods, index) {
+    if (arrOfGoods[index].selected) {
+        arrOfGoods[index].selected = false;
+    } else {
+        arrOfGoods[index].selected = true;
     }
 }
 
-export const updateTotalPrice = updateTotalSum;
+export const changeSelectedF = changeSelected;
+export const updateTotalFunc = updateTotal;
+export const updateTotalOldFunc = updateTotalOld;
