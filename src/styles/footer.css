@@ -2,6 +2,10 @@
   display: none;
 }
 
+.closed-header-displayed {
+  display: flex;
+}
+
 .item-list-hidden {
   display: none;
 }

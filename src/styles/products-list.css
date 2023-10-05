@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .products-header__text {
   padding: 0px 0px 5px 0px;
   color: black;
@@ -66,6 +67,7 @@
   font-style: normal;
   font-weight: 600;
   line-height: 24px;
+  font-family: "Segoe UI Semibold";
 }
 
 .unavailable-info {
@@ -109,6 +111,22 @@
     align-items: center;
     gap: 8px;
     flex: 1 0 0;
+  }
+  .added-products-total__closed {
+    display: none;
+    width: 100%;
+    gap: 11px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    font-family: "Segoe UI Semibold";
+  }
+  .added-products-total__closed-price::before {
+    content: "·";
+    width: 6px;
+    display: inline-block;
+    margin-right: 10px;
   }
   .products-header__icon {
     display: flex;

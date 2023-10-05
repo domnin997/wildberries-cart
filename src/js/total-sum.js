@@ -1,12 +1,18 @@
 function updateTotal (arrOfGoods) {
-    let total = 0;
+    let totalPr = 0,
+        totalNum = 0;
         arrOfGoods.forEach((good) => {
             if (good.selected && good.displayed) {
-                total += good.totalPrice;
+                totalPr += good.totalPrice;
+                    totalNum += good.numberOfGoods;
             }
         })
 
-    document.querySelector('.total-price__value').innerText = `${total}`;
+    totalPr = totalPr.toLocaleString('ru');
+
+    document.querySelector('.total-price__value').innerText = `${totalPr}`;
+    document.querySelector('.added-products-total__closed-price').innerText = `${totalPr} сом`;
+    document.querySelector('.added-products-total__closed-number').innerText = `${totalNum.toLocaleString('ru')} товаров`;
 }
 
 function updateTotalOld (arrOfGoods) {

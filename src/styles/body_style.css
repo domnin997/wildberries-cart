@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Segoe UI";
+  font-style: normal;
+  src: local("Segoe UI") url("../fonts/Segoe_UI.ttf") format("ttf");
+}
 body {
   font-family: "Segoe UI";
 }

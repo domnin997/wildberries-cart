@@ -1,3 +1,9 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Segoe UI";
+  font-style: normal;
+  src: local("Segoe UI") url("../fonts/Segoe_UI.ttf") format("ttf");
+}
 body {
   font-family: "Segoe UI";
 }
@@ -312,13 +318,6 @@ body {
   gap: 11px;
 }
 
-.added-products-total__closed {
-  display: flex;
-  width: 100%;
-  gap: 11px;
-  display: none;
-}
-
 @media (min-width: 1px) {
   .main-field {
     display: flex;
@@ -500,6 +499,7 @@ body {
   font-style: normal;
   font-weight: 600;
   line-height: 24px;
+  font-family: "Segoe UI Semibold";
 }
 
 .unavailable-info {
@@ -543,6 +543,22 @@ body {
     align-items: center;
     gap: 8px;
     flex: 1 0 0;
+  }
+  .added-products-total__closed {
+    display: none;
+    width: 100%;
+    gap: 11px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    font-family: "Segoe UI Semibold";
+  }
+  .added-products-total__closed-price::before {
+    content: "·";
+    width: 6px;
+    display: inline-block;
+    margin-right: 10px;
   }
   .products-header__icon {
     display: flex;
@@ -1706,6 +1722,10 @@ body {
   display: none;
 }
 
+.closed-header-displayed {
+  display: flex;
+}
+
 .item-list-hidden {
   display: none;
 }
@@ -2082,13 +2102,12 @@ body {
 @font-face {
   font-family: "Segoe UI";
   font-style: normal;
-  src: local("Roboto");
-  url: "../fonts/Segoe_UI" format("ttf");
+  src: local("Segoe UI") url("../fonts/Segoe_UI.ttf") format("ttf");
 }
 @font-face {
   font-family: "Segoe UI Semibold";
   font-style: normal;
-  url: "../fonts/Segoe_UI_Semibold" format("ttf");
+  src: local("Segoe_UI_Semibold") url("../fonts/SegoeUISemibold.woff2") format("woff2"), url("../fonts/SegoeUISemibold2") format("woff");
 }
 @media (min-width: 1px) {
   body {
