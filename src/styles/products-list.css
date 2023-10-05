@@ -67,7 +67,6 @@
   font-style: normal;
   font-weight: 600;
   line-height: 24px;
-  font-family: "Segoe UI Semibold";
 }
 
 .unavailable-info {
@@ -120,7 +119,6 @@
     font-style: normal;
     font-weight: 600;
     line-height: 24px;
-    font-family: "Segoe UI Semibold";
   }
   .added-products-total__closed-price::before {
     content: "·";

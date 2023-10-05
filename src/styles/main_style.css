@@ -1,13 +1,4 @@
 @charset "UTF-8";
-@font-face {
-  font-family: "Segoe UI";
-  font-style: normal;
-  src: local("Segoe UI") url("../fonts/Segoe_UI.ttf") format("ttf");
-}
-body {
-  font-family: "Segoe UI";
-}
-
 @media (min-width: 1px) {
   .header {
     background-color: rgb(103, 37, 168);
@@ -499,7 +490,6 @@ body {
   font-style: normal;
   font-weight: 600;
   line-height: 24px;
-  font-family: "Segoe UI Semibold";
 }
 
 .unavailable-info {
@@ -552,7 +542,6 @@ body {
     font-style: normal;
     font-weight: 600;
     line-height: 24px;
-    font-family: "Segoe UI Semibold";
   }
   .added-products-total__closed-price::before {
     content: "·";
@@ -2099,16 +2088,10 @@ body {
   line-height: 16px;
 }
 
-@font-face {
-  font-family: "Segoe UI";
-  font-style: normal;
-  src: local("Segoe UI") url("../fonts/Segoe_UI.ttf") format("ttf");
+html {
+  font-family: Segoe UI;
 }
-@font-face {
-  font-family: "Segoe UI Semibold";
-  font-style: normal;
-  src: local("Segoe_UI_Semibold") url("../fonts/SegoeUISemibold.woff2") format("woff2"), url("../fonts/SegoeUISemibold2") format("woff");
-}
+
 @media (min-width: 1px) {
   body {
     background-color: rgb(246, 246, 250);
