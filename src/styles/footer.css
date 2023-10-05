@@ -2,6 +2,14 @@
   display: none;
 }
 
+.item-list-hidden {
+  display: none;
+}
+
+.rotate180 {
+  transform: rotate(-180deg);
+}
+
 .footer {
   display: flex;
   flex-direction: column;

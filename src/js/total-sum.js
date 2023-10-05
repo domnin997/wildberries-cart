@@ -1,7 +1,7 @@
 function updateTotal (arrOfGoods) {
     let total = 0;
         arrOfGoods.forEach((good) => {
-            if (good.selected) {
+            if (good.selected && good.displayed) {
                 total += good.totalPrice;
             }
         })
@@ -12,7 +12,7 @@ function updateTotal (arrOfGoods) {
 function updateTotalOld (arrOfGoods) {
     let totalOld = 0;
         arrOfGoods.forEach((good) => {
-            if (good.selected) {
+            if (good.selected && good.displayed) {
                 totalOld += good.totalOldPrice;
             }
         })

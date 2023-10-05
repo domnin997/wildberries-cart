@@ -529,6 +529,7 @@ body {
     gap: 11px;
   }
   .products-container {
+    overflow: hidden;
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -551,6 +552,10 @@ body {
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
+    transition: margin 0.3s ease, transform 0.3s ease;
+  }
+  .products-header__icon:hover {
+    cursor: pointer;
   }
   .show-hide-icon {
     position: static;
@@ -564,6 +569,7 @@ body {
     border-top: solid;
     border-width: 1px;
     border-color: lightgrey;
+    transition-duration: 1s;
   }
   .product__picture {
     width: 72px;
@@ -812,6 +818,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition-duration: 1s;
   }
   .products-list-item {
     display: flex;
@@ -1699,6 +1706,14 @@ body {
   display: none;
 }
 
+.item-list-hidden {
+  display: none;
+}
+
+.rotate180 {
+  transform: rotate(-180deg);
+}
+
 .footer {
   display: flex;
   flex-direction: column;
@@ -2069,6 +2084,11 @@ body {
   font-style: normal;
   src: local("Roboto");
   url: "../fonts/Segoe_UI" format("ttf");
+}
+@font-face {
+  font-family: "Segoe UI Semibold";
+  font-style: normal;
+  url: "../fonts/Segoe_UI_Semibold" format("ttf");
 }
 @media (min-width: 1px) {
   body {

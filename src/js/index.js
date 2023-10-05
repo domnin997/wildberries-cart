@@ -1,9 +1,10 @@
-import { shirtPrice } from "./prices.js";
 import { addDecorationToFavI, addDecorationToDelI } from "./fav-del-decoration.js";
 import { goodsArr } from "./list-item-sums.js";
 import {  changeSelectedF, updateTotalFunc, updateTotalOldFunc } from "./total-sum.js";
 import { updateListItem } from "./update-item-fields.js";
+import { showHideLists } from "./show-hide-list.js.js";
 
+showHideLists();
 let localProdArr = goodsArr;
 
 // countingFuncI(localProdArr);
@@ -32,10 +33,12 @@ availItems.forEach((item, index) => {
         if (event.target.classList.contains('delete-icon')) {
             item.remove();
                 updateProdNumIcon();
-                    if (productsCheckboxes[index].checked == true) {
+                goodsArr[index].displayed = false;
+                if (productsCheckboxes[index].checked == true) {
                         productsCheckboxes[index].checked = false;
                         goodsArr[index].selected = false;
                     }
+                    updateTotalFunc(goodsArr);
         }
         if (event.target.classList.contains('plus-button')) {
             goodsArr[index].countPlus();
@@ -101,8 +104,11 @@ let headerLabel = document.querySelector('.header__label'),
     headerLabel.addEventListener('click', (event) => {
         event.preventDefault();
             changeChecked(headerCheckbox);
+            goodsArr.forEach((el) => {
+                el.selected = true;
+            })
                 updateCheck();
-                // updateTotalPrice(goodsArr);
+                updateTotalFunc(goodsArr);
     })
 
     productLabels.forEach((checkbox, i) => checkbox.addEventListener('click', (event) => {
@@ -119,3 +125,8 @@ let headerLabel = document.querySelector('.header__label'),
 
 
 headerCheckbox.checked = true;
+goodsArr.forEach((el) => {
+    el.selected = true;
+});
+updateCheck();
+updateTotalFunc(goodsArr);

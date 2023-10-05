@@ -7,6 +7,7 @@ class Product {
         this.totalPrice = numberOfGoods*discountedPrice;
         this.totalOldPrice = numberOfGoods*standardPrice;
         this.selected = false;
+        this.displayed = true;
     }
 
     updateTotal () {
