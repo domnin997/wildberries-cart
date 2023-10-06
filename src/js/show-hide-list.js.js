@@ -14,12 +14,14 @@ function productsListOpener (availEmpty = false, unavailEmpty = false) {
     function changeAvailHeader (ind) {
         if (ind === 0) {
             if (state[ind].displayed === false) {
-                availHeaderCheckbox.classList.add('hidden');
-                availHeaderText.classList.add('hidden');
+                [availHeaderCheckbox, availHeaderText].forEach(el => {
+                    el.classList.add('hidden')
+                });
                     availClosedHeader.classList.add('closed-header-displayed');
             } else {
-                availHeaderCheckbox.classList.remove('hidden');
-                availHeaderText.classList.remove('hidden');
+                [availHeaderCheckbox, availHeaderText].forEach(el => {
+                    el.classList.remove('hidden');
+                });
                     availClosedHeader.classList.remove('closed-header-displayed');
             }
         }

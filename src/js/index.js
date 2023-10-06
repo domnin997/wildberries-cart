@@ -39,19 +39,21 @@ let prodNumIcon = document.querySelector('.menu-icons__number-of-items');
 let headerCheckbox = document.querySelector('.products-header__checkbox'),
     productsCheckboxes = document.querySelectorAll('.product__checkbox');
 
+
 availItems.forEach((item, index) => {
     item.addEventListener('click', (event) => {
         
         if (event.target.classList.contains('delete-icon')) {
             item.remove();
-                updateProdNumIcon();
-                goodsArr[index].displayed = false;
-                if (productsCheckboxes[index].checked == true) {
-                        productsCheckboxes[index].checked = false;
-                        goodsArr[index].selected = false;
-                    }
-                    updateTotalFunc(goodsArr);
-                        deleteDeliveryElement(goodsArr, index, deliveryDates, deliveryProductsConts, delProdImgCont);
+             updateProdNumIcon();
+              goodsArr[index].displayed = false;
+               if (productsCheckboxes[index].checked == true) {
+                       productsCheckboxes[index].checked = false;
+                       goodsArr[index].selected = false;
+                   }
+                updateTotalFunc(goodsArr);
+                 deleteDeliveryElement(goodsArr, index, deliveryDates, deliveryProductsConts, delProdImgCont);
+                 
         }
         
         if (event.target.classList.contains('plus-button')) {

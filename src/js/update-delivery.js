@@ -47,7 +47,10 @@ function updateDeliveryBlock (goodsArr, index, mobileCounters, desktopCounters, 
 
 
 function showHideElement (goodsArr, index, delDates, delProdConts, imgConts) {
-    
+    const good = goodsArr[index],
+          numOfGoods = goodsArr[index].numberOfGoods,
+          warehouseLim = goodsArr[index].warehouseLim;
+
     function hideElement (element) {
         element.forEach ((e) => {
             e.classList.add('hidden');
@@ -60,17 +63,15 @@ function showHideElement (goodsArr, index, delDates, delProdConts, imgConts) {
         });
     }
 
-    if (goodsArr[index].selected && goodsArr[index].displayed) {
-        
+    if (good.selected && good.displayed) {
         showElement([delDates[0], delDates[2], delProdConts[0], delProdConts[2]]);
         showElement ([imgConts[index], imgConts[index + 4]]);
 
-        if (goodsArr[index].numberOfGoods > 184) {
+        if (numOfGoods > warehouseLim) {
             showElement([delDates[1], delDates[3], delProdConts[1], delProdConts[3]]);
-           
         }
 
-    } else if (!goodsArr[index].selected && goodsArr[index].displayed) {
+    } else if (!good.selected && good.displayed) {
         
         if (goodsArr.every((el) => el.selected === false)) {
             hideElement(delDates);
@@ -79,9 +80,8 @@ function showHideElement (goodsArr, index, delDates, delProdConts, imgConts) {
 
         hideElement([imgConts[index], imgConts[index + 4]]);
         
-        if (goodsArr[index].numberOfGoods > 184) {
+        if (numOfGoods > warehouseLim) {
             hideElement([delDates[1], delDates[3], delProdConts[1], delProdConts[3]]);
-            
         }
     }
 }
@@ -89,6 +89,13 @@ function showHideElement (goodsArr, index, delDates, delProdConts, imgConts) {
 
 function deleteElement (goodsArr, index, delDates, delProdConts, imgConts) {
     const good = goodsArr[index];
+
+    const availHeaderCheckbox = document.querySelector('.header__label'),
+          availHeaderText = document.querySelector('.products-header__text'),
+          availClosedHeader = document.querySelector('.added-products-total__closed');
+    
+    
+
     function removeElement (elements) {
         elements.forEach((el) => {
             el.remove();
@@ -99,13 +106,18 @@ function deleteElement (goodsArr, index, delDates, delProdConts, imgConts) {
         removeElement([imgConts[index], imgConts[index+4]]);
     }
 
-    if (good.numberOfGoods > 184) {
+    if (good.numberOfGoods > good.warehouseLim) {
         removeElement([imgConts[3], imgConts[7], delDates[1], delDates[3], delProdConts[1], delProdConts[3]]);
     }
 
     if (goodsArr.every((el) => el.displayed === false)) {
         removeElement(delProdConts);
         removeElement(delDates);
+        // [availHeaderCheckbox, availHeaderText].forEach((el) => {
+        //     el.classList.add('hidden');
+        // })
+
+        // availClosedHeader.classList.add('closed-header-displayed');
     }
 }
 
