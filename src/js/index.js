@@ -4,6 +4,7 @@ import { changeSelectedF, updateTotalFunc, updateTotalOldFunc } from "./total-su
 import { updateListItem } from "./update-item-fields.js";
 import { showHideLists } from "./show-hide-list.js.js";
 import { updDelivery } from "./update-delivery.js";
+import { showHideDelEl } from "./update-delivery.js";
 
 showHideLists();
 let localProdArr = goodsArr;
@@ -17,7 +18,8 @@ addDecorationToDelI();
 let mobDelCount = document.querySelectorAll('.delivery-products__number-mobile'),
     deskDelCount = document.querySelectorAll('.delivery-products__number'),
     deliveryDates = document.querySelectorAll('.delivery-date'),
-    deliveryProductsConts = document.querySelectorAll('.delivery-products-cont');
+    deliveryProductsConts = document.querySelectorAll('.delivery-products-cont'),
+    delProdImgCont = document.querySelectorAll('.delivery-products__img-cont');
 
 
 // Блок обновления лист айтемов.
@@ -52,14 +54,15 @@ availItems.forEach((item, index) => {
         
         if (event.target.classList.contains('plus-button')) {
             goodsArr[index].countPlus();
-                updateListItem(counterFields, currentPrices, currentPricesMobile, oldPrices, oldPricesMobile, index, goodsArr)
-                    updateTotalFunc(goodsArr);
-                        updDelivery(goodsArr, index, mobDelCount, deskDelCount, deliveryDates, deliveryProductsConts);
+             updateListItem(counterFields, currentPrices, currentPricesMobile, oldPrices, oldPricesMobile, index, goodsArr)
+              updateTotalFunc(goodsArr);
+               updDelivery(goodsArr, index, mobDelCount, deskDelCount, deliveryDates, deliveryProductsConts);
+        
         } else if (event.target.classList.contains('minus-button')) {
             goodsArr[index].countMinus();
-                updateListItem(counterFields, currentPrices, currentPricesMobile, oldPrices, oldPricesMobile, index, goodsArr)
-                    updateTotalFunc(goodsArr);
-                        updDelivery(goodsArr, index, mobDelCount, deskDelCount, deliveryDates, deliveryProductsConts);
+             updateListItem(counterFields, currentPrices, currentPricesMobile, oldPrices, oldPricesMobile, index, goodsArr)
+              updateTotalFunc(goodsArr);
+               updDelivery(goodsArr, index, mobDelCount, deskDelCount, deliveryDates, deliveryProductsConts);
         }
     })
 })
@@ -121,6 +124,9 @@ let headerLabel = document.querySelector('.header__label'),
             })
                 updateCheck();
                 updateTotalFunc(goodsArr);
+                    productsCheckboxes.forEach((el, i) => {
+                        showHideDelEl(goodsArr, i, deliveryDates, deliveryProductsConts, delProdImgCont);
+                    })
     })
 
     productLabels.forEach((checkbox, i) => checkbox.addEventListener('click', (event) => {
@@ -132,7 +138,8 @@ let headerLabel = document.querySelector('.header__label'),
             changeSelectedF(goodsArr, i);
                 updateTotalFunc(goodsArr);
                 updateTotalOldFunc(goodsArr);
-                console.log(goodsArr);
+                    showHideDelEl(goodsArr, i, deliveryDates, deliveryProductsConts, delProdImgCont);
+                        
     }))
 
 
