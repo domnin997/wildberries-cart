@@ -1,8 +1,9 @@
 import { addDecorationToFavI, addDecorationToDelI } from "./fav-del-decoration.js";
 import { goodsArr } from "./list-item-sums.js";
-import {  changeSelectedF, updateTotalFunc, updateTotalOldFunc } from "./total-sum.js";
+import { changeSelectedF, updateTotalFunc, updateTotalOldFunc } from "./total-sum.js";
 import { updateListItem } from "./update-item-fields.js";
 import { showHideLists } from "./show-hide-list.js.js";
+import { updDelivery } from "./update-delivery.js";
 
 showHideLists();
 let localProdArr = goodsArr;
@@ -10,6 +11,14 @@ let localProdArr = goodsArr;
 // countingFuncI(localProdArr);
 addDecorationToFavI();
 addDecorationToDelI();
+
+// Блок с обновлением превью
+
+let mobDelCount = document.querySelectorAll('.delivery-products__number-mobile'),
+    deskDelCount = document.querySelectorAll('.delivery-products__number'),
+    deliveryDates = document.querySelectorAll('.delivery-date'),
+    deliveryProductsConts = document.querySelectorAll('.delivery-products-cont');
+
 
 // Блок обновления лист айтемов.
 
@@ -40,14 +49,17 @@ availItems.forEach((item, index) => {
                     }
                     updateTotalFunc(goodsArr);
         }
+        
         if (event.target.classList.contains('plus-button')) {
             goodsArr[index].countPlus();
                 updateListItem(counterFields, currentPrices, currentPricesMobile, oldPrices, oldPricesMobile, index, goodsArr)
                     updateTotalFunc(goodsArr);
+                        updDelivery(goodsArr, index, mobDelCount, deskDelCount, deliveryDates, deliveryProductsConts);
         } else if (event.target.classList.contains('minus-button')) {
             goodsArr[index].countMinus();
                 updateListItem(counterFields, currentPrices, currentPricesMobile, oldPrices, oldPricesMobile, index, goodsArr)
                     updateTotalFunc(goodsArr);
+                        updDelivery(goodsArr, index, mobDelCount, deskDelCount, deliveryDates, deliveryProductsConts);
         }
     })
 })

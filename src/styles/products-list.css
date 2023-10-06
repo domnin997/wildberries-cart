@@ -369,6 +369,9 @@
     text-align: right;
     text-decoration: line-through;
     color: rgb(151, 151, 175);
+    border-bottom: dashed;
+    border-color: rgba(151, 151, 175, 0.5);
+    border-width: 1px;
   }
   .product-info__name-price-wrap {
     display: flex;
@@ -574,10 +577,8 @@
     text-align: right;
     text-decoration: line-through;
     color: rgb(151, 151, 175);
-  }
-  .product-price__old span {
     border-bottom: dashed;
     border-color: rgba(151, 151, 175, 0.5);
-    border-width: 1.5px;
+    border-width: 1px;
   }
 }

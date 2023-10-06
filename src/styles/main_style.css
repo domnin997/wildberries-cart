@@ -792,6 +792,9 @@
     text-align: right;
     text-decoration: line-through;
     color: rgb(151, 151, 175);
+    border-bottom: dashed;
+    border-color: rgba(151, 151, 175, 0.5);
+    border-width: 1px;
   }
   .product-info__name-price-wrap {
     display: flex;
@@ -997,11 +1000,9 @@
     text-align: right;
     text-decoration: line-through;
     color: rgb(151, 151, 175);
-  }
-  .product-price__old span {
     border-bottom: dashed;
     border-color: rgba(151, 151, 175, 0.5);
-    border-width: 1.5px;
+    border-width: 1px;
   }
 }
 .wb-checkbox {
@@ -1218,6 +1219,10 @@
     gap: 12px;
   }
   .delivery-date {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
     color: rgb(0, 0, 0);
     font-size: 16px;
     font-style: normal;
@@ -1228,6 +1233,57 @@
     width: 40px;
     height: 56px;
     border-radius: 8px;
+  }
+  .delivery-producst {
+    display: flex;
+    height: 56px;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .delivery-products__img-cont {
+    position: relative;
+  }
+  .delivery-products__number {
+    position: absolute;
+    display: flex;
+    height: 16px;
+    min-width: 16px;
+    transform: rotate(0.065deg);
+    padding: 0px 4px 0px 4px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(245, 81, 35);
+    border-radius: 16px;
+    bottom: 48px;
+    right: -4px;
+    color: white;
+    text-align: center;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+  }
+  .delivery-products__number-mobile {
+    position: absolute;
+    display: flex;
+    height: 16px;
+    min-width: 16px;
+    transform: rotate(0.065deg);
+    padding: 0px 4px 0px 4px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(245, 81, 35);
+    border-radius: 16px;
+    bottom: 48px;
+    right: -4px;
+    color: white;
+    text-align: center;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
   }
   .back-delivery {
     display: flex;
@@ -1261,7 +1317,7 @@
     line-height: 16px;
   }
 }
-@media (min-width: 1023px) {
+@media (min-width: 1024px) {
   .order-info-wrap {
     gap: 16px;
   }
@@ -1336,10 +1392,8 @@
     height: 24px;
     align-items: flex-start;
   }
-  .devilery-date {
-    display: flex;
-    height: 56px;
-    flex-direction: column;
+  .delivery-date {
+    min-height: 56px;
     align-items: flex-start;
   }
   .delivery-details-info__lines {
