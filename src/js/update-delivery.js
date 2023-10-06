@@ -1,55 +1,50 @@
 function updateDeliveryBlock (goodsArr, index, mobileCounters, desktopCounters, delDates, delProdConts) {
     
-    let numOfGoods = goodsArr[index].numberOfGoods;
+    const numOfGoods = goodsArr[index].numberOfGoods,
+          warehouseLim = goodsArr[index].warehouseLim;
     
-    function hideElement (element) {
-        element.forEach((el) => {
+    function hideElement (elements) {
+        elements.forEach((el) => {
             el.classList.add('hidden');
-        })
+        });
     }
 
-    function showElement (element) {
-        element.forEach((el) => {
+    function showElement (elements) {
+        elements.forEach((el) => {
             el.classList.remove('hidden');
-        })
+        });
     }
 
     if (numOfGoods === 1) {
         hideElement([mobileCounters[index], desktopCounters[index]]);
 
-    } else if (goodsArr[index].diffWarehouses) {
-        
-        if (numOfGoods > goodsArr[index].warehouseLimit) {
-            showElement([delDates[1], delDates[3], delProdConts[1], delProdConts[3]]);
-
-                if (numOfGoods - 184 === 1) {
-                    hideElement([mobileCounters[3], desktopCounters[3]]);
-                } else {
-                    
-                    showElement([mobileCounters[3], desktopCounters[3]]);
-                        mobileCounters[3].innerText = `${numOfGoods - 184}`;
-                        desktopCounters[3].innerText = `${numOfGoods - 184}`;
-                }
-               
-        } else {
-            
-            hideElement([delDates[1], delDates[3], delProdConts[1], delProdConts[3]]);
-
-                if (numOfGoods === 1) {
-                    hideElement([mobileCounters[index], desktopCounters[index]]);
-
-                } else {
-                    showElement([mobileCounters[index], desktopCounters[index]]);
-                        mobileCounters[index].innerText = `${numOfGoods}`;
-                        desktopCounters[index].innerText = `${numOfGoods}`;
-                }  
-        }
-    } else {
+    } else if (!goodsArr[index].severalWarehouses) {
         showElement([mobileCounters[index], desktopCounters[index]]);
             mobileCounters[index].innerText = `${numOfGoods}`;
             desktopCounters[index].innerText = `${numOfGoods}`;
+
+    } else if (goodsArr[index].severalWarehouses) {
+        if (numOfGoods <= warehouseLim) {
+            hideElement([delDates[1], delDates[3], delProdConts[1], delProdConts[3]]);
+            showElement([mobileCounters[index], desktopCounters[index]]);
+                mobileCounters[index].innerText = `${numOfGoods}`;
+                desktopCounters[index].innerText = `${numOfGoods}`;
+        } else {
+            if (goodsArr[index].selected) {
+                showElement([delDates[1], delDates[3], delProdConts[1], delProdConts[3]]);
+            }
+            
+            if (numOfGoods - warehouseLim === 1) {
+                hideElement([mobileCounters[3], desktopCounters[3]]);
+            } else {
+                showElement([mobileCounters[3], desktopCounters[3]]);
+                    mobileCounters[3].innerText = `${numOfGoods - warehouseLim}`;
+                    desktopCounters[3].innerText = `${numOfGoods - warehouseLim}`;
+            }
+        }
     }
-}
+} 
+
 
 function showHideElement (goodsArr, index, delDates, delProdConts, imgConts) {
     
@@ -71,8 +66,8 @@ function showHideElement (goodsArr, index, delDates, delProdConts, imgConts) {
         showElement ([imgConts[index], imgConts[index + 4]]);
 
         if (goodsArr[index].numberOfGoods > 184) {
-            showElement([delDates[0], delDates[2], delProdConts[1], delProdConts[3]]);
-            showElement([imgConts[3], imgConts[7]]);
+            showElement([delDates[1], delDates[3], delProdConts[1], delProdConts[3]]);
+           
         }
 
     } else if (!goodsArr[index].selected && goodsArr[index].displayed) {
@@ -85,11 +80,35 @@ function showHideElement (goodsArr, index, delDates, delProdConts, imgConts) {
         hideElement([imgConts[index], imgConts[index + 4]]);
         
         if (goodsArr[index].numberOfGoods > 184) {
-            hideElement([delDates[0], delDates[2], delProdConts[1], delProdConts[3]]);
-            hideElement ([imgConts[3], imgConts[7]]);
+            hideElement([delDates[1], delDates[3], delProdConts[1], delProdConts[3]]);
+            
         }
     }
 }
 
+
+function deleteElement (goodsArr, index, delDates, delProdConts, imgConts) {
+    const good = goodsArr[index];
+    function removeElement (elements) {
+        elements.forEach((el) => {
+            el.remove();
+        })
+    }
+
+    if (!good.displayed) {
+        removeElement([imgConts[index], imgConts[index+4]]);
+    }
+
+    if (good.numberOfGoods > 184) {
+        removeElement([imgConts[3], imgConts[7], delDates[1], delDates[3], delProdConts[1], delProdConts[3]]);
+    }
+
+    if (goodsArr.every((el) => el.displayed === false)) {
+        removeElement(delProdConts);
+        removeElement(delDates);
+    }
+}
+
+export const deleteDeliveryElement = deleteElement;
 export const showHideDelEl = showHideElement;
 export const updDelivery = updateDeliveryBlock;

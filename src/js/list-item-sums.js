@@ -1,11 +1,11 @@
 class Product {
-    constructor(standardPrice, discountedPrice, numberOfGoods, maxAvailable, diffWarehouses = false, warehouseLimit = maxAvailable) {
+    constructor(standardPrice, discountedPrice, numberOfGoods, maxAvailable, severalWarehouses = false, warehouseLim = maxAvailable) {
         this.standardPrice = standardPrice;
         this.discountedPrice = discountedPrice;
         this.numberOfGoods = numberOfGoods;
         this.maxAvailable = maxAvailable;
-        this.diffWarehouses = diffWarehouses;
-        this.warehouseLimit = warehouseLimit;
+        this.severalWarehouses = severalWarehouses;
+        this.warehouseLim = warehouseLim;
         this.totalPrice = numberOfGoods*discountedPrice;
         this.totalOldPrice = numberOfGoods*standardPrice;
         this.selected = false;
@@ -22,7 +22,7 @@ class Product {
             ++this.numberOfGoods
                 this.updateTotal();
         } else {
-            console.log('Превышен лимит');
+            console.log('Достигнут максимум');
         }
     }
 
@@ -31,7 +31,7 @@ class Product {
             --this.numberOfGoods
                 this.updateTotal();
         } else {
-            console.log('Достигнут минимум')
+            console.log('Достигнут минимум');
         }
     }
 }

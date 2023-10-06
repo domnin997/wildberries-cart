@@ -3,7 +3,7 @@ import { goodsArr } from "./list-item-sums.js";
 import { changeSelectedF, updateTotalFunc, updateTotalOldFunc } from "./total-sum.js";
 import { updateListItem } from "./update-item-fields.js";
 import { showHideLists } from "./show-hide-list.js.js";
-import { updDelivery } from "./update-delivery.js";
+import { updDelivery, deleteDeliveryElement } from "./update-delivery.js";
 import { showHideDelEl } from "./update-delivery.js";
 
 showHideLists();
@@ -41,6 +41,7 @@ let headerCheckbox = document.querySelector('.products-header__checkbox'),
 
 availItems.forEach((item, index) => {
     item.addEventListener('click', (event) => {
+        
         if (event.target.classList.contains('delete-icon')) {
             item.remove();
                 updateProdNumIcon();
@@ -50,6 +51,7 @@ availItems.forEach((item, index) => {
                         goodsArr[index].selected = false;
                     }
                     updateTotalFunc(goodsArr);
+                        deleteDeliveryElement(goodsArr, index, deliveryDates, deliveryProductsConts, delProdImgCont);
         }
         
         if (event.target.classList.contains('plus-button')) {

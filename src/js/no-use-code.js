@@ -62,3 +62,38 @@
 // }
 
 // export const countingFuncI = countingFunc;
+
+
+
+
+// if (numOfGoods > warehouseLim) {
+        //     showElement([delDates[1], delDates[3], delProdConts[1], delProdConts[3]]);
+
+        //         if (numOfGoods - warehouseLim === 1) {
+        //             hideElement([mobileCounters[3], desktopCounters[3]]);
+        //         } else {
+                    
+        //             showElement([mobileCounters[3], desktopCounters[3]]);
+        //                 mobileCounters[3].innerText = `${numOfGoods - 184}`;
+        //                 desktopCounters[3].innerText = `${numOfGoods - 184}`;
+        //         }
+               
+        // } else {
+            
+            // hideElement([delDates[1], delDates[3], delProdConts[1], delProdConts[3]]);
+
+                // if (numOfGoods === 1) {
+                //     hideElement([mobileCounters[index], desktopCounters[index]]);
+                //     // Повторение кода?
+                // } else {
+                //     showElement([mobileCounters[index], desktopCounters[index]]);
+                //         mobileCounters[index].innerText = `${numOfGoods}`;
+                //         desktopCounters[index].innerText = `${numOfGoods}`;
+                // }  
+
+                // } else {
+    //     showElement([mobileCounters[index], desktopCounters[index]]);
+    //         mobileCounters[index].innerText = `${numOfGoods}`;
+    //         desktopCounters[index].innerText = `${numOfGoods}`;
+    // }
+// }
