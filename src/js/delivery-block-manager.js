@@ -45,7 +45,6 @@ function updateDeliveryBlock (goodsArr, index, mobileCounters, desktopCounters, 
     }
 } 
 
-
 function showHideElement (goodsArr, index, delDates, delProdConts, imgConts) {
     const good = goodsArr[index],
           numOfGoods = goodsArr[index].numberOfGoods,
@@ -86,15 +85,8 @@ function showHideElement (goodsArr, index, delDates, delProdConts, imgConts) {
     }
 }
 
-
 function deleteElement (goodsArr, index, delDates, delProdConts, imgConts) {
     const good = goodsArr[index];
-
-    const availHeaderCheckbox = document.querySelector('.header__label'),
-          availHeaderText = document.querySelector('.products-header__text'),
-          availClosedHeader = document.querySelector('.added-products-total__closed');
-    
-    
 
     function removeElement (elements) {
         elements.forEach((el) => {
@@ -113,11 +105,6 @@ function deleteElement (goodsArr, index, delDates, delProdConts, imgConts) {
     if (goodsArr.every((el) => el.displayed === false)) {
         removeElement(delProdConts);
         removeElement(delDates);
-        // [availHeaderCheckbox, availHeaderText].forEach((el) => {
-        //     el.classList.add('hidden');
-        // })
-
-        // availClosedHeader.classList.add('closed-header-displayed');
     }
 }
 

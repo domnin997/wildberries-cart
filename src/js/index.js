@@ -1,11 +1,12 @@
-import { addDecorationToFavI, addDecorationToDelI } from "./fav-del-decoration.js";
-import { goodsArr } from "./list-item-sums.js";
-import { changeSelectedF, updateTotalFunc, updateTotalOldFunc } from "./total-sum.js";
-import { updateListItem } from "./update-item-fields.js";
-import { toggleAvailHeader } from "./show-hide-list.js.js";
-import { updDelivery, deleteDeliveryElement, showHideDelEl } from "./update-delivery.js";
+import { addDecorationToFavI, addDecorationToDelI } from "./fav-del-icons-decor.js";
+import { goodsArr } from "./products-constructor.js";
+import { changeSelectedF, updateTotalFunc, updateTotalOldFunc } from "./total-sums-updater.js";
+import { updateListItem } from "./item-fields-updater.js";
+import { toggleAvailHeader } from "./avail-header-toggler.js";
+import { updDelivery, deleteDeliveryElement, showHideDelEl } from "./delivery-block-manager.js";
 import { getDOMElements } from './DOMElements.js';
-import { manageUnavailList } from "./deleteItems.js";
+import { manageUnavailList } from "./unavail-list-manager.js";
+import { manageAddressChangeF } from "./address-changer.js";
 
 const {
     mobDelCount, deskDelCount, deliveryDates, deliveryProductsConts,
@@ -19,6 +20,7 @@ let localProdArr = goodsArr;
 addDecorationToFavI();
 addDecorationToDelI();
 manageUnavailList();
+manageAddressChangeF();
 
 // Блок с количеством продуктов
 const icon = showHideIcons[0],

@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    
+
     <header class="header">
 
         <div class="header-wrapper">
@@ -892,7 +892,7 @@
                                     <h2 class="delivery-details__h2">
                                         Способ доставки
                                     </h2>
-                                    <button class="delivery-details__change-btn change-btn">
+                                    <button class="delivery-details__change-btn change-btn change-address-btn">
                                         Изменить
                                     </button>
                                 </div>
@@ -1273,7 +1273,7 @@
                                 <p class="total-delivery__text total-subheader-txt">
                                     Доставка в пункт выдачи
                                 </p>
-                                <img class="change-img"
+                                <img class="change-img change-address-btn"
                                      src="./icons/change-img.svg"
                                      alt="Change image"
                                 >
@@ -1373,6 +1373,27 @@
             </p>
         </div>
     </footer>
+
+
+    <div class="modal-overlay">
+
+        <div class="change-address">
+            <div class="change-address__header">
+                <h2 class="change-address__h2">Способ доставки</h2><img>
+            </div>
+            <div class="change-address__wrap">
+                <div class="change-address__list">
+                    <div class="change-address__list-selectors">
+
+                    </div>
+                    <div class="change-address__list-addresses">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 <script type="module" src="./js/index.js"></script>
 </body>
 </html>

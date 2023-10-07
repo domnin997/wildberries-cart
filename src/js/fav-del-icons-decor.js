@@ -1,5 +1,3 @@
-const favIcons = document.querySelectorAll('.fav-icon');
-
 function addDecorationToFav () {
 
     document.querySelectorAll('.fav-icon').forEach((icon) => {
@@ -21,7 +19,6 @@ function addDecorationToFav () {
     })
 }
 
-
 function addDecorationToDel () {
     document.querySelectorAll('.delete-icon').forEach((icon) => {
         
@@ -36,10 +33,8 @@ function addDecorationToDel () {
             icon.children[1].attributes.fill.value = "black";
             icon.children[2].attributes.fill.value = "black";
         });
-    
     });
 }
-
 
 export const addDecorationToFavI = addDecorationToFav;
 export const addDecorationToDelI = addDecorationToDel;

@@ -1,4 +1,5 @@
 class Product {
+    
     constructor(standardPrice, discountedPrice, numberOfGoods, maxAvailable, severalWarehouses = false, warehouseLim = maxAvailable) {
         this.standardPrice = standardPrice;
         this.discountedPrice = discountedPrice;
@@ -36,11 +37,10 @@ class Product {
     }
 }
 
-let phoneCases = new Product (11500.235, 10500.235, 200, 3000, true, 184);
-let shirts = new Product (1051, 522, 1, 2);
-let pencils = new Product (475, 247, 2, 2);
+let phoneCases = new Product (11500.235, 10500.235, 200, 3000, true, 184),
+    shirts = new Product (1051, 522, 1, 2),
+    pencils = new Product (475, 247, 2, 2);
 
 let productsArr = [shirts, phoneCases, pencils];
-
 
 export const goodsArr = productsArr;
