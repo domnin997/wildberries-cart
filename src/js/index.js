@@ -3,42 +3,26 @@ import { goodsArr } from "./list-item-sums.js";
 import { changeSelectedF, updateTotalFunc, updateTotalOldFunc } from "./total-sum.js";
 import { updateListItem } from "./update-item-fields.js";
 import { showHideLists } from "./show-hide-list.js.js";
-import { updDelivery, deleteDeliveryElement } from "./update-delivery.js";
-import { showHideDelEl } from "./update-delivery.js";
+import { updDelivery, deleteDeliveryElement, showHideDelEl } from "./update-delivery.js";
+import { getDOMElements } from './DOMElements.js';
+import { manageUnavailList } from "./deleteItems.js";
 
-showHideLists();
+const {
+    mobDelCount, deskDelCount, deliveryDates, deliveryProductsConts,
+    delProdImgCont, counterFields, currentPrices, currentPricesMobile,
+    oldPrices, oldPricesMobile, headerCheckbox, productsCheckboxes,
+    availItems, prodNumIcon, showHideIcons,
+} = getDOMElements();
+
+// showHideLists();
 let localProdArr = goodsArr;
-
-// countingFuncI(localProdArr);
 addDecorationToFavI();
 addDecorationToDelI();
-
-// Блок с обновлением превью
-
-let mobDelCount = document.querySelectorAll('.delivery-products__number-mobile'),
-    deskDelCount = document.querySelectorAll('.delivery-products__number'),
-    deliveryDates = document.querySelectorAll('.delivery-date'),
-    deliveryProductsConts = document.querySelectorAll('.delivery-products-cont'),
-    delProdImgCont = document.querySelectorAll('.delivery-products__img-cont');
-
-
-// Блок обновления лист айтемов.
-
-let counterFields = document.querySelectorAll('.counter__number'),
-    currentPrices = document.querySelectorAll('.product-price__value'),
-    currentPricesMobile = document.querySelectorAll('.product-price__value-mobile'),
-    oldPrices = document.querySelectorAll('.product-price__old-value-desktop'),
-    oldPricesMobile = document.querySelectorAll('.product-price__old-value-mobile');
+manageUnavailList();
 
 // Блок с количеством продуктов
 
-let availItems = document.querySelectorAll('.available-item');
 let productsNum = availItems.length;
-let prodNumIcon = document.querySelector('.menu-icons__number-of-items');
-
-let headerCheckbox = document.querySelector('.products-header__checkbox'),
-    productsCheckboxes = document.querySelectorAll('.product__checkbox');
-
 
 availItems.forEach((item, index) => {
     item.addEventListener('click', (event) => {
@@ -47,7 +31,7 @@ availItems.forEach((item, index) => {
             item.remove();
              updateProdNumIcon();
               goodsArr[index].displayed = false;
-               if (productsCheckboxes[index].checked == true) {
+               if (productsCheckboxes[index].checked === true) {
                        productsCheckboxes[index].checked = false;
                        goodsArr[index].selected = false;
                    }
@@ -73,8 +57,8 @@ availItems.forEach((item, index) => {
 
 function updateProdNumIcon () {
     
-    availItems = document.querySelectorAll('.available-item');
-    productsNum = availItems.length;
+    let availItem = document.querySelectorAll('.available-item');
+    productsNum = availItem.length;
 
     if (productsNum) {
         prodNumIcon.classList.remove('hidden');
@@ -88,21 +72,9 @@ updateProdNumIcon();
 
 // Чекбоксы
 
-function changeChecked (element) {
-    console.log('invoked');
-    if (element.checked) {
-        element.checked = false;
-    } else {
-        element.checked = true;
-    }
-}
-
-function updateHeaderCheck () {
-    if (headerCheckbox.checked) {
-        headerCheckbox.checked = false;
-    } else {
-        headerCheckbox.checked = true;
-    }
+function toggleCheckbox (element) {
+    console.log('Clicked')
+    element.checked ? element.checked = false : element.checked = true;
 }
 
 function removeHeaderCheck () {
@@ -112,7 +84,17 @@ function removeHeaderCheck () {
 function updateCheck () {
     if (headerCheckbox.checked) {
         productsCheckboxes.forEach((box)=>{
-            box.checked = 'true';
+            box.checked = true;
+            goodsArr.forEach((el) => {
+                el.selected = true;
+            })
+        })
+    } else if (!headerCheckbox.checked) {
+        productsCheckboxes.forEach((box)=>{
+            box.checked = false;
+            goodsArr.forEach((el) => {
+                el.selected = false;
+            })
         })
     }
 }
@@ -122,20 +104,17 @@ let headerLabel = document.querySelector('.header__label'),
 
     headerLabel.addEventListener('click', (event) => {
         event.preventDefault();
-            changeChecked(headerCheckbox);
-            goodsArr.forEach((el) => {
-                el.selected = true;
-            })
-                updateCheck();
-                updateTotalFunc(goodsArr);
-                    productsCheckboxes.forEach((el, i) => {
-                        showHideDelEl(goodsArr, i, deliveryDates, deliveryProductsConts, delProdImgCont);
-                    })
+        toggleCheckbox(headerCheckbox);
+        updateCheck();
+        updateTotalFunc(goodsArr);
+        productsCheckboxes.forEach((el, i) => {
+            showHideDelEl(goodsArr, i, deliveryDates, deliveryProductsConts, delProdImgCont);
+        })
     })
 
     productLabels.forEach((checkbox, i) => checkbox.addEventListener('click', (event) => {
         event.preventDefault();
-            changeChecked(productsCheckboxes[i]);
+            toggleCheckbox(productsCheckboxes[i]);
                 if (!productsCheckboxes[i].checked) {
                     removeHeaderCheck();
                 }
