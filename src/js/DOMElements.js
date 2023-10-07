@@ -27,6 +27,9 @@ function getElements () {
         addressSelectors: document.querySelectorAll('.change-address__list-selector'),
         courierAddresses: document.querySelectorAll('.courier-add'),
         pickPointAddresses: document.querySelectorAll('.pick-point-add'),
+        changeAddressBtn: document.querySelector('.change-address__button'),
+        deliveryAddress1: document.querySelector('.pick-point-info__address'),
+        deliveryAddress2: document.querySelector('.total-delivery__address'),
     };
 }
 

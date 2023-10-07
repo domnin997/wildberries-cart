@@ -1,5 +1,14 @@
 import { getDOMElements } from "./DOMElements.js";
-const { addressBtns, modalOverlay, addressSelectors, courierAddresses, pickPointAddresses } = getDOMElements();
+const {
+    addressBtns,
+    modalOverlay,
+    addressSelectors,
+    courierAddresses,
+    pickPointAddresses,
+    changeAddressBtn,
+    deliveryAddress1,
+    deliveryAddress2,
+ } = getDOMElements();
 
 let selectedAddress;
 
@@ -23,6 +32,13 @@ function manageAddressChange () {
         })
     })
 
+    changeAddressBtn.addEventListener('click', (event) => {
+        if (selectedAddress) {
+            deliveryAddress1.innerText = selectedAddress;
+            deliveryAddress2.innerText = selectedAddress;
+            modalOverlay.classList.remove('displayed');
+        }
+    })
 
     addressSelectors.forEach((selector, index) => {
         selector.addEventListener('click', (event) => {
