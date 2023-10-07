@@ -2,7 +2,7 @@ import { addDecorationToFavI, addDecorationToDelI } from "./fav-del-decoration.j
 import { goodsArr } from "./list-item-sums.js";
 import { changeSelectedF, updateTotalFunc, updateTotalOldFunc } from "./total-sum.js";
 import { updateListItem } from "./update-item-fields.js";
-import { showHideLists } from "./show-hide-list.js.js";
+import { toggleAvailHeader } from "./show-hide-list.js.js";
 import { updDelivery, deleteDeliveryElement, showHideDelEl } from "./update-delivery.js";
 import { getDOMElements } from './DOMElements.js';
 import { manageUnavailList } from "./deleteItems.js";
@@ -11,18 +11,39 @@ const {
     mobDelCount, deskDelCount, deliveryDates, deliveryProductsConts,
     delProdImgCont, counterFields, currentPrices, currentPricesMobile,
     oldPrices, oldPricesMobile, headerCheckbox, productsCheckboxes,
-    availItems, prodNumIcon, showHideIcons,
+    availItems, prodNumIcon, showHideIcons, prodLists, availHeaderCheckbox,
+    availHeaderText, availClosedHeader
 } = getDOMElements();
 
-// showHideLists();
 let localProdArr = goodsArr;
 addDecorationToFavI();
 addDecorationToDelI();
 manageUnavailList();
 
 // Блок с количеством продуктов
+const icon = showHideIcons[0],
+      prodList = prodLists[0];
+let isDisplayed = true;
 
-let productsNum = availItems.length;
+let productsNum = availItems.length,
+    isAvailDisplayed = true;
+
+function showHideAvailHandler () {
+    if (isDisplayed) {
+        prodList.classList.add('item-list-hidden');
+         isDisplayed = false;
+         toggleAvailHeader(isDisplayed, availHeaderCheckbox, availHeaderText, availClosedHeader);
+           icon.classList.add('rotate180');
+
+    } else if (!isDisplayed) {
+        prodList.classList.remove('item-list-hidden');
+         isDisplayed = true;
+         toggleAvailHeader(isDisplayed, availHeaderCheckbox, availHeaderText, availClosedHeader);
+           icon.classList.remove('rotate180');
+    }
+}
+
+icon.addEventListener('click', showHideAvailHandler);
 
 availItems.forEach((item, index) => {
     item.addEventListener('click', (event) => {
@@ -37,7 +58,12 @@ availItems.forEach((item, index) => {
                    }
                 updateTotalFunc(goodsArr);
                  deleteDeliveryElement(goodsArr, index, deliveryDates, deliveryProductsConts, delProdImgCont);
-                 
+                 if (!productsNum) {
+                    icon.removeEventListener('click', showHideAvailHandler);
+                    isDisplayed = false;
+                    toggleAvailHeader(isDisplayed, availHeaderCheckbox, availHeaderText, availClosedHeader);
+                    icon.classList.add('rotate180');
+                }
         }
         
         if (event.target.classList.contains('plus-button')) {

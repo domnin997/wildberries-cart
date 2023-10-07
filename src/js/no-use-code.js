@@ -97,3 +97,21 @@
     //         desktopCounters[index].innerText = `${numOfGoods}`;
     // }
 // }
+
+// iconBtns.forEach((btn, i) => {
+//     btn.addEventListener('click', (event) => {
+//         if (state[i].empty) {
+//             return;
+//         } else if (state[i].displayed) {
+//             lists[i].classList.add('item-list-hidden');
+//                 state[i].displayed = false;
+//                     changeAvailHeader();
+//                         iconBtns[i].classList.add('rotate180');
+//         } else if (!state[i].displayed) {
+//             lists[i].classList.remove('item-list-hidden');
+//                 state[i].displayed = true;
+//                     changeAvailHeader();
+//                         iconBtns[i].classList.remove('rotate180');
+//         }
+//     })
+// });

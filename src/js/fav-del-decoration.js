@@ -1,15 +1,24 @@
+const favIcons = document.querySelectorAll('.fav-icon');
+
 function addDecorationToFav () {
 
     document.querySelectorAll('.fav-icon').forEach((icon) => {
         icon.addEventListener('mouseover', (e) => {
             icon.children[0].attributes.fill.value = "#CB11AB";
         });
+
+        icon.addEventListener('click', (e) => {
+            icon.classList.contains('clicked') ? icon.classList.remove('clicked') : icon.classList.add('clicked'); 
+        })
         
         icon.addEventListener('mouseout', (e) => {
-            icon.children[0].attributes.fill.value = "black";
+            if (icon.classList.contains('clicked')) {
+                return;
+            } else {
+                icon.children[0].attributes.fill.value = "black";
+            }
         });
     })
-
 }
 
 

@@ -19,6 +19,9 @@ function getElements () {
         unavailHeader: document.querySelector('.unavailable-header'),
         prodLists: document.querySelectorAll('.products-list'),
         unavailItems: document.querySelectorAll('.unavailable-item'),
+        availHeaderCheckbox: document.querySelector('.header__label'),
+        availHeaderText: document.querySelector('.products-header__text'),
+        availClosedHeader: document.querySelector('.added-products-total__closed'),
     };
 }
 
