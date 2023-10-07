@@ -24,6 +24,9 @@ function getElements () {
         availClosedHeader: document.querySelector('.added-products-total__closed'),
         addressBtns: document.querySelectorAll('.change-address-btn'),
         modalOverlay: document.querySelector('.modal-overlay'),
+        addressSelectors: document.querySelectorAll('.change-address__list-selector'),
+        courierAddresses: document.querySelectorAll('.courier-add'),
+        pickPointAddresses: document.querySelectorAll('.pick-point-add'),
     };
 }
 
