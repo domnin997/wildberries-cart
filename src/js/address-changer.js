@@ -1,7 +1,7 @@
 import { getDOMElements } from "./DOMElements.js";
 const {
-    addressBtns, modalOverlay, addressSelectors, courierAddresses,
-    pickPointAddresses, changeAddressBtn, deliveryAddress1,
+    changeAddressWindow, addressBtns, modalOverlay, addressSelectors,
+    courierAddresses, pickPointAddresses, changeAddressBtn, deliveryAddress1,
     deliveryAddress2, pickPointHeader1, pickPointHeader2,
     pickPointTimeRating,
  } = getDOMElements();
@@ -68,6 +68,7 @@ function manageAddressChange () {
                     })
 
                         modalOverlay.classList.remove('displayed');
+                        changeAddressWindow.classList.add('hidden');
         } else {
             
             pickPointHeader1.innerText = 'Пункт выдачи';
@@ -82,6 +83,7 @@ function manageAddressChange () {
                     })
 
                         modalOverlay.classList.remove('displayed');
+                        changeAddressWindow.classList.add('hidden');
         }
     })
 
@@ -100,13 +102,14 @@ function manageAddressChange () {
     addressBtns.forEach((btn) => {
         btn.addEventListener('click', (event) => {
             modalOverlay.classList.add('displayed');
+            changeAddressWindow.classList.remove('hidden');
         });
     });
 
     modalOverlay.addEventListener('click', (event) => {
         if (event.target.classList.contains('modal-overlay')) {
             modalOverlay.classList.remove('displayed');
-
+            changeAddressWindow.classList.add('hidden');
             setDefault();
         }
     });

@@ -1,9 +1,12 @@
 @media (min-width: 1px) {
+  
   .search-panel {
     display: none;
   }
 }
+
 @media (min-width: 1024px) {
+  
   .search-panel {
     display: flex;
     height: 48px;
@@ -13,6 +16,7 @@
     border-radius: 36px;
     background-color: rgba(255, 255, 255, 0.2);
   }
+
   .search-panel__wrapper {
     display: flex;
     align-items: center;
@@ -20,6 +24,7 @@
     flex: 1 0 0;
     align-self: stretch;
   }
+
   .search-panel__input {
     display: flex;
     padding-bottom: 4px;
@@ -27,23 +32,22 @@
     gap: 4px;
     flex: 1 0 0;
     opacity: 0.5;
-    max-width: 900px;
   }
+
   input[type=text] {
-    color: rgb(255, 255, 255);
-    color: rgb(255, 255, 255);
+    color: var(--system-white);
+    color: var(--system-white);
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
   }
+
   input[type=text]::-moz-placeholder {
-    color: rgb(255, 255, 255);
+    color: var(--system-white);
   }
+
   input[type=text]::placeholder {
-    color: rgb(255, 255, 255);
-  }
-  .desktop-search-icon {
-    opacity: 0.4;
+    color: var(--system-white);
   }
 }

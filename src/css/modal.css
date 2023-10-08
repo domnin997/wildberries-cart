@@ -1,5 +1,5 @@
 .modal-overlay {
-    position: absolute;
+    position: fixed;
     background: rgba(5, 0, 10, 0.30);
     width: 100%;
     height: 100%;
@@ -145,7 +145,7 @@
     align-self: stretch;
 }
 
-.change-address__custom-radio {
+.change-card__custom-radio, .change-address__custom-radio {
     position: relative;
     display: inline-block;
     width: 18px;
@@ -156,7 +156,7 @@
     vertical-align: text-top;
 }
 
-.change-address__custom-radio::before {
+.change-card__custom-radio::before, .change-address__custom-radio::before {
     content: '';
     display: inline-block;
     width: 8px;
@@ -173,7 +173,11 @@
     border: 6px solid rgba(203, 17, 171, 1);
 }
 
-.change-address__stock-radio {
+.change-card__stock-radio:checked + .change-card__custom-radio {
+    border: 6px solid rgba(203, 17, 171, 1);
+}
+
+.change-card__stock-radio, .change-address__stock-radio {
     width: 0;
     height: 0;
     position: absolute;
@@ -226,7 +230,7 @@
     align-self: stretch;
 }
 
-.change-address__button-container {
+.popup-button-container {
     display: flex;
     padding: 16px;
     flex-direction: column;
@@ -235,7 +239,7 @@
     align-self: stretch;
 }
 
-.change-address__button-wrap {
+.popup-button-wrap {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -243,7 +247,7 @@
     align-self: stretch;
 }
 
-.change-address__button {
+.popup-button {
     display: flex;
     height: 44px;
     padding: 0px 48px;
@@ -264,6 +268,103 @@
 .not_disp {
     opacity: 0;
 }
+
+.change-card {
+    position: fixed;
+    display: flex;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.change-card__header-cont {
+    display: flex;
+    width: auto;
+    padding: 16px 11px 13px 16px;
+    align-items: center;
+    align-self: stretch;
+}
+
+.change-card__header {
+    display: flex;
+    height: 32px;
+    flex-direction: column;
+    justify-content: center;
+    align-self: stretch;
+    width: 100%;
+    color: black;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: -0.2px;
+}
+
+.change-card__cards-list-container {
+    display: flex;
+    padding: 0px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    flex: 1 0 0;
+    align-self: stretch;
+}
+
+.change-card__cards-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+}
+
+.cards-list-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.cards-list-item__radio-container {
+    display: flex;
+    width: 20px;
+    padding: 3px 0px 1px 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+}
+
+.cards-list-item__card-info {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.cards-list-item__payment-system {
+    display: flex;
+    width: 32px;
+    height: 24px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 4px;
+    background-color: rgba(246, 246, 250, 1);
+}
+
+.cards-list-item__card-number {
+    color: black;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
 }
 
 @media (min-width: 1024px) {
@@ -337,17 +438,47 @@
     justify-content: center;
 }
 
-.change-address__button-container {
+.popup-button-container {
     padding: 16px 24px 24px 24px;
 }
 
-.change-address__button-wrap {
+.popup-button-wrap {
     gap: 24px;
+}
+
+.change-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: auto;
+}
+
+.change-card__header-cont {
+    padding: 16px 24px 13px 24px;
+    align-items: flex-start;
+}
+
+.change-card__header {
+    font-weight: 700;
+}
+
+.change-card__cards-list-container {
+    gap: 8px;
+    align-self: stretch;
+    padding: 0px 22px 123px 22px;
+    align-items: center;
+    gap: 24px;
+    align-self: stretch;
+}
+.cards-list-item__card-info {
+    align-items: center;
+    gap: 4px;
 }
 
 .selected {
     border: 2px solid rgba(203, 17, 171, 1);
 }
-
 
 }

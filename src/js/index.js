@@ -7,6 +7,7 @@ import { updDelivery, deleteDeliveryElement, showHideDelEl } from "./delivery-bl
 import { getDOMElements } from './DOMElements.js';
 import { manageUnavailList } from "./unavail-list-manager.js";
 import { manageAddressChangeF } from "./address-changer.js";
+import { manageCardChangeF } from "./card-changer.js";
 
 const {
     mobDelCount, deskDelCount, deliveryDates, deliveryProductsConts,
@@ -21,6 +22,7 @@ addDecorationToFavI();
 addDecorationToDelI();
 manageUnavailList();
 manageAddressChangeF();
+manageCardChangeF();
 
 // Блок с количеством продуктов
 const icon = showHideIcons[0],

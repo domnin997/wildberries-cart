@@ -24,15 +24,24 @@ function getElements () {
         availClosedHeader: document.querySelector('.added-products-total__closed'),
         addressBtns: document.querySelectorAll('.change-address-btn'),
         modalOverlay: document.querySelector('.modal-overlay'),
+
+        changeAddressWindow: document.querySelector('.change-address'),
         addressSelectors: document.querySelectorAll('.change-address__list-selector'),
         courierAddresses: document.querySelectorAll('.courier-add'),
         pickPointAddresses: document.querySelectorAll('.pick-point-add'),
         pickPointHeader1: document.querySelector('.pick-point'),
         pickPointHeader2: document.querySelector('.total-delivery__text'),
         pickPointTimeRating: document.querySelectorAll('.pick-point-info__time-rating'),
-        changeAddressBtn: document.querySelector('.change-address__button'),
+        changeAddressBtn: document.querySelector('.change-addr-btn'),
         deliveryAddress1: document.querySelector('.pick-point-info__address'),
         deliveryAddress2: document.querySelector('.total-delivery__address'),
+        
+        changeCardBtns: document.querySelectorAll('.change-card-button'),
+        changeCardWindow: document.querySelector('.change-card'),
+        cards: document.querySelectorAll('.cards-list-item'),
+        closeCardWindow: document.querySelector('.change-card__close-wrap'),
+        changeCardBtn: document.querySelector('.change-card-btn'),
+        paySysIcons: document.querySelectorAll('.payment-system'),
     };
 }
 
