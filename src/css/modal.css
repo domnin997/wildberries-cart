@@ -261,6 +261,9 @@
     line-height: 24px;
 }
 
+.not_disp {
+    opacity: 0;
+}
 }
 
 @media (min-width: 1024px) {
@@ -345,4 +348,6 @@
 .selected {
     border: 2px solid rgba(203, 17, 171, 1);
 }
+
+
 }
