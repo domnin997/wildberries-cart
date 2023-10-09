@@ -7,5 +7,6 @@ html {
     --text-black: rgba(0, 0, 0, 1);
     --system-gray: rgba(151, 151, 175, 1);
     --rulers-rulers-input: rgba(0, 0, 0, 0.20);
+    --rulers-rulers: rgba(0, 0, 0, 0.10);
     --system-green: rgba(12, 180, 119, 1);
 }

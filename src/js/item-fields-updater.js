@@ -8,6 +8,21 @@ function updateItemField (countFields, currPriceFields, currPriceMobFields, oldP
         currPriceMobFields[index].innerText = `${totalCurrent} `;
         oldPriceFields[index].innerText = `${totalOld}`;
         oldPriceMobFields[index].innerText = `${totalOld}`;
+
+    
+        if (totalCurrent.length > 8) {
+            currPriceFields[index].classList.add('super-small-font');
+            currPriceMobFields[index].classList.add('super-small-font');
+        } else if (totalCurrent.length > 6) {
+            currPriceFields[index].classList.add('smaller-font');
+            currPriceMobFields[index].classList.add('smaller-font');
+        }
+         else {
+            currPriceFields[index].classList.remove('smaller-font');
+            currPriceMobFields[index].classList.remove('smaller-font');
+            currPriceFields[index].classList.remove('super-small-font');
+            currPriceMobFields[index].classList.remove('super-small-font');
+        }
 }
 
 export const updateListItem = updateItemField;
