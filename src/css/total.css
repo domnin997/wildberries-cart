@@ -1,4 +1,5 @@
 @media (min-width: 1px) {
+  
   .total-cont {
     display: flex;
     max-width: 100%;
@@ -69,7 +70,13 @@
     line-height: 28px;
     letter-spacing: -0.2px;
   }
+
+  .change-img:hover {
+    cursor: pointer;
+  }
 }
+
+
 @media (min-width: 1024px) {
   .total-cont {
     max-width: 429px;

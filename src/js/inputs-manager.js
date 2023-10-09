@@ -10,20 +10,61 @@ let userName,
     clicked = false;
 
 const userData = [userName, userSurname, userEmail, userTel, userTIN];
+const validated = [false, false, false, false, false];
 
-function validateInput () {
-    const regex = new RegExp(/^[а-яА-ЯёЁ]+$/);
-    
+function hideError (i) {
+    inputFields[i].classList.remove('incorrect-input');
+    inputDownLabels[i].classList.add('label-not-displayed');
+}
 
-    if (regex.test(userData[0])) {
-        inputFields[0].classList.remove('incorrect-input');
-        inputDownLabels[0].classList.add('label-not-displayed');
-        console.log(userData[0], 'Пройдено')
-    } else {
-        console.log(userData[0], 'Не пройдено');
-        inputFields[0].classList.add('incorrect-input');
-        inputDownLabels[0].classList.remove('label-not-displayed');
+function showError (i) {
+    inputFields[i].classList.add('incorrect-input');
+    inputDownLabels[i].classList.remove('label-not-displayed');
+}
+
+function validateInput (i) {
+
+    if (i === 0 || i === 1) {
+        const regex = new RegExp(/^[а-яА-ЯёЁ ]+$/);
+
+        if (userData[i] === '' && clicked) {
+            showError(i);
+            inputDownLabels[i].innerText = 'Укажите имя';
+        }
+        
+        else if (userData[i] === '') {
+            hideError(i);
+        } 
+        
+        else if (regex.test(userData[i])) {
+            hideError(i); 
+        } 
+        
+        else if (userData[i] !== '') {
+            showError(i);
+            inputDownLabels[i].innerText = 'Используйте кириллицу';
+        }
+    } else if (i === 2) {
+
+        if (userData[i] === '') {
+            showError(i);
+            inputDownLabels[i].innerText = 'Укажите почту';
+        } else if (userData[i].includes('@')) {
+            hideError(i);
+        } else if (userData[i] !== '') {
+            showError(i);
+            inputDownLabels[i].innerText = 'Формат mail@mail.mail';
+        }
+    } else if (i === 3) {
+        const regex = new RegExp(/\+7\s\d{3}\s\d{3}-\d{2}-\d{2}/);
+
+        if (regex.test(userData[i])) {
+            hideError(i);
+        } else {
+            showError(i);
+        }
     }
+    
 }
 
 function manageInputs ( ) {
@@ -37,22 +78,36 @@ function manageInputs ( ) {
             } else {
                 inputUpLabels[i].classList.remove('label-not-displayed');
                 userData[i] = input.value;
-                if (clicked) {
-                    validateInput();
+                if (validated[i]) {
+                    validateInput(i);
                 }
             }
         })
 
         input.addEventListener('change', () => {
             userData[i] = input.value;
+                validated[i] = true;
+                //     validateInput(i);
+                        console.log(i, `потерял фокус чейндж`);
+        })
+
+        input.addEventListener('blur', () => {
+            userData[i] = input.value;
+                validateInput(i);
+     
+            console.log(i, `потерял фокус`)
         })
 
     })
 
     orderBtn.forEach((btn) => {
         btn.addEventListener('click', () => {
-            validateInput();
             clicked = true;
+            userData.forEach((el, i) => {
+                userData[i] = inputFields[i].value;
+                    validateInput(i);
+            }) 
+            
         });
     })
 }
