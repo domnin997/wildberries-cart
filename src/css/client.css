@@ -1,4 +1,9 @@
 @media (min-width: 1px) {
+  
+  .label-not-displayed {
+    opacity: 0;
+  }
+  
   .client {
     display: flex;
     padding: 16px 16px 24px 16px;
@@ -74,7 +79,13 @@
     line-height: 14px;
   }
 }
-@media (min-width: 1023px) {
+@media (min-width: 1024px) {
+  
+  .label-not-displayed {
+    opacity: 0;
+  }
+
+  
   .client {
     display: flex;
     padding: 16px 24px 24px 24px;
@@ -136,6 +147,7 @@
   color: rgb(0, 0, 0);
 }
 
+
 .client-input-block__type-field {
   display: flex;
   flex-direction: column;
@@ -167,4 +179,8 @@
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
+}
+
+.incorrect-input {
+  border-color: var(--system-orange);
 }

@@ -1130,7 +1130,7 @@
                         >
                             <div class="client-inputs-wrap">
                                 <div class="client-input-block">
-                                    <p class="client-input-block__up-label">
+                                    <p class="client-input-block__up-label label-not-displayed">
                                         Имя
                                     </p>
                                     <div class="client-input-block__wrap">
@@ -1138,21 +1138,21 @@
                                                 type="text"
                                                 placeholder="Имя"
                                                 >
-                                        <p class="client-input-block__down-label">
+                                        <p class="client-input-block__down-label label-not-displayed">
                                             Укажите имя
                                         </p>
                                     </div>
                                     
                                 </div>
                                 <div class="client-input-block">
-                                    <p class="client-input-block__up-label">
+                                    <p class="client-input-block__up-label label-not-displayed">
                                         Фамилия
                                     </p>
                                     <div class="client-input-block__wrap">
                                         <input  class="client-input-block__type-field"
                                             type="text"
                                             placeholder="Фамилия">
-                                        <p class="client-input-block__down-label">
+                                        <p class="client-input-block__down-label label-not-displayed">
                                             Укажите фамилию
                                         </p>
                                     </div>
@@ -1162,7 +1162,7 @@
                             <div class="client-inputs-wrap">
                                 
                                 <div class="client-input-block">
-                                    <p class="client-input-block__up-label">
+                                    <p class="client-input-block__up-label label-not-displayed">
                                         Почта
                                     </p>
                                     <div class="client-input-block__wrap">
@@ -1170,13 +1170,13 @@
                                             type="email"
                                             placeholder="Почта"
                                             >
-                                        <p class="client-input-block__down-label">
+                                        <p class="client-input-block__down-label label-not-displayed">
                                             Укажите почту
                                         </p>
                                     </div>
                                 </div>
                                 <div class="client-input-block">
-                                    <p class="client-input-block__up-label">
+                                    <p class="client-input-block__up-label label-not-displayed">
                                         Телефон
                                     </p>
                                     <div class="client-input-block__wrap">
@@ -1185,13 +1185,13 @@
                                             placeholder="Телефон"
                                             value="+7 988 123-45-67"
                                             >
-                                        <p class="client-input-block__down-label">
+                                        <p class="client-input-block__down-label label-not-displayed">
                                             Укажите телефон
                                         </p>
                                     </div>
                                 </div>
                                 <div class="client-input-block">
-                                    <p class="client-input-block__up-label">
+                                    <p class="client-input-block__up-label label-not-displayed">
                                         ИНН
                                     </p>
                                     <div class="client-input-block__wrap">
@@ -1317,7 +1317,9 @@
                                 type="checkbox"
                                 id="6"
                                 >
-                                <label for="6"></label>
+                                <label  class="order-label"
+                                        for="6">
+                                </label>
                                 <p class="total-card__payment-option-text">
                                     Списать оплату сразу
                                 </p>
@@ -1332,8 +1334,14 @@
                 
     
                 <div class="total-order-btn-cont">
-                    <button class="total-order-btn">
+                    <button class="total-order-btn no-sum">
                         Заказать
+                    </button>
+
+                    <button class="total-order-btn with-sum hidden">
+                        <span>Оплатить</span>
+                        <span class="order-sum"> </span>
+                        <span>сом</span>
                     </button>
                     <div class="total-order-agreement">
                         <img src="./icons/ok-agreem.svg" alt="Agreement icon">

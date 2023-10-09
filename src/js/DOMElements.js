@@ -42,6 +42,18 @@ function getElements () {
         closeCardWindow: document.querySelector('.change-card__close-wrap'),
         changeCardBtn: document.querySelector('.change-card-btn'),
         paySysIcons: document.querySelectorAll('.payment-system'),
+
+        orderBtnNoSum: document.querySelector('.no-sum'),
+        orderBtnWithSum: document.querySelector('.with-sum'),
+        orderLabel: document.querySelector('.order-label'),
+        orderCheckBox: document.querySelector('.total-checkbox'),
+        paymentDetOutro: document.querySelector('.payment-details__outro'),
+
+        inputFields: document.querySelectorAll('.client-input-block__type-field'),
+        inputUpLabels: document.querySelectorAll('.client-input-block__up-label'),
+        inputDownLabels: document.querySelectorAll('.client-input-block__down-label'),
+        orderBtn: document.querySelectorAll('.total-order-btn'),
+
     };
 }
 

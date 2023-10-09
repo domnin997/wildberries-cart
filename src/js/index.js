@@ -8,6 +8,8 @@ import { getDOMElements } from './DOMElements.js';
 import { manageUnavailList } from "./unavail-list-manager.js";
 import { manageAddressChangeF } from "./address-changer.js";
 import { manageCardChangeF } from "./card-changer.js";
+import { manageOrderBtn } from "./order-btn-manager.js";
+import { manageClientInputs } from "./inputs-manager.js";
 
 const {
     mobDelCount, deskDelCount, deliveryDates, deliveryProductsConts,
@@ -23,6 +25,8 @@ addDecorationToDelI();
 manageUnavailList();
 manageAddressChangeF();
 manageCardChangeF();
+manageOrderBtn();
+manageClientInputs();
 
 // Блок с количеством продуктов
 const icon = showHideIcons[0],

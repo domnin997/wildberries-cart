@@ -18,6 +18,7 @@ function updateTotal (arrOfGoods) {
     totalNum = totalNum.toLocaleString();
 
     document.querySelector('.total-price__value').innerText = `${totalPr}`;
+    document.querySelector('.order-sum').innerText = `${totalPr}`;
     document.querySelector('.added-products-total__closed-price').innerText = `${totalPr} сом`;
     document.querySelector('.added-products-total__closed-number').innerText = `${totalNum} товаров`;
     document.querySelector('.total-price__details-num').innerText = `${totalNum}`;
