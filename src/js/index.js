@@ -6,10 +6,10 @@ import { toggleAvailHeader } from "./avail-header-toggler.js";
 import { updDelivery, deleteDeliveryElement, showHideDelEl } from "./delivery-block-manager.js";
 import { getDOMElements } from './DOMElements.js';
 import { manageUnavailList } from "./unavail-list-manager.js";
-import { manageAddressChangeF } from "./address-changer.js";
 import { manageCardChangeF } from "./card-changer.js";
 import { manageOrderBtn } from "./order-btn-manager.js";
 import { manageClientInputs } from "./inputs-manager.js";
+import { secondAddrFunc } from "./addresses.js";
 
 const {
     mobDelCount, deskDelCount, deliveryDates, deliveryProductsConts,
@@ -23,7 +23,7 @@ let localProdArr = goodsArr;
 addDecorationToFavI();
 addDecorationToDelI();
 manageUnavailList();
-manageAddressChangeF();
+secondAddrFunc();
 manageCardChangeF();
 manageOrderBtn();
 manageClientInputs();
