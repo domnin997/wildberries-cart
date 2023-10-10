@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'Segoe UI';
+    src:
+        /* local("Segoe UI"), */
+        /* url('SegoeUINormal.woff2') format('woff2'),
+        url('SegoeUINormal.woff') format('woff'), */
+        url('SegoeUI.ttf') format('truetype');
+    
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Segoe UI';
+    src:
+        local("Segoe UI Semibold"),
+        /* url('SegoeUISemibold.woff2') format('woff2'),
+        url('SegoeUISemibold.woff') format('woff'), */
+        url('SegoeUI-SemiBold.ttf') format('truetype');
+    
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Segoe UI;
+    src:
+        local("Segoe UI Bold"),
+        /* url('SegoeUIBold.woff2') format('woff2'),
+        url('SegoeUIBold.woff') format('woff'), */
+        url('SegoeUI-Bold.ttf') format('truetype');
+
+    font-weight: 700;
+}

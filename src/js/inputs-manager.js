@@ -22,22 +22,24 @@ function showError (i) {
     inputDownLabels[i].classList.remove('label-not-displayed');
 }
 
+
+
 function validateInput (i) {
 
     if (i === 0 || i === 1) {
-        const regex = new RegExp(/^[а-яА-ЯёЁ ]+$/);
+        const regex = new RegExp(/(^[а-яА-ЯёЁ ]+$)/);
 
         if (userData[i] === '' && clicked) {
             showError(i);
-            inputDownLabels[i].innerText = 'Укажите имя';
+            if (i === 0) { inputDownLabels[i].innerText = 'Укажите имя'; } 
+            
+            else { inputDownLabels[i].innerText = 'Укажите фамилию'; }
         }
         
-        else if (userData[i] === '') {
-            hideError(i);
-        } 
+        else if (userData[i] === '') { hideError(i); } 
         
-        else if (regex.test(userData[i])) {
-            hideError(i); 
+        else if (regex.test(userData[i]) && userData[i].trim().length > 0) {
+            hideError(i);
         } 
         
         else if (userData[i] !== '') {
@@ -46,22 +48,38 @@ function validateInput (i) {
         }
     } else if (i === 2) {
 
-        if (userData[i] === '') {
+
+        let emailReg = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{1,})$/iu;
+        
+        if (userData[i] === '' && clicked) {
             showError(i);
-            inputDownLabels[i].innerText = 'Укажите почту';
-        } else if (userData[i].includes('@')) {
+                inputDownLabels[i].innerText = 'Укажите почту';
+         } 
+         
+         else if (userData[i] === '') { hideError(i); }
+        
+         else if (emailReg.test(userData[i])) {
             hideError(i);
+
         } else if (userData[i] !== '') {
             showError(i);
             inputDownLabels[i].innerText = 'Формат mail@mail.mail';
         }
+
     } else if (i === 3) {
         const regex = new RegExp(/\+7\s\d{3}\s\d{3}-\d{2}-\d{2}/);
-
-        if (regex.test(userData[i])) {
-            hideError(i);
-        } else {
+        
+        if (userData[i] === '' && clicked) {
             showError(i);
+                inputDownLabels[i].innerText = 'Укажите телефон';
+         } else if (userData[i] === '') { hideError(i); }
+
+        else if (regex.test(userData[i])) {
+            hideError(i);
+            
+        } else if (userData[i] !== '') {
+            showError(i);
+            inputDownLabels[i].innerText = 'Формат +7 999 999-99-99';
         }
     }
     
@@ -78,25 +96,35 @@ function manageInputs ( ) {
             } else {
                 inputUpLabels[i].classList.remove('label-not-displayed');
                 userData[i] = input.value;
-                if (validated[i]) {
-                    validateInput(i);
-                }
+                    if (validated[i]) {
+                        validateInput(i);
+                    }
             }
         })
 
         input.addEventListener('change', () => {
             userData[i] = input.value;
                 validated[i] = true;
-                //     validateInput(i);
-                        console.log(i, `потерял фокус чейндж`);
         })
 
         input.addEventListener('blur', () => {
             userData[i] = input.value;
                 validateInput(i);
-     
-            console.log(i, `потерял фокус`)
         })
+    
+        if (i === 4) {
+            input.addEventListener('keypress', e => {
+                if(!/\d/.test(e.key))
+                    e.preventDefault();
+            })
+        }
+
+        if (i === 3) {
+            input.addEventListener('keypress', e => {
+                if(!/[+\ \-\d]/.test(e.key))
+                    e.preventDefault();
+            })
+        }
 
     })
 
