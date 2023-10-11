@@ -2,22 +2,27 @@ import { getDOMElements } from "./DOMElements.js";
 
 const { changeCardBtns, changeCardWindow,
         modalOverlay, closeCardWindow,
-        cards, changeCardBtn, paySysIcons
+        cardsLabels, confirmCard, paySysIcons
       } = getDOMElements();
 
 const cardsBase = [
-    {icon: './icons/mir.svg', number: '1234 56•• •••• 1234'},
-    {icon: './icons/visa.svg', number: '1234 56•• •••• 1234'},
-    {icon: './icons/mastercard.svg', number: '1234 56•• •••• 1234'},
-    {icon: './icons/maestro.svg', number: '1234 56•• •••• 1234'}
+    {icon: './icons/mir.svg', number: '1234 56•• •••• 1234', selected: true},
+    {icon: './icons/visa.svg', number: '1234 56•• •••• 1234', selected: false},
+    {icon: './icons/mastercard.svg', number: '1234 56•• •••• 1234', selected: false},
+    {icon: './icons/maestro.svg', number: '1234 56•• •••• 1234', selected: false}
 ];
 
 let defSelectedCard = 0,
-    newSelectedCard = 0,
-    card2 = document.querySelectorAll('input[name="card"]');
+    cardsRadios = document.querySelectorAll('input[name="card"]');
+
+function setCadSelected (index) {
+    cardsBase.forEach((card) => {card.selected = false});
+    cardsBase[index].selected = true;
+}
 
 function setDefaultCard () {
-    card2[defSelectedCard].checked = true;
+    cardsRadios[defSelectedCard].checked = true;
+    setCadSelected(defSelectedCard);
 }
 
 function closePopup () {
@@ -25,34 +30,29 @@ function closePopup () {
     changeCardWindow.classList.add('hidden');
 }
 
-function handleChoise () {
-    if (newSelectedCard === defSelectedCard) {
-        modalOverlay.classList.remove('displayed');
-        changeCardWindow.classList.add('hidden');
-    } else {
-        defSelectedCard = newSelectedCard;
-    }
-}
-
-function manageCardChange () {
+function manageCards () {
+    
     setDefaultCard();
+
     changeCardBtns.forEach((btn) => {
-        btn.addEventListener('click', (event) => {
+        btn.addEventListener('click', () => {
             modalOverlay.classList.add('displayed');
             changeCardWindow.classList.remove('hidden');
         })
     })
 
-    cards.forEach((card, index) => {
-        card.addEventListener('click', (event) => {
-            newSelectedCard = index;
+    cardsLabels.forEach((card, index) => {
+        card.addEventListener('click', () => {
+            setCadSelected(index);
         });
     })
 
-    changeCardBtn.addEventListener ('click', (event) => {
-        defSelectedCard = newSelectedCard;
+    confirmCard.addEventListener ('click', () => {
+        cardsBase.forEach((card, index) => {if (card.selected === true) {
+            defSelectedCard = index;
+        }});
         paySysIcons.forEach((icon) => {
-            icon.attributes.src.nodeValue = cardsBase[newSelectedCard].icon;
+            icon.attributes.src.nodeValue = cardsBase[defSelectedCard].icon;
                 closePopup();
         })
     })
@@ -64,4 +64,4 @@ function manageCardChange () {
     })
 }
 
-export const manageCardChangeF = manageCardChange;
+export const manageCardChange = manageCards;

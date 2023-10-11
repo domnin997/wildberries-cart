@@ -1,12 +1,12 @@
-import { addDecorationToFavI, addDecorationToDelI } from "./fav-del-icons-decor.js";
+import { addFavDelDecor } from "./fav-del-icons-decor.js";
 import { goodsArr } from "./products-constructor.js";
-import { changeSelectedF, updateTotalFunc, updateTotalOldFunc } from "./total-sums-updater.js";
+import { changeSelectedF, updateTotalFunc, updateTotalOldFunc} from "./total-sums-updater.js";
 import { updateListItem } from "./item-fields-updater.js";
 import { toggleAvailHeader } from "./avail-header-toggler.js";
 import { updDelivery, deleteDeliveryElement, showHideDelEl } from "./delivery-block-manager.js";
 import { getDOMElements } from './DOMElements.js';
 import { manageUnavailList } from "./unavail-list-manager.js";
-import { manageCardChangeF } from "./card-changer.js";
+import { manageCardChange } from "./card-changer.js";
 import { manageOrderBtn } from "./order-btn-manager.js";
 import { manageClientInputs } from "./inputs-manager.js";
 import { secondAddrFunc } from "./addresses.js";
@@ -16,15 +16,15 @@ const {
     delProdImgCont, counterFields, currentPrices, currentPricesMobile,
     oldPrices, oldPricesMobile, headerCheckbox, productsCheckboxes,
     availItems, prodNumIcon, showHideIcons, prodLists, availHeaderCheckbox,
-    availHeaderText, availClosedHeader
+    availHeaderText, availClosedHeader, minusBtns, plusBtns
 } = getDOMElements();
 
 let localProdArr = goodsArr;
-addDecorationToFavI();
-addDecorationToDelI();
+
+addFavDelDecor();
 manageUnavailList();
 secondAddrFunc();
-manageCardChangeF();
+manageCardChange();
 manageOrderBtn();
 manageClientInputs();
 
@@ -71,7 +71,7 @@ availItems.forEach((item, index) => {
                     isDisplayed = false;
                     toggleAvailHeader(isDisplayed, availHeaderCheckbox, availHeaderText, availClosedHeader);
                     icon.classList.add('rotate180');
-                }
+                 }
         }
         
         if (event.target.classList.contains('plus-button')) {
@@ -79,13 +79,25 @@ availItems.forEach((item, index) => {
              updateListItem(counterFields, currentPrices, currentPricesMobile, oldPrices, oldPricesMobile, index, goodsArr)
               updateTotalFunc(goodsArr);
                updDelivery(goodsArr, index, mobDelCount, deskDelCount, deliveryDates, deliveryProductsConts);
+                if (goodsArr[index].numberOfGoods === goodsArr[index].maxAvailable) {
+                    plusBtns[index].classList.add('counter__button-light');
+                } 
+                if (goodsArr[index].numberOfGoods > 1) {
+                    minusBtns[index].classList.remove('counter__button-light');
+                }
         
         } else if (event.target.classList.contains('minus-button')) {
             goodsArr[index].countMinus();
              updateListItem(counterFields, currentPrices, currentPricesMobile, oldPrices, oldPricesMobile, index, goodsArr)
               updateTotalFunc(goodsArr);
                updDelivery(goodsArr, index, mobDelCount, deskDelCount, deliveryDates, deliveryProductsConts);
-        }
+               if (goodsArr[index].numberOfGoods < goodsArr[index].maxAvailable) {
+                    plusBtns[index].classList.remove('counter__button-light');
+                } 
+                if (goodsArr[index].numberOfGoods === 1) {
+                    minusBtns[index].classList.add('counter__button-light');
+                }
+            }
     })
 })
 
@@ -107,7 +119,6 @@ updateProdNumIcon();
 // Чекбоксы
 
 function toggleCheckbox (element) {
-    console.log('Clicked')
     element.checked ? element.checked = false : element.checked = true;
 }
 
@@ -146,23 +157,28 @@ let headerLabel = document.querySelector('.header__label'),
         })
     })
 
-    productLabels.forEach((checkbox, i) => checkbox.addEventListener('click', (event) => {
-        event.preventDefault();
-            toggleCheckbox(productsCheckboxes[i]);
-                if (!productsCheckboxes[i].checked) {
-                    removeHeaderCheck();
-                }
-            changeSelectedF(goodsArr, i);
-                updateTotalFunc(goodsArr);
-                updateTotalOldFunc(goodsArr);
-                    showHideDelEl(goodsArr, i, deliveryDates, deliveryProductsConts, delProdImgCont);
-                        
+    productLabels.forEach((label, i) => label.addEventListener('click', (event) => {
+      event.preventDefault();
+        toggleCheckbox(productsCheckboxes[i]);
+          if (!productsCheckboxes[i].checked) {
+              removeHeaderCheck();
+          }
+          if (Array.from(productsCheckboxes).every((checkbox) => checkbox.checked === true)) {
+            headerCheckbox.checked = true;
+          }
+           changeSelectedF(goodsArr, i);
+            updateTotalFunc(goodsArr);
+             updateTotalOldFunc(goodsArr);
+              showHideDelEl(goodsArr, i, deliveryDates, deliveryProductsConts, delProdImgCont);          
     }))
 
+function firstTimePageLoad () {
+    headerCheckbox.checked = true;
+        goodsArr.forEach((el) => {
+            el.selected = true;
+        });
+            updateCheck();
+            updateTotalFunc(goodsArr);
+}
 
-headerCheckbox.checked = true;
-goodsArr.forEach((el) => {
-    el.selected = true;
-});
-updateCheck();
-updateTotalFunc(goodsArr);
+firstTimePageLoad();

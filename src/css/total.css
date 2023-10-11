@@ -27,6 +27,18 @@
     gap: 16px;
     align-self: stretch;
   }
+
+
+  .agreement-line {
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: var(--rulers-rulers);
+  }
+
+  .agreement-line:hover {
+    cursor: pointer;
+  }
+
   .total-delivery-wrap {
     display: flex;
     flex-direction: column;
@@ -222,15 +234,16 @@
 }
 
 .total-delivery__date-text {
+  color:var(--system-magenta);
   border-bottom: dashed;
   border-color: rgba(203, 17, 171, 0.2);
   border-width: 1px;
 }
 
 .total-back-delivery__text-green {
-  color: rgb(12, 180, 119);
+  color: var(--system-green);
   border-bottom: dashed;
-  border-color: rgb(12, 180, 119);
+  border-color: rgba(12, 180, 119, 0.2);
   border-width: 1px;
 }
 

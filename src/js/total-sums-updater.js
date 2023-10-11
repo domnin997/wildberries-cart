@@ -34,7 +34,6 @@ function updateTotalOld (arrOfGoods) {
                 totalOld += good.totalOldPrice;
             }
         })
-    console.log(totalOld);
     return totalOld;
 }
 

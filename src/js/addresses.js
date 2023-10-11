@@ -3,10 +3,8 @@ import { getDOMElements } from "./DOMElements.js";
 const {
     changeAddrBtns, changeAddrWindow, closeAddrWindow, modalOverlay, addrListSelectors,
     courierAddresses, pickPointAddresses, confirmAddrBtn, deliveryAddress1,
-    deliveryAddress2, pickPointHeader1, pickPointHeader2,
-    pickPointTimeRating,
+    deliveryAddress2, deliveryAddrHeader1, deliveryAddrHeader2, pickPointTimeRating,
  } = getDOMElements();
-
 
  const pointsArr = [
     {selected: true},
@@ -84,8 +82,8 @@ function manageAddressChange () {
     confirmAddrBtn.addEventListener('click', () => {
         
         if (isPointsListSelected && document.querySelector('input[name="point-address"]:checked')) {
-            pickPointHeader1.innerText = 'Пункт выдачи';
-            pickPointHeader2.innerText = 'Доставка в пункт выдачи';
+            deliveryAddrHeader1.innerText = 'Пункт выдачи';
+            deliveryAddrHeader2.innerText = 'Доставка в пункт выдачи';
                 pickPointTimeRating.forEach((el) => {
                     el.classList.remove('not_disp');
                 })
@@ -100,8 +98,8 @@ function manageAddressChange () {
         } 
 
         else if (!isPointsListSelected && document.querySelector('input[name="courier-address"]:checked')) {
-            pickPointHeader1.innerText = 'Доставка курьером';
-            pickPointHeader2.innerText = 'Доставка курьером';
+            deliveryAddrHeader1.innerText = 'Доставка курьером';
+            deliveryAddrHeader2.innerText = 'Доставка курьером';
                 pickPointTimeRating.forEach((el) => {
                     el.classList.add('not_disp');
                 })

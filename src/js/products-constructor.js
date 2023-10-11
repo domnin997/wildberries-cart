@@ -22,8 +22,6 @@ class Product {
         if (this.numberOfGoods < this.maxAvailable) {
             ++this.numberOfGoods
                 this.updateTotal();
-        } else {
-            console.log('Достигнут максимум');
         }
     }
 
@@ -31,8 +29,6 @@ class Product {
         if (this.numberOfGoods > 1) {
             --this.numberOfGoods
                 this.updateTotal();
-        } else {
-            console.log('Достигнут минимум');
         }
     }
 }
