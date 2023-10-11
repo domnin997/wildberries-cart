@@ -16,7 +16,7 @@ function getElements () {
         headerCheckbox: document.querySelector('.products-header__checkbox'),
         productsCheckboxes: document.querySelectorAll('.product__checkbox'),
         availItems: document.querySelectorAll('.available-item'),
-        prodNumIcon: document.querySelector('.menu-icons__number-of-items'),
+        prodNumIcon: document.querySelectorAll('.menu-icons__number-of-items'),
         showHideIcons: document.querySelectorAll('.products-header__icon'),
         unavailHeader: document.querySelector('.unavailable-header'),
         prodLists: document.querySelectorAll('.products-list'),

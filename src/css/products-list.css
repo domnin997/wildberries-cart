@@ -249,6 +249,9 @@
     letter-spacing: -0.2px;
   }
 
+  .counter__button-light {
+    color: var(--rulers-rulers-input);
+  }
 
   .counter__number {
     display: flex;

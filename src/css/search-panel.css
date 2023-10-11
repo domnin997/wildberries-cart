@@ -32,9 +32,13 @@
     gap: 4px;
     flex: 1 0 0;
     opacity: 0.5;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
   }
 
-  input[type=text] {
+  .search-panel__input[type=text] {
     color: var(--system-white);
     color: var(--system-white);
     font-size: 18px;
@@ -43,11 +47,11 @@
     line-height: 24px;
   }
 
-  input[type=text]::-moz-placeholder {
+  .search-panel__input[type=text]::-moz-placeholder {
     color: var(--system-white);
   }
 
-  input[type=text]::placeholder {
+  .search-panel__input[type=text]::placeholder {
     color: var(--system-white);
   }
 }

@@ -2,12 +2,7 @@ import { getDOMElements } from "./DOMElements.js";
 
 const {inputFields, inputUpLabels, inputDownLabels, orderBtn} = getDOMElements();
 
-let userName,
-    userSurname,
-    userEmail,
-    userTel,
-    userTIN,
-    clicked = false;
+let userName, userSurname, userEmail, userTel, userTIN, clicked = false;
 
 const userData = [userName, userSurname, userEmail, userTel, userTIN];
 const validated = [false, false, false, false, false];
@@ -21,8 +16,6 @@ function showError (i) {
     inputFields[i].classList.add('incorrect-input');
     inputDownLabels[i].classList.remove('label-not-displayed');
 }
-
-
 
 function validateInput (i) {
 
@@ -80,6 +73,20 @@ function validateInput (i) {
         } else if (userData[i] !== '') {
             showError(i);
             inputDownLabels[i].innerText = 'Формат +7 999 999-99-99';
+        } 
+    } else if (i === 4) {
+        const regex = new RegExp(/^\d{9}$/);
+
+        if (userData[i] === '' && clicked) {
+            showError(i);
+                inputDownLabels[i].innerText = 'Укажите ИНН';
+                inputDownLabels[i].style.color = 'rgb(245, 81, 35)';
+         } 
+         
+         else if (userData[i] === '') { hideError(i); }
+        
+         else if (regex.test(userData[i])) {
+            hideError(i);
         }
     }
     
@@ -131,6 +138,13 @@ function manageInputs ( ) {
     orderBtn.forEach((btn) => {
         btn.addEventListener('click', () => {
             clicked = true;
+            
+            let top = inputFields[0].getBoundingClientRect().top;
+            window.scrollBy({
+                top: top - 50,
+                behavior: 'smooth'
+            });
+
             userData.forEach((el, i) => {
                 userData[i] = inputFields[i].value;
                     validateInput(i);

@@ -20,8 +20,6 @@ const {
     availHeaderText, availClosedHeader, minusBtns, plusBtns
 } = getDOMElements();
 
-let localProdArr = goodsArr;
-
 addFavDelDecor();
 manageUnavailList();
 secondAddrFunc();
@@ -30,13 +28,13 @@ manageOrderBtn();
 manageClientInputs();
 manageToolTips();
 
-// Блок с количеством продуктов
+
+
 const icon = showHideIcons[0],
       prodList = prodLists[0];
-let isDisplayed = true;
 
-let productsNum = availItems.length,
-    isAvailDisplayed = true;
+let isDisplayed = true,
+    productsNum = availItems.length;
 
 function showHideAvailHandler () {
     if (isDisplayed) {
@@ -109,16 +107,23 @@ function updateProdNumIcon () {
     productsNum = availItem.length;
 
     if (productsNum) {
-        prodNumIcon.classList.remove('hidden');
-        prodNumIcon.innerText = productsNum;
+        prodNumIcon.forEach((icon)=> {
+            icon.classList.remove('hidden');
+            icon.innerText = productsNum;
+        })
+        
     } else {
-        prodNumIcon.classList.add('hidden');
+        prodNumIcon.forEach((icon)=> {
+            icon.classList.add('hidden');
+        })
+        
     }
 };
 
 updateProdNumIcon();
 
-// Чекбоксы
+
+
 
 function toggleCheckbox (element) {
     element.checked ? element.checked = false : element.checked = true;

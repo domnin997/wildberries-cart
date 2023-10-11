@@ -12,7 +12,7 @@
   .payment-details__header {
     display: flex;
     align-items: flex-start;
-    height: 32px;
+    height: 28px;
     gap: 10px;
     align-self: stretch;
   }
@@ -81,13 +81,19 @@
   }
 }
 @media (min-width: 1024px) {
+  
   .payment-details {
     padding: 16px 24px 24px 24px;
   }
+
   .payment-details__header-text {
     font-size: 24px;
     line-height: 32px;
     letter-spacing: -0.24px;
+  }
+
+  .payment-details__header {
+    height: 32px;
   }
   .payment-details__method {
     gap: 16px;
