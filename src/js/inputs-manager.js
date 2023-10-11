@@ -75,19 +75,26 @@ function validateInput (i) {
             inputDownLabels[i].innerText = 'Формат +7 999 999-99-99';
         } 
     } else if (i === 4) {
-        const regex = new RegExp(/^\d{9}$/);
+        const regex = new RegExp(/^\d{14}$/);
 
         if (userData[i] === '' && clicked) {
             showError(i);
                 inputDownLabels[i].innerText = 'Укажите ИНН';
-                inputDownLabels[i].style.color = 'rgb(245, 81, 35)';
+                    inputDownLabels[i].style.color = 'rgb(245, 81, 35)';
          } 
          
-         else if (userData[i] === '') { hideError(i); }
+         else if (userData[i] === '') {
+            hideError(i);
+        }
         
          else if (regex.test(userData[i])) {
             hideError(i);
-        }
+
+        } else if (userData[i] !== '') {
+            showError(i);
+            inputDownLabels[i].innerText = 'Формат - 14 цифр';
+                inputDownLabels[i].style.color = 'rgb(245, 81, 35)';
+        } 
     }
     
 }

@@ -34,10 +34,12 @@ function getElements () {
         pickPointAddresses: document.querySelectorAll('.pick-point-add'),
         deliveryAddrHeader1: document.querySelector('.pick-point'),
         deliveryAddrHeader2: document.querySelector('.total-delivery__text'),
+        deliveryAddrHeadMob: document.querySelector('.delivery-details-info-mobile__point-header'),
         pickPointTimeRating: document.querySelectorAll('.pick-point-info__time-rating'),
         confirmAddrBtn: document.querySelector('.confirm-address-btn'),
         deliveryAddress1: document.querySelector('.pick-point-info__address'),
         deliveryAddress2: document.querySelector('.total-delivery__address'),
+        deliveryAddressMob: document.querySelector('.delivery-details-info-mobile__point-address'),
         
         changeCardBtns: document.querySelectorAll('.change-card-button'),
         changeCardWindow: document.querySelector('.change-card'),

@@ -4,6 +4,7 @@ const {
     changeAddrBtns, changeAddrWindow, closeAddrWindow, modalOverlay, addrListSelectors,
     courierAddresses, pickPointAddresses, confirmAddrBtn, deliveryAddress1,
     deliveryAddress2, deliveryAddrHeader1, deliveryAddrHeader2, pickPointTimeRating,
+    deliveryAddrHeadMob, deliveryAddressMob,
  } = getDOMElements();
 
  const pointsArr = [
@@ -83,11 +84,13 @@ function manageAddressChange () {
         
         if (isPointsListSelected && document.querySelector('input[name="point-address"]:checked')) {
             deliveryAddrHeader1.innerText = 'Пункт выдачи';
+            deliveryAddrHeadMob.innerText = 'Пункт выдачи';
             deliveryAddrHeader2.innerText = 'Доставка в пункт выдачи';
                 pickPointTimeRating.forEach((el) => {
                     el.classList.remove('not_disp');
                 })
                     deliveryAddress1.innerText = getPointAddress ();
+                    deliveryAddressMob.innerText = getPointAddress ();
                     deliveryAddress2.innerText = getPointAddress ();
                         pointsArr.forEach((point, index) => {
                             if (point.selected) {
@@ -99,11 +102,13 @@ function manageAddressChange () {
 
         else if (!isPointsListSelected && document.querySelector('input[name="courier-address"]:checked')) {
             deliveryAddrHeader1.innerText = 'Доставка курьером';
+            deliveryAddrHeadMob.innerText = 'Доставка курьером';
             deliveryAddrHeader2.innerText = 'Доставка курьером';
                 pickPointTimeRating.forEach((el) => {
                     el.classList.add('not_disp');
                 })
                     deliveryAddress1.innerText = getCourierAddress ();
+                    deliveryAddressMob.innerText = getCourierAddress ();
                     deliveryAddress2.innerText = getCourierAddress ();
                         couriersArr.forEach((courier, index) => {
                             if (courier.selected) {
@@ -121,6 +126,7 @@ function manageAddressChange () {
                 label.remove();
                  if (index === pointSelectedRadio) {
                     deliveryAddress1.innerText = 'Выберите адрес';
+                    deliveryAddressMob.innerText = 'Выберите адрес';
                     deliveryAddress2.innerText = 'Выберите адрес';
                         pickPointTimeRating.forEach((el) => {
                             el.classList.add('not_disp');
@@ -141,6 +147,7 @@ function manageAddressChange () {
                 label.remove();
                 if (index === courierSelectedRadio) {
                     deliveryAddress1.innerText = 'Выберите адрес';
+                    deliveryAddressMob.innerText = 'Выберите адрес';
                     deliveryAddress2.innerText = 'Выберите адрес';
                         pickPointTimeRating.forEach((el) => {
                             el.classList.add('not_disp');
