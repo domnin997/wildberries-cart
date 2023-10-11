@@ -10,6 +10,7 @@ import { manageCardChange } from "./card-changer.js";
 import { manageOrderBtn } from "./order-btn-manager.js";
 import { manageClientInputs } from "./inputs-manager.js";
 import { secondAddrFunc } from "./addresses.js";
+import { manageToolTips } from "./tooltips.js";
 
 const {
     mobDelCount, deskDelCount, deliveryDates, deliveryProductsConts,
@@ -27,6 +28,7 @@ secondAddrFunc();
 manageCardChange();
 manageOrderBtn();
 manageClientInputs();
+manageToolTips();
 
 // Блок с количеством продуктов
 const icon = showHideIcons[0],

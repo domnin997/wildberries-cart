@@ -132,9 +132,7 @@
     border-radius: 8px;
     background-color: rgba(0, 0, 0, 0.05);
   }
-  .unavail {
-    filter: grayscale(100%);
-  }
+  
   .products-list {
     display: flex;
     flex-direction: column;
@@ -503,6 +501,11 @@
     width: 20px;
     height: 20px;
   }
+
+  .product-info__location-icon:hover {
+    cursor: pointer;
+  }
+  
   .product-info__location-icon .info {
     padding-top: 4px;
   }
@@ -623,7 +626,10 @@
     border-width: 1px;
   }
 
-
+  .old-desktop:hover {
+    cursor: pointer;
+  }
+  
   .prod-price-special {
     align-items: center;
   }

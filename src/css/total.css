@@ -247,6 +247,10 @@
   border-width: 1px;
 }
 
+.total-back-delivery__text-green:hover {
+  cursor: pointer;
+}
+
 .total-card {
   display: flex;
   flex-direction: column;
