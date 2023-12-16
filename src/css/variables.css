@@ -5,6 +5,7 @@ html {
     --background-smoky: rgba(246, 246, 250, 1);
     --system-magenta: rgba(203, 17, 171, 1);
     --text-black: rgba(0, 0, 0, 1);
+    --desktop-menu-border: rgba(255, 255, 255, 0.45);
     --system-gray: rgba(151, 151, 175, 1);
     --rulers-rulers-input: rgba(0, 0, 0, 0.20);
     --rulers-rulers: rgba(0, 0, 0, 0.10);

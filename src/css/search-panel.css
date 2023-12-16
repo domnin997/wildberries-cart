@@ -1,12 +1,7 @@
-@media (min-width: 1px) {
-  
-  .search-panel {
-    display: none;
-  }
+.search-panel {
+  display: none;
 }
-
 @media (min-width: 1024px) {
-  
   .search-panel {
     display: flex;
     height: 48px;
@@ -16,7 +11,6 @@
     border-radius: 36px;
     background-color: rgba(255, 255, 255, 0.2);
   }
-
   .search-panel__wrapper {
     display: flex;
     align-items: center;
@@ -24,7 +18,6 @@
     flex: 1 0 0;
     align-self: stretch;
   }
-
   .search-panel__input {
     display: flex;
     padding-bottom: 4px;
@@ -37,7 +30,6 @@
     font-weight: 400;
     line-height: 24px;
   }
-
   .search-panel__input[type=text] {
     color: var(--system-white);
     color: var(--system-white);
@@ -46,11 +38,9 @@
     font-weight: 400;
     line-height: 24px;
   }
-
   .search-panel__input[type=text]::-moz-placeholder {
     color: var(--system-white);
   }
-
   .search-panel__input[type=text]::placeholder {
     color: var(--system-white);
   }
