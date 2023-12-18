@@ -29,4 +29,4 @@
 
 ### Ссылка на размещенный проект:
 
-[Открыть страницу в браузере] (https://domnin997.github.io/wildberries-cart/src/index.html)
+[Открыть страницу в браузере](https://domnin997.github.io/wildberries-cart/src/index.html)
