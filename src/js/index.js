@@ -28,8 +28,6 @@ manageOrderBtn();
 manageClientInputs();
 manageToolTips();
 
-
-
 const icon = showHideIcons[0],
       prodList = prodLists[0];
 
