@@ -2,6 +2,7 @@ import productData from '../productData.json' assert {type: "json"};
 import Product from './product.js';
 import { updateTotalPrice } from './totalBlock.js';
 import { updateDeliveryBlock } from './deliveryBlock.js';
+import { createUnavailableProductsList } from './unavailableProductsList.js';
 const productsList = document.querySelector('.products-container__products-list');
 
 let goodsArray = [];
@@ -10,7 +11,7 @@ productData.forEach((good) => {
   const newProduct = new Product(
     good.id, good.name, good.price, good.discount, good.quantity,
     good.maxAvailable, good.isSeveralWarehouses, good.delivaryData, good.color,
-    good.size, good.img, good.warehouse, good.entity);
+    good.size, good.img, good.unavailableImg, good.warehouse, good.entity);
     goodsArray.push(newProduct);
 })
 
@@ -21,6 +22,8 @@ function deleteProduct (productsArray, deleteId) {
   })
   goodsArray = [...updatedArray];
 }
+
+createUnavailableProductsList(goodsArray)
 
 function createProductList () {
   goodsArray.forEach((good) => {

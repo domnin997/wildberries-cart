@@ -1,12 +1,14 @@
-const deliveryProductsBlock = document.querySelector('.delivery-producst');
 const deliveryDatesBlock = document.querySelector('.delivery-details__dates');
-
+const deliveryProductsContainer = document.querySelector('.delivery-products-container');
+// В контейнер добавляем линии в зависимости от числа товаров
+// В линии добавляем товары
 export const updateDeliveryBlock = function (productsArray) {
   deliveryDatesBlock.innerHTML = '';
-  deliveryProductsBlock.innerHTML = '';
+  deliveryProductsContainer.innerHTML = '';
 
   let isSeveralWarehouses = false;
   if (productsArray.length > 0) {
+    const productLine = createProductsLine();
 
     const deliveryLines = document.createElement('div');
           deliveryLines.classList.add('delivery-date');
@@ -14,8 +16,22 @@ export const updateDeliveryBlock = function (productsArray) {
     deliveryDatesBlock.append(deliveryLines);
 
     productsArray.forEach((product) => {
+      let quantity = product.quantity;
 
+      if (product.deliveryData.isSeveralDates) {
+        isSeveralWarehouses = true;
+        quantity = product.deliveryData.warehouseLimit;
+      }
+      const newCard = createProductCard(product.img, quantity);
+      productLine.append(newCard);
     })
+    deliveryProductsContainer.append(productLine);
+
+    if (isSeveralWarehouses) {
+      const secondLine = createProductsLine();
+      secondLine.append(createProductCard('./img/iphone-case.png', 16))
+      deliveryProductsContainer.append(secondLine);
+    }
   }
 
 
@@ -48,5 +64,11 @@ function createProductCard (img, quantity) {
     productCard.querySelector('.product-img-delivery').src = img;
     productCard.querySelector('.delivery-products__number').innerText = quantity;
     productCard.querySelector('.delivery-products__number').classList.remove('hidden')
-    deliveryProductsBlock.append(productCard);
+    return productCard;
+}
+
+function createProductsLine () {
+  const productLine = document.createElement('div');
+        productLine.classList.add('delivery-products');
+  return productLine;
 }

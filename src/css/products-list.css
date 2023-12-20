@@ -581,9 +581,14 @@
     display: flex;
     gap: 16px;
   }
+
+
   .fav-icon:hover {
     cursor: pointer;
+    fill: orangered;
   }
+
+  
   .delete-icon {
     cursor: pointer;
   }

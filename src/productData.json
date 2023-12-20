@@ -12,6 +12,7 @@
     },
     "isSeveralWarehouses": false,
     "img": "./img/UZCotton.png",
+    "unavailableImg": "./img/UZCotton_amended.jpeg",
     "color": "белый",
     "size": "56",
     "warehouse": "Коледино WB",
@@ -26,11 +27,12 @@
     "maxAvailable": "230",
     "delivaryData": {
       "isSeveralDates": true,
-      "quantities": ["184", "16"]
+      "warehouseLimit": "184"
     },
     "quantity": "200",
     "isSeveralWarehouses": true,
     "img": "./img/iphone-case.png",
+    "unavailableImg": "./img/phonecase_amended.jpeg",
     "color": "прозрачный",
     "size": null,
     "warehouse": "Коледино WB",
@@ -49,6 +51,7 @@
     "quantity": "1",
     "isSeveralWarehouses": false,
     "img": "./img/pencils.png",
+    "unavailableImg": "./img/pencils_amended.jpeg",
     "color": null,
     "size": null,
     "warehouse": "Коледино WB",
