@@ -7,6 +7,9 @@
     "discount": "51",
     "quantity": "2",
     "maxAvailable": "2",
+    "delivaryData": {
+      "isSeveralDates": false
+    },
     "isSeveralWarehouses": false,
     "img": "./img/UZCotton.png",
     "color": "белый",
@@ -21,6 +24,10 @@
     "currency": "сом",
     "discount": "8",
     "maxAvailable": "230",
+    "delivaryData": {
+      "isSeveralDates": true,
+      "quantities": ["184", "16"]
+    },
     "quantity": "200",
     "isSeveralWarehouses": true,
     "img": "./img/iphone-case.png",
@@ -36,6 +43,9 @@
     "currency": "сом",
     "discount": "48",
     "maxAvailable": "2",
+    "delivaryData": {
+      "isSeveralDates": false
+    },
     "quantity": "1",
     "isSeveralWarehouses": false,
     "img": "./img/pencils.png",

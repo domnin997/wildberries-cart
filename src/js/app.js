@@ -9,7 +9,7 @@ let goodsArray = [];
 productData.forEach((good) => {
   const newProduct = new Product(
     good.id, good.name, good.price, good.discount, good.quantity,
-    good.maxAvailable, good.isSeveralWarehouses, good.color,
+    good.maxAvailable, good.isSeveralWarehouses, good.delivaryData, good.color,
     good.size, good.img, good.warehouse, good.entity);
     goodsArray.push(newProduct);
 })

@@ -1,6 +1,6 @@
 export default class Product {
   constructor(id, name, price, discount, quantity,
-    maxAvailable, severalWarehouses = false, color, size, img, warehouse, entity) {
+    maxAvailable, isSeveralWarehouses = false, deliveryData, color, size, img, warehouse, entity) {
     this.id = id;
     this.name = name;
     this.price = +price;
@@ -10,7 +10,8 @@ export default class Product {
     this.totalDiscountedPrice = this.discountedPrice * this.quantity;
     this.totalStandardPrice = this.price * this.quantity;
     this.maxAvailable = +maxAvailable;
-    this.severalWarehouses = severalWarehouses;
+    this.deliveryData = deliveryData;
+    this.isSeveralWarehouses = isSeveralWarehouses;
     this.warehouse = warehouse;
     this.entity = entity;
     this.img = img;
