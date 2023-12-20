@@ -381,7 +381,7 @@
 
 .rating-text {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 4px;
     align-self: stretch;
     color: #000;
@@ -396,8 +396,9 @@
 @media (min-width: 1024px) {
 
 .change-address {
-    right: 212px;
-    top: 177px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     height: auto;
     width: 500px;
     border-radius: 16px; 

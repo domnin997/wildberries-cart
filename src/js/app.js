@@ -1,11 +1,25 @@
 import productData from '../productData.json' assert {type: "json"};
+import addressData from '../deliveryAddresses.json' assert {type: "json"};
 import Product from './product.js';
 import { updateTotalPrice } from './totalBlock.js';
 import { updateDeliveryBlock } from './deliveryBlock.js';
 import { createUnavailableProductsList } from './unavailableProductsList.js';
+import {createAddressList} from './addressChanger.js';
 const productsList = document.querySelector('.products-container__products-list');
 
 let goodsArray = [];
+
+const pointsBtn = document.querySelector('.pick-points');
+const courierBtn = document.querySelector('.courier-address');
+
+pointsBtn.addEventListener('click', () => {
+  createAddressList(addressData.pointAddresses);
+})
+
+courierBtn.addEventListener('click', () => {
+  createAddressList(addressData.courierAddresses);
+})
+
 
 productData.forEach((good) => {
   const newProduct = new Product(

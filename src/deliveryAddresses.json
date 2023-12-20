@@ -1,0 +1,33 @@
+
+{"courierAddresses": [
+  {
+    "address": "Бишкек, улица Табышалиева, 57",
+    "isSelected": true  
+  },
+  {
+    "address": "Бишкек, улица Жукеева-Пудовкина, 77/1",
+    "isSelected": false
+  },
+  {
+    "address": "Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1",
+    "isSelected": false
+  }
+  ],
+  "pointAddresses": [
+    {
+      "address": "Бишкек, улица Ахматбека Суюмбаева, 12/1",
+      "rating": null,
+      "isSelected": true
+    },
+    {
+      "address": "г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1",
+      "rating": "4.99",
+      "isSelected": false
+    },
+    {
+      "address": "г. Бишкек, улица Табышалиева, д. 57",
+      "rating": "4.99",
+      "isSelected": false
+    }
+  ]
+}

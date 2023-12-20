@@ -588,282 +588,82 @@
       <p class="footer-text">© 2022 &nbsp ООО «Товары и точка»</p>
     </div>
   </footer>
-    <div class="modal-overlay">
-        <div class="change-address hidden">
-            <div class="change-address__header">
-                <h2 class="change-address__h2">
-                    Способ доставки
-                </h2>
-                <div class="change-address__close-wrap">
-                    <svg class="change-address__close-icon"
-                         xmlns="http://www.w3.org/2000/svg"
-                         width="24"
-                         height="24"
-                         viewBox="0 0 24 24"
-                         fill="none">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.92961 17.6568C4.53909 18.0473 4.53909 18.6805 4.92961 19.071C5.32014 19.4615 5.9533 19.4615 6.34383 19.071L12.0008 13.414L17.658 19.0711C18.0485 19.4616 18.6817 19.4616 19.0722 19.0711C19.4627 18.6806 19.4627 18.0474 19.0722 17.6569L13.4151 11.9998L19.0717 6.34309C19.4623 5.95257 19.4623 5.3194 19.0717 4.92888C18.6812 4.53835 18.0481 4.53836 17.6575 4.92888L12.0008 10.5856L6.34427 4.92899C5.95374 4.53846 5.32058 4.53846 4.93005 4.92899C4.53953 5.31951 4.53953 5.95267 4.93005 6.3432L10.5866 11.9998L4.92961 17.6568Z" fill="#9797AF"/>
-                    </svg>
-                </div>
-            </div>
-            <div class="change-address__wrap">                
-                <div class="change-address__list">
-                    <div class="change-address__list-selectors">
-                        <div class="change-address__list-selector selected">
-                            <div class="change-address__list-selector-wrap">
-                                <span>В пункт выдачи</span>
-                            </div>
-                        </div>
-                        <div class="change-address__list-selector">
-                            <div class="change-address__list-selector-wrap">
-                                <span>Курьером</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="change-address__list-addresses">
-                        <h3 class="change-address__list-addresses-h3">
-                            Мои адреса
-                        </h3>                       
-                        <label class="change-address__list-item courier-add hidden">
-                            <div class="change-address__radio-container">
-                                <div class="change-address__radio">
-                                    <input class="change-address__stock-radio"
-                                           type="radio"
-                                           name="courier-address"
-                                           value="1"
-                                           data-address="Бишкек, улица Табышалиева, 57">
-                                    <span class="change-address__custom-radio"></span>
-                                </div>
-                            </div>
-                            <div class="change-address__point-container">
-                                <div class="change-address__point-address">
-                                    Бишкек, улица Табышалиева, 57
-                                </div>
-                            </div>
-                            <div class="change-address__delete-container">
-                                <svg class="change-address__delete-icon"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="20"
-                                    height="20"
-                                    viewBox="0 0 20 20"
-                                    fill="none">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.5 5C2.5 4.72386 2.72386 4.5 3 4.5H17C17.2761 4.5 17.5 4.72386 17.5 5C17.5 5.27614 17.2761 5.5 17 5.5H3C2.72386 5.5 2.5 5.27614 2.5 5Z" fill="#9797AF"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.4584 4.5H16.5059L15.6411 15.6926C15.5405 16.9947 14.4546 18 13.1486 18H6.84639C5.54299 18 4.45829 16.9986 4.35435 15.6994L3.4584 4.5ZM4.5416 5.5L5.35117 15.6196C5.41353 16.3992 6.06435 17 6.84639 17H13.1486C13.9322 17 14.5837 16.3968 14.6441 15.6155L15.4256 5.5H4.5416Z" fill="#9797AF"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13 5.5H7V3.46875C7 2.65758 7.65758 2 8.46875 2H11.5312C12.3424 2 13 2.65758 13 3.46875V5.5ZM8.46875 3C8.20987 3 8 3.20987 8 3.46875V4.5H12V3.46875C12 3.20987 11.7901 3 11.5312 3H8.46875Z" fill="#9797AF"/>
-                                  </svg>
-                            </div>
-                        </label>
-                        <label class="change-address__list-item courier-add hidden">
-                            <div class="change-address__radio-container">
-                                <div class="change-address__radio">
-                                    <input class="change-address__stock-radio"
-                                           type="radio"
-                                           name="courier-address"
-                                           value="2"                                        
-                                           data-address="Бишкек, улица Жукеева-Пудовкина, 77/1"
-                                           >
-                                    <span class="change-address__custom-radio"></span>
-                                </div>
-                            </div>
-                            <div class="change-address__point-container">
-                                <div class="change-address__point-address">
-                                    Бишкек, улица Жукеева-Пудовкина, 77/1
-                                </div>
-                            </div>
-                            <div class="change-address__delete-container">
-                                <svg class="change-address__delete-icon"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="20"
-                                    height="20"
-                                    viewBox="0 0 20 20"
-                                    fill="none">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.5 5C2.5 4.72386 2.72386 4.5 3 4.5H17C17.2761 4.5 17.5 4.72386 17.5 5C17.5 5.27614 17.2761 5.5 17 5.5H3C2.72386 5.5 2.5 5.27614 2.5 5Z" fill="#9797AF"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.4584 4.5H16.5059L15.6411 15.6926C15.5405 16.9947 14.4546 18 13.1486 18H6.84639C5.54299 18 4.45829 16.9986 4.35435 15.6994L3.4584 4.5ZM4.5416 5.5L5.35117 15.6196C5.41353 16.3992 6.06435 17 6.84639 17H13.1486C13.9322 17 14.5837 16.3968 14.6441 15.6155L15.4256 5.5H4.5416Z" fill="#9797AF"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13 5.5H7V3.46875C7 2.65758 7.65758 2 8.46875 2H11.5312C12.3424 2 13 2.65758 13 3.46875V5.5ZM8.46875 3C8.20987 3 8 3.20987 8 3.46875V4.5H12V3.46875C12 3.20987 11.7901 3 11.5312 3H8.46875Z" fill="#9797AF"/>
-                                  </svg>
-                            </div>
-                        </label>
-                        <label class="change-address__list-item courier-add hidden">
-                            <div class="change-address__radio-container">
-                                <div class="change-address__radio">
-                                    <input class="change-address__stock-radio"
-                                           type="radio"
-                                           name="courier-address"
-                                           value="3"
-                                           data-address="Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1"
-                                           >
-                                    <span class="change-address__custom-radio"></span>
-                                </div>
-                            </div>
-                            <div class="change-address__point-container">
-                                <div class="change-address__point-address">
-                                    Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1
-                                </div>
-                            </div>
-                            <div class="change-address__delete-container">
-                                <svg class="change-address__delete-icon"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="20"
-                                    height="20"
-                                    viewBox="0 0 20 20"
-                                    fill="none">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.5 5C2.5 4.72386 2.72386 4.5 3 4.5H17C17.2761 4.5 17.5 4.72386 17.5 5C17.5 5.27614 17.2761 5.5 17 5.5H3C2.72386 5.5 2.5 5.27614 2.5 5Z" fill="#9797AF"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.4584 4.5H16.5059L15.6411 15.6926C15.5405 16.9947 14.4546 18 13.1486 18H6.84639C5.54299 18 4.45829 16.9986 4.35435 15.6994L3.4584 4.5ZM4.5416 5.5L5.35117 15.6196C5.41353 16.3992 6.06435 17 6.84639 17H13.1486C13.9322 17 14.5837 16.3968 14.6441 15.6155L15.4256 5.5H4.5416Z" fill="#9797AF"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13 5.5H7V3.46875C7 2.65758 7.65758 2 8.46875 2H11.5312C12.3424 2 13 2.65758 13 3.46875V5.5ZM8.46875 3C8.20987 3 8 3.20987 8 3.46875V4.5H12V3.46875C12 3.20987 11.7901 3 11.5312 3H8.46875Z" fill="#9797AF"/>
-                                  </svg>
-                            </div>
-                        </label>
-                        <label class="change-address__list-item pick-point-add">
-                            <div class="change-address__radio-container">
-                                <div class="change-address__radio">
-                                    <input class="change-address__stock-radio"
-                                           type="radio"
-                                           name="point-address"
-                                           value="1"
-                                           data-address="Бишкек, улица Ахматбека Суюмбаева, 12/1">
-                                    <span class="change-address__custom-radio"></span>
-                                </div>
-                            </div>
-                            <div class="change-address__point-container">
-                                <div class="change-address__point-address">
-                                    Бишкек, улица Ахматбека Суюмбаева, 12/1
-                                </div>
-                                <div class="change-address__rating-container">
-                                    <div class="change-address__star-container">
-                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                            width="12"
-                                            height="12"
-                                            viewBox="0 0 12 12"
-                                            fill="none"
-                                        >
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.69769 1.14922C6.43817 0.528396 5.56198 0.528387 5.30244 1.14919L6.69769 1.14922ZM5.30244 1.14919L4.14719 3.90977L1.19202 4.16613C0.519264 4.22467 0.262282 5.05966 0.759713 5.49464L3.00514 7.45915L2.33207 10.3824C2.18436 11.0238 2.87792 11.5567 3.46133 11.2023L6.00032 9.65611L8.53797 11.2015C9.12269 11.5588 9.81568 11.0227 9.66861 10.3826L8.99549 7.45915L11.2402 5.49537C11.7385 5.05961 11.4793 4.22519 10.8083 4.16667L7.85294 3.91029L6.69769 1.14922" fill="#FF970D"/>
-                                          </svg>
-                                    </div>
-                                    <p class="change-address__point-name">Пункт выдачи</p>
-                                </div>
-                            </div>
-                            <div class="change-address__delete-container">
-                                <svg class="change-address__delete-icon"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="20"
-                                    height="20"
-                                    viewBox="0 0 20 20"
-                                    fill="none">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.5 5C2.5 4.72386 2.72386 4.5 3 4.5H17C17.2761 4.5 17.5 4.72386 17.5 5C17.5 5.27614 17.2761 5.5 17 5.5H3C2.72386 5.5 2.5 5.27614 2.5 5Z" fill="#9797AF"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.4584 4.5H16.5059L15.6411 15.6926C15.5405 16.9947 14.4546 18 13.1486 18H6.84639C5.54299 18 4.45829 16.9986 4.35435 15.6994L3.4584 4.5ZM4.5416 5.5L5.35117 15.6196C5.41353 16.3992 6.06435 17 6.84639 17H13.1486C13.9322 17 14.5837 16.3968 14.6441 15.6155L15.4256 5.5H4.5416Z" fill="#9797AF"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13 5.5H7V3.46875C7 2.65758 7.65758 2 8.46875 2H11.5312C12.3424 2 13 2.65758 13 3.46875V5.5ZM8.46875 3C8.20987 3 8 3.20987 8 3.46875V4.5H12V3.46875C12 3.20987 11.7901 3 11.5312 3H8.46875Z" fill="#9797AF"/>
-                                  </svg>
-                            </div>
-                        </label>
-
-                        <label class="change-address__list-item pick-point-add">
-                            <div class="change-address__radio-container">
-                                <div class="change-address__radio">
-                                    <input class="change-address__stock-radio"
-                                           type="radio"
-                                           name="point-address"
-                                           value="2"
-                                           data-address="г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1"
-                                    >
-                                    <span class="change-address__custom-radio"></span>
-                                </div>
-                            </div>
-                            <div class="change-address__point-container">
-                                <div class="change-address__point-address">
-                                    г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1
-                                </div>
-                                <div class="change-address__rating-container">
-                                    <div class="change-address__star-container">
-                                        <div class="rating-text">
-                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                            width="12"
-                                            height="12"
-                                            viewBox="0 0 12 12"
-                                            fill="none"
-                                        >
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.69769 1.14922C6.43817 0.528396 5.56198 0.528387 5.30244 1.14919L6.69769 1.14922ZM5.30244 1.14919L4.14719 3.90977L1.19202 4.16613C0.519264 4.22467 0.262282 5.05966 0.759713 5.49464L3.00514 7.45915L2.33207 10.3824C2.18436 11.0238 2.87792 11.5567 3.46133 11.2023L6.00032 9.65611L8.53797 11.2015C9.12269 11.5588 9.81568 11.0227 9.66861 10.3826L8.99549 7.45915L11.2402 5.49537C11.7385 5.05961 11.4793 4.22519 10.8083 4.16667L7.85294 3.91029L6.69769 1.14922" fill="#FF970D"/>
-                                          </svg>
-                                          <p>4.99</p>
-                                        </div>
-                                    </div>
-                                    <p class="change-address__point-name">Пункт выдачи</p>
-                                </div>
-                            </div>
-                            <div class="change-address__delete-container">
-                                <svg class="change-address__delete-icon"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="20"
-                                    height="20"
-                                    viewBox="0 0 20 20"
-                                    fill="none">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.5 5C2.5 4.72386 2.72386 4.5 3 4.5H17C17.2761 4.5 17.5 4.72386 17.5 5C17.5 5.27614 17.2761 5.5 17 5.5H3C2.72386 5.5 2.5 5.27614 2.5 5Z" fill="#9797AF"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.4584 4.5H16.5059L15.6411 15.6926C15.5405 16.9947 14.4546 18 13.1486 18H6.84639C5.54299 18 4.45829 16.9986 4.35435 15.6994L3.4584 4.5ZM4.5416 5.5L5.35117 15.6196C5.41353 16.3992 6.06435 17 6.84639 17H13.1486C13.9322 17 14.5837 16.3968 14.6441 15.6155L15.4256 5.5H4.5416Z" fill="#9797AF"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13 5.5H7V3.46875C7 2.65758 7.65758 2 8.46875 2H11.5312C12.3424 2 13 2.65758 13 3.46875V5.5ZM8.46875 3C8.20987 3 8 3.20987 8 3.46875V4.5H12V3.46875C12 3.20987 11.7901 3 11.5312 3H8.46875Z" fill="#9797AF"/>
-                                  </svg>
-                            </div>
-                        </label>
-
-                        <label class="change-address__list-item pick-point-add">
-                            <div class="change-address__radio-container">
-                                <div class="change-address__radio">
-                                    <input class="change-address__stock-radio"
-                                           type="radio"
-                                           name="point-address"
-                                           value="3"
-                                           data-address="г. Бишкек, улица Табышалиева, д. 57"
-                                    >
-                                    <span class="change-address__custom-radio"></span>
-                                </div>
-                            </div>
-                            <div class="change-address__point-container">
-                                <div class="change-address__point-address">
-                                    г. Бишкек, улица Табышалиева, д. 57
-                                </div>
-                                <div class="change-address__rating-container">
-                                    <div class="change-address__star-container">
-                                        <div class="rating-text">
-                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                            width="12"
-                                            height="12"
-                                            viewBox="0 0 12 12"
-                                            fill="none"
-                                        >
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.69769 1.14922C6.43817 0.528396 5.56198 0.528387 5.30244 1.14919L6.69769 1.14922ZM5.30244 1.14919L4.14719 3.90977L1.19202 4.16613C0.519264 4.22467 0.262282 5.05966 0.759713 5.49464L3.00514 7.45915L2.33207 10.3824C2.18436 11.0238 2.87792 11.5567 3.46133 11.2023L6.00032 9.65611L8.53797 11.2015C9.12269 11.5588 9.81568 11.0227 9.66861 10.3826L8.99549 7.45915L11.2402 5.49537C11.7385 5.05961 11.4793 4.22519 10.8083 4.16667L7.85294 3.91029L6.69769 1.14922" fill="#FF970D"/>
-                                          </svg>
-                                          <p>4.99</p>
-                                        </div>
-                                    </div>
-                                    <p class="change-address__point-name">Пункт выдачи</p>
-                                </div>
-                            </div>
-                            <div class="change-address__delete-container">
-                                <svg class="change-address__delete-icon"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="20"
-                                    height="20"
-                                    viewBox="0 0 20 20"
-                                    fill="none">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.5 5C2.5 4.72386 2.72386 4.5 3 4.5H17C17.2761 4.5 17.5 4.72386 17.5 5C17.5 5.27614 17.2761 5.5 17 5.5H3C2.72386 5.5 2.5 5.27614 2.5 5Z" fill="#9797AF"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.4584 4.5H16.5059L15.6411 15.6926C15.5405 16.9947 14.4546 18 13.1486 18H6.84639C5.54299 18 4.45829 16.9986 4.35435 15.6994L3.4584 4.5ZM4.5416 5.5L5.35117 15.6196C5.41353 16.3992 6.06435 17 6.84639 17H13.1486C13.9322 17 14.5837 16.3968 14.6441 15.6155L15.4256 5.5H4.5416Z" fill="#9797AF"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13 5.5H7V3.46875C7 2.65758 7.65758 2 8.46875 2H11.5312C12.3424 2 13 2.65758 13 3.46875V5.5ZM8.46875 3C8.20987 3 8 3.20987 8 3.46875V4.5H12V3.46875C12 3.20987 11.7901 3 11.5312 3H8.46875Z" fill="#9797AF"/>
-                                  </svg>
-                            </div>
-                        </label>
-
-                        <div class="empty-point-list-notification hidden"> Список пуст </div>
-                        <div class="empty-courier-list-notification hidden"> Список пуст </div>                 
-                    </div>
-                </div>
-            </div>
-            <div class="popup-button-container">
-                <div class="popup-button-wrap">
-                    <button class="popup-button confirm-address-btn">
-                        Выбрать
-                    </button>
-                </div>
-            </div>
+  <div class="modal-overlay displayed">
+    <!-- Для скрытия следующего окна, добавить hidden class -->
+    <div class="change-address"> 
+      <div class="change-address__header">
+        <h2 class="change-address__h2">Способ доставки</h2>
+        <div class="change-address__close-wrap">
+          <svg class="change-address__close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.92961 17.6568C4.53909 18.0473 4.53909 18.6805 4.92961 19.071C5.32014 19.4615 5.9533 19.4615 6.34383 19.071L12.0008 13.414L17.658 19.0711C18.0485 19.4616 18.6817 19.4616 19.0722 19.0711C19.4627 18.6806 19.4627 18.0474 19.0722 17.6569L13.4151 11.9998L19.0717 6.34309C19.4623 5.95257 19.4623 5.3194 19.0717 4.92888C18.6812 4.53835 18.0481 4.53836 17.6575 4.92888L12.0008 10.5856L6.34427 4.92899C5.95374 4.53846 5.32058 4.53846 4.93005 4.92899C4.53953 5.31951 4.53953 5.95267 4.93005 6.3432L10.5866 11.9998L4.92961 17.6568Z" fill="#9797AF"/>
+          </svg>
         </div>
-
-        <div class="change-card hidden">
+      </div>
+      <div class="change-address__wrap">                
+        <div class="change-address__list">
+          <div class="change-address__list-selectors">
+            <div class="change-address__list-selector pick-points selected">
+              <div class="change-address__list-selector-wrap">
+                <span>В пункт выдачи</span>
+              </div>
+            </div>
+            <div class="change-address__list-selector courier-address">
+              <div class="change-address__list-selector-wrap">
+                <span>Курьером</span>
+              </div>
+            </div>
+          </div>
+          <template id="addressLineTemplate">
+            <label class="change-address__list-item courier-add">
+              <div class="change-address__radio-container">
+                <div class="change-address__radio">
+                  <input class="change-address__stock-radio"
+                         type="radio"
+                         name="courier-address"
+                         value="1"
+                         data-address="Бишкек, улица Табышалиева, 57">
+                  <span class="change-address__custom-radio"></span>
+                </div>
+              </div>
+              <div class="change-address__point-container">
+                <div class="change-address__point-address">Бишкек, улица Табышалиева, 57</div>
+            <!-- Отключаемый для курьеров элемент -->
+                <div class="change-address__rating-container">
+                  <div class="change-address__star-container">
+                    <div class="rating-text">
+                      <img src="../src/icons/rating-star.svg">
+                      <p class="rating-score"></p>
+                    </div>
+                  </div>
+                  <p class="change-address__point-name">Пункт выдачи</p>
+                </div>
+            <!-- Отключаемый для курьеров элемент -->
+              </div>
+              <div class="change-address__delete-container">
+                <svg class="change-address__delete-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M2.5 5C2.5 4.72386 2.72386 4.5 3 4.5H17C17.2761 4.5 17.5 4.72386 17.5 5C17.5 5.27614 17.2761 5.5 17 5.5H3C2.72386 5.5 2.5 5.27614 2.5 5Z" fill="#9797AF"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M3.4584 4.5H16.5059L15.6411 15.6926C15.5405 16.9947 14.4546 18 13.1486 18H6.84639C5.54299 18 4.45829 16.9986 4.35435 15.6994L3.4584 4.5ZM4.5416 5.5L5.35117 15.6196C5.41353 16.3992 6.06435 17 6.84639 17H13.1486C13.9322 17 14.5837 16.3968 14.6441 15.6155L15.4256 5.5H4.5416Z" fill="#9797AF"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M13 5.5H7V3.46875C7 2.65758 7.65758 2 8.46875 2H11.5312C12.3424 2 13 2.65758 13 3.46875V5.5ZM8.46875 3C8.20987 3 8 3.20987 8 3.46875V4.5H12V3.46875C12 3.20987 11.7901 3 11.5312 3H8.46875Z" fill="#9797AF"/>
+                </svg>
+              </div>
+            </label>
+          </template>
+          <div class="change-address__list-addresses">
+            
+            <h3 class="change-address__list-addresses-h3">Мои адреса</h3>
+                    
+            <div class="empty-point-list-notification hidden"> Список пуст </div>
+            <div class="empty-courier-list-notification hidden"> Список пуст </div>                 
+          </div>
+        </div>
+      </div>
+      <div class="popup-button-container">
+        <div class="popup-button-wrap">
+          <button class="popup-button confirm-address-btn">Выбрать</button>
+        </div>
+      </div>
+    </div>
+    <div class="change-card hidden">
             <div class="change-card__header-cont">
                 <h2 class="change-card__header">Способ оплаты</h2>
                 <div class="change-card__close-wrap">
