@@ -8,6 +8,8 @@ const changeAddressBtns = document.querySelectorAll('.change-address-btn');
 const pointAddressContainer = document.querySelector('.pick-point-info__address');
 const totalAddressContainer = document.querySelector('.total-delivery__address');
 const confirmAddress = document.querySelector('.confirm-address-btn');
+const pointRatingContainer = document.querySelector('.pick-point-info__time-rating');
+const addressHeader =  document.querySelector('.pick-point');
 
 let pointsAddresses = [...addressData.pointAddresses];
 let courierAddresses = [...addressData.courierAddresses];
@@ -46,6 +48,8 @@ function changeSelected () {
       } else {
         address.isSelected = false;
       }
+      pointRatingContainer.classList.add('hidden')
+      addressHeader.innerText = 'Курьером'
     })
   } else {
     pointsAddresses.forEach((address) => {
@@ -54,11 +58,15 @@ function changeSelected () {
       } else {
         address.isSelected = false;
       }
+      pointRatingContainer.classList.remove('hidden')
+      addressHeader.innerText = 'Пункт выдачи'
     })
   }
   pointAddressContainer.innerText = currentSelected.address;
   totalAddressContainer.innerText = currentSelected.address;
   modalOverLay.classList.remove('displayed');
+  // courierBtn.classList.remove('selected');
+  // pointsBtn.classList.add('selected');
 }
 
 export const createAddressList = function (addressesArray, deleteHandler, selectionHandler) {

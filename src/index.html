@@ -248,158 +248,93 @@
                 </div>
               </template>          
             </div>
-          </div>      
+            </div>      
           </div>
           <div class="order-info-wrap">
-            <div class="order-details">
-              <div class="delivery">
-                <div class="delivery-details">
-                        <div class="delivery-details__header">
-                          <h2 class="delivery-details__h2">Способ доставки</h2>
-                            <button class="delivery-details__change-btn change-btn change-address-btn">
-                              Изменить
-                            </button>
-                        </div>
-                        <div class="delivery-details-info desktop-only-b">
-                          <div class="delivery-details-info__headers">
-                            <div class="pick-point">Пункт выдачи</div>
-                            <div class="delivery-price-header">Стоимость доставки</div>
-                            <div class="delivery-details__dates"></div>
-                            <!-- <div class="delivery-date">5—6 февраля</div>
-                            <div class="delivery-date">7—8 февраля</div> -->
-                          </div>
-                          <div class="delivery-details-info__lines">
-                            <div class="pick-point-info">
-                              <div class="pick-point-info__address">Бишкек, улица Ахматбека Суюмбаева, 12/1</div>
-                              <div class="pick-point-info__time-rating">
-                                <div class="rating">
-                                    <div class="rating-star-container">    
-                                      <img class="rating-star"
-                                           src="./icons/rating-star.svg">
-                                    </div>
-                                    <div class="rating-value">4.99</div>
-                                </div>
-                                <div class="work-time">Ежедневно с 10 до 21</div>        
-                              </div>   
-                            </div>
-                            <div class="delivery-price">Бесплатно</div>
-                            <div class="delivery-products-container">
-
-                            </div>
-                            <template id="deliveryProductCardTemplate">
-                              <div class="delivery-products__img-cont">
-                                <img class="product-img-delivery"
-                                     src="./img/UZCotton.png"
-                                     alt="Product picture">
-                                <span class="delivery-products__number hidden"></span>
-                              </div>
-                            </template>
-                          </div>
-                        </div>
-                        <div class="delivery-details-info-mobile">
-                        <div class="delivery-details-info-mobile-point-wrap">
-                          <div class="delivery-details-info-mobile__point">
-                            <div class="delivery-details-info-mobile__point-name-address">
-                              <p class="delivery-details-info-mobile__point-header">
-                                                    Пункт выдачи
-                                                </p>
-                                                <p class="delivery-details-info-mobile__point-address">
-                                                    Бишкек, улица Ахматбека Суюмбаева, 12/1
-                                                </p>
-                                            </div>
-                                            <div class="pick-point-info__time-rating">
-                                                <div class="rating">
-                                                    <div class="rating-star-container">
-                                                        <img class="rating-star"
-                                                            src="./icons/rating-star.svg"
-                                                        >
-                                                    </div>
-                                                    <div class="rating-value">
-                                                        4.99
-                                                    </div>
-                                                </div>
-                                                <div class="work-time">
-                                                    Ежедневно с 10 до 21 
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                        <div class="delivery-details-info-mobile__price">
-                                            <p class="delivery-details-info-mobile__price-header">
-                                                Стоимость доставки
-                                            </p>
-                                            <p class="delivery-details-info-mobile__price-value">
-                                                Бесплатно
-                                            </p>
-                                        </div>
-                        </div>
-                                    <div class="delivery-details-info-mobile-dates-wrap">
-                                        <div class="date-wrap">
-                                        <div class="delivery-date">
-                                            5—6 февраля
-                                        </div>
-                                        <div class="delivery-products-cont">
-                                            <div class="delivery-producst">
-                                                <div class="delivery-products__img-cont">
-                                                    <img class="product-img-delivery"
-                                                        src="./img/UZCotton.png"
-                                                        alt="Product picture"
-                                                    >
-                                                    <span class="delivery-products__number-mobile hidden">
-
-                                                    </span>
-                                                </div>
-                                                <div class="delivery-products__img-cont">
-                                                    <img class="product-img-delivery"
-                                                        src="./img/iphone-case.png"
-                                                        alt="Product picture"
-                                                    >
-                                                    <span class="delivery-products__number-mobile">
-                                                        184
-                                                    </span>
-                                                </div>
-                                                <div class="delivery-products__img-cont">
-                                                    <img class="product-img-delivery"
-                                                        src="./img/pencils.png"
-                                                        alt="Product picture"
-                                                    >
-                                                    <span class="delivery-products__number-mobile">
-                                                        2
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="date-wrap">
-                                        <div class="delivery-date">
-                                            7—8 февраля
-                                        </div>
-                                        <div class="delivery-products-cont">
-                                            <div class="delivery-producst">
-                                                <div class="delivery-products__img-cont">
-                                                    <img class="product-img-delivery"
-                                                        src="./img/iphone-case.png"
-                                                        alt="Product picture"
-                                                    >
-                                                    <span class="delivery-products__number-mobile">
-                                                        16
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </div>
-                        </div>
+            <div class="delivery">
+              <div class="delivery-header-info-wrapper">
+                <div class="delivery-header">
+                  <h2 class="delivery-header__h2">Способ доставки</h2>
+                  <button class="delivery-header__change-btn change-btn">Изменить</button>
                 </div>
-                <div class="back-delivery">
-                  <div class="back-delivery-container">
-                    <img class=""
-                         src="./icons/back-shipping.svg"
-                         alt="Ship back img">
-                    <p class="total-back-delivery__text-main">Обратная доставка товаров на склад при отказе —
-                      <span class="total-back-delivery__text-green">бесплатно</span>
-                    </p>     
+                <div class="delivery-info delivery-desktop">
+                  <div class="delivery-subheaders">
+                    <div class="delivery-subheaders__type">Пункт выдачи</div>
+                    <div class="delivery-subheaders__price">Стоимость доставки</div>
+                    <div class="delivery-subheaders__dates">
+                <!-- Контейнер под динамически выставляемые даты -->
+                    </div>
                   </div>
+                  <div class="delivery-details">
+                    <div class="delivery-address">
+                      <div class="delivery-address__text">Бишкек, улица Ахматбека Суюмбаева, 12/1</div>
+                      <div class="pick-point-info">
+                        <div class="rating-info">
+                          <div class="star-container">
+                            <img class="star-container__star" src="./icons/rating-star.svg" alt="starIcon">
+                          </div>
+                          <div class="rating-info__value">4.99</div>
+                        </div>
+                        <div class="pick-point-info__work-time">Ежедневно с 10 до 21</div>   
+                      </div>
+                    </div>
+                    <div class="delivery-price">Бесплатно</div>
+                    <div class="delivery-products-container">
+
+                    </div>
+                    <template id="deliveryProductCardTemplate">
+                      <div class="delivery-products__img-cont">
+                        <img class="product-img-delivery" src="./img/UZCotton.png" alt="Product picture">
+                        <span class="delivery-products__number hidden"></span>
+                      </div>
+                    </template>
+                  </div>
+                </div>
+                
+                <div class="delivery-info delivery-mobile">
+                  <div class="delivery-point-price-wrapper">
+                    <div class="delivery-point">
+                      <div class="delivery-point__address">
+                        <p class="delivery-point__address-type">Пункт выдачи</p>
+                        <p class="delivery-point__address-text">Бишкек, улица Ахматбека Суюмбаева, 12/1</p>
+                      </div>
+                      <div class="pick-point-info">
+                        <div class="rating-info">
+                          <div class="star-container">
+                            <img class="star-container__star" src="./icons/rating-star.svg" alt="starIcon">
+                          </div>
+                          <div class="rating-info__value">4.99</div>
+                        </div>
+                        <div class="pick-point-info__work-time">Ежедневно с 10 до 21</div>
+                      </div>
+                    </div>
+                    <div class="delivery-price">
+                      <p class="delivery-price__header">Стоимость доставки</p>
+                      <p class="delivery-price__value">Бесплатно</p>
+                    </div>
+                  </div>
+                  <div class="delivery-dates">
+                    <div class="date-product-wrapper">
+                      <div class="delivery-date">5—6 февраля</div>
+                      <div class="delivery-products-container-mobile">
+                        
+                      </div>
+                    </div>
+                    <div class="date-product-wrapper">
+                      <div class="delivery-date">7—8 февраля</div>
+                      <div class="delivery-products-container-mobile">
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="back-delivery">
+                <div class="back-delivery__wrapper">
+                  <img src="./icons/back-shipping.svg" alt="freeDeliveryIcon">
+                  <p class="back-delivery__main-text">Обратная доставка товаров на склад при отказе —
+                    <span class="back-delivery__green-text">бесплатно</span>
+                  </p>     
                 </div>
               </div>
             </div>
@@ -471,7 +406,7 @@
                   </div>
               </form>
             </div>   
-            </div>
+          </div>
         </div>
     </section>
     <section class="total-cont">        

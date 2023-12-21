@@ -1,10 +1,12 @@
-const deliveryDatesBlock = document.querySelector('.delivery-details__dates');
+const deliveryDatesBlock = document.querySelector('.delivery-subheaders__dates');
 const deliveryProductsContainer = document.querySelector('.delivery-products-container');
+const mobileProductsContainers = document.querySelectorAll('.delivery-products-container-mobile');
 // В контейнер добавляем линии в зависимости от числа товаров
 // В линии добавляем товары
 export const updateDeliveryBlock = function (productsArray) {
   deliveryDatesBlock.innerHTML = '';
   deliveryProductsContainer.innerHTML = '';
+  mobileProductsContainers[0].innerHTML = '';
 
   let isSeveralWarehouses = false;
   if (productsArray.length > 0) {
@@ -22,8 +24,11 @@ export const updateDeliveryBlock = function (productsArray) {
         isSeveralWarehouses = true;
         quantity = product.deliveryData.warehouseLimit;
       }
-      const newCard = createProductCard(product.img, quantity);
-      productLine.append(newCard);
+      const newDesktopCard = createProductCard(product.img, quantity);
+      productLine.append(newDesktopCard);
+
+      const newMobileCard = createProductCard(product.img, quantity);
+      mobileProductsContainers[0].append(newMobileCard);   
     })
     deliveryProductsContainer.append(productLine);
 
@@ -31,6 +36,7 @@ export const updateDeliveryBlock = function (productsArray) {
       const secondLine = createProductsLine();
       secondLine.append(createProductCard('./img/iphone-case.png', 16))
       deliveryProductsContainer.append(secondLine);
+      mobileProductsContainers[1].append(createProductCard('./img/iphone-case.png', 16))
     }
   }
 

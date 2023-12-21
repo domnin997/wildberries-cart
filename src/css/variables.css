@@ -3,6 +3,7 @@ html {
     --system-white: rgba(255, 255, 255, 1);
     --system-orange: rgba(245, 81, 35, 1);
     --background-smoky: rgba(246, 246, 250, 1);
+    --background-white: rgba(255, 255, 255, 1);
     --system-magenta: rgba(203, 17, 171, 1);
     --text-black: rgba(0, 0, 0, 1);
     --desktop-menu-border: rgba(255, 255, 255, 0.45);
