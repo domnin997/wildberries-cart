@@ -38,7 +38,6 @@ export const updateDeliveryBlock = function (productsArray) {
 
   productsArray.forEach((product) => {
     if (product.deliveryData.isSeveralDates) {
-      console.log(product.deliveryData)
       isSeveralWarehouses = true;
     }
     createProductCard(product.img, product.quantity);
