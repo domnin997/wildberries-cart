@@ -4,11 +4,13 @@ import { updateTotalPrice } from './totalBlock.js';
 import { updateDeliveryBlock } from './deliveryBlock.js';
 import { createUnavailableProductsList } from './unavailableProductsList.js';
 import {handleAddressChange} from './addressChanger.js';
+import { handleCardChanges } from './cardChanger.js';
 const productsList = document.querySelector('.products-container__products-list');
 
 let goodsArray = [];
 
 handleAddressChange();
+handleCardChanges();
 
 productData.forEach((good) => {
   const newProduct = new Product(

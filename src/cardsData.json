@@ -1,0 +1,22 @@
+[
+  {
+    "icon": "./icons/mir.svg",
+    "number": "1234 56•• •••• 1234",
+    "isSelected": true
+  },
+  {
+    "icon": "./icons/visa.svg",
+    "number": "2567 56•• •••• 8895",
+    "isSelected": false
+  },
+  {
+    "icon": "./icons/mastercard.svg",
+    "number": "3321 56•• •••• 4567",
+    "isSelected": false
+  },
+  {
+    "icon": "./icons/maestro.svg",
+    "number": "7878 56•• •••• 1111",
+    "isSelected": false
+  }
+]

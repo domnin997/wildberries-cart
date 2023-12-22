@@ -339,22 +339,22 @@
               </div>
             </div>
             <div class="payment-details">
-              <div class="payment-details__method">
-                <div class="payment-details__header">
-                  <h2 class="payment-details__header-text">Способ оплаты</h2>
-                  <button class="change-btn change-card-button">Изменить</button>
+              <div class="payment-method">
+                <div class="payment-method__header">
+                  <h2 class="payment-method__h2">Способ оплаты</h2>
+                  <button class="payment-method__change-btn change-btn">Изменить</button>
                 </div>
-                <div class="payment-details__cards">
-                <div class="payment-details__card-container">
-                  <img class="payment-system"
-                       src="./icons/mir.svg"
-                       alt="Payment system">
-                  <div class="card-details">
-                    <span class="card-number">1234 56•• •••• 1234</span>
-                    <span class="card-expiration-date">01/30</span>
+                <div class="payment-card-wrapper">
+                  <div class="payment-card">
+                    <img class="payment-system"
+                         src="./icons/mir.svg"
+                         alt="Payment system">
+                    <div class="card-details">
+                      <span class="card-details__number js__card-number">1234 56•• •••• 1234</span>
+                      <span class="card-details__expiration">01/30</span>
+                    </div>
                   </div>
-                </div>
-                  <div class="payment-details__outro">Спишем оплату с карты при получении</div>
+                  <div class="payment-card-outro">Спишем оплату с карты при получении</div>
                 </div>
               </div>
             </div>
@@ -483,7 +483,7 @@
                 <img class="payment-system"
                      src="./icons/mir.svg"
                      alt="Payment system">
-                <span class="total__card-number">1234 56•• •••• 1234</span>
+                <span class="total__card-number js__card-number">1234 56•• •••• 1234</span>
               </div>
             </div>                   
             <div class="total-card__payment-option">
@@ -525,7 +525,7 @@
   </footer>
   <div class="modal-overlay">
     <!-- Для скрытия следующего окна, добавить hidden class -->
-    <div class="change-address"> 
+    <div class="change-address hidden"> 
       <div class="change-address__header">
         <h2 class="change-address__h2">Способ доставки</h2>
         <div class="change-address__close-wrap">
@@ -599,117 +599,45 @@
       </div>
     </div>
     <div class="change-card hidden">
-            <div class="change-card__header-cont">
-                <h2 class="change-card__header">Способ оплаты</h2>
-                <div class="change-card__close-wrap">
-                    <svg class="change-card__close-icon"
-                         xmlns="http://www.w3.org/2000/svg"
-                         width="24"
-                         height="24"
-                         viewBox="0 0 24 24"
-                         fill="none"
-                    >
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.92961 17.6568C4.53909 18.0473 4.53909 18.6805 4.92961 19.071C5.32014 19.4615 5.9533 19.4615 6.34383 19.071L12.0008 13.414L17.658 19.0711C18.0485 19.4616 18.6817 19.4616 19.0722 19.0711C19.4627 18.6806 19.4627 18.0474 19.0722 17.6569L13.4151 11.9998L19.0717 6.34309C19.4623 5.95257 19.4623 5.3194 19.0717 4.92888C18.6812 4.53835 18.0481 4.53836 17.6575 4.92888L12.0008 10.5856L6.34427 4.92899C5.95374 4.53846 5.32058 4.53846 4.93005 4.92899C4.53953 5.31951 4.53953 5.95267 4.93005 6.3432L10.5866 11.9998L4.92961 17.6568Z" fill="#9797AF"/>
-                    </svg>
-                </div>
-            </div>           
-            <div class="change-card__cards-list-container">
-                <div class="change-card__cards-list">
-                    <label class="cards-list-item">
-                        <div class="cards-list-item__radio-container">
-                            <input class="change-card__stock-radio"
-                                    type="radio"
-                                    name="card"
-                                    value="1"
-                                    data-address="Бишкек, улица Табышалиева, 57"
-                                    >
-                            <span class="change-card__custom-radio"></span>
-                        </div>
-                        <div class="cards-list-item__card-info">
-                            <div class="cards-list-item__payment-system">
-                                <img class=""
-                                     src="./icons/mir.svg" 
-                                     alt="Payment system">
-                            </div>
-                            <div class="cards-list-item__card-number">
-                                1234 56•• •••• 1234
-                            </div>
-                        </div>
-                    </label>
-                    <label class="cards-list-item">
-                        <div class="cards-list-item__radio-container">
-                            <input class="change-card__stock-radio"
-                                    type="radio"
-                                    name="card"
-                                    value="2"
-                                    data-address="Бишкек, улица Табышалиева, 57"
-                                    >
-                            <span class="change-card__custom-radio"></span>
-                        </div>
-                        <div class="cards-list-item__card-info">
-                            <div class="cards-list-item__payment-system">
-                                <img class=""
-                                     src="./icons/visa.svg" 
-                                     alt="Payment system">
-                            </div>
-                            <div class="cards-list-item__card-number">
-                                1234 56•• •••• 1234
-                            </div>
-                        </div>
-                    </label>
-                    <label class="cards-list-item">
-                        <div class="cards-list-item__radio-container">
-                            <input class="change-card__stock-radio"
-                                    type="radio"
-                                    name="card"
-                                    value="3"
-                                    data-address="Бишкек, улица Табышалиева, 57"
-                                    >
-                            <span class="change-card__custom-radio"></span>
-                        </div>
-                        <div class="cards-list-item__card-info">
-                            <div class="cards-list-item__payment-system">
-                                <img class=""
-                                     src="./icons/mastercard.svg" 
-                                     alt="Payment system">
-                            </div>
-                            <div class="cards-list-item__card-number">
-                                1234 56•• •••• 1234
-                            </div>
-                        </div>
-                    </label>
-                    <label class="cards-list-item">
-                        <div class="cards-list-item__radio-container">
-                            <input class="change-card__stock-radio"
-                                    type="radio"
-                                    name="card"
-                                    value="4"
-                                    data-address="Бишкек, улица Табышалиева, 57"
-                                    >
-                            <span class="change-card__custom-radio"></span>
-                        </div>
-                        <div class="cards-list-item__card-info">
-                            <div class="cards-list-item__payment-system">
-                                <img class=""
-                                     src="./icons/maestro.svg" 
-                                     alt="Payment system">
-                            </div>
-                            <div class="cards-list-item__card-number">
-                                1234 56•• •••• 1234
-                            </div>
-                        </div>
-                    </label>
-                </div>
-            </div>
-            <div class="popup-button-container change-card-btn">
-                <div class="popup-button-wrap">
-                    <button class="popup-button change-card-button">
-                        Выбрать
-                    </button>
-                </div>
-            </div>
+      <div class="change-card__header-cont">
+        <h2 class="change-card__header">Способ оплаты</h2>
+        <div class="change-card__close-wrap">
+          <svg class="change-card__close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.92961 17.6568C4.53909 18.0473 4.53909 18.6805 4.92961 19.071C5.32014 19.4615 5.9533 19.4615 6.34383 19.071L12.0008 13.414L17.658 19.0711C18.0485 19.4616 18.6817 19.4616 19.0722 19.0711C19.4627 18.6806 19.4627 18.0474 19.0722 17.6569L13.4151 11.9998L19.0717 6.34309C19.4623 5.95257 19.4623 5.3194 19.0717 4.92888C18.6812 4.53835 18.0481 4.53836 17.6575 4.92888L12.0008 10.5856L6.34427 4.92899C5.95374 4.53846 5.32058 4.53846 4.93005 4.92899C4.53953 5.31951 4.53953 5.95267 4.93005 6.3432L10.5866 11.9998L4.92961 17.6568Z" fill="#9797AF"/>
+          </svg>
         </div>
+      </div>
+      <div class="cards-list-container">
+        <template id="cardsListItem">
+          <label class="cards-list-item">
+            <div class="cards-list-item__radio-wrapper">
+              <input class="cards-list-item__stock-radio"
+                     type="radio"
+                     name="card"
+                     value="1">
+              <span class="cards-list-item__custom-radio"></span>
+            </div>
+            <div class="card-info">
+              <div class="card-info__payment-system">
+                <img class="card-info__payment-system-icon"
+                     src="./icons/mir.svg"
+                     alt="paymentSystemIcon">
+              </div>
+              <div class="card-info__number"></div>
+            </div>
+          </label>
+        </template>
+        <div class="cards-list"> 
+    
+        </div>
+      </div>
+      <div class="popup-button-container change-card-btn">
+        <div class="popup-button-wrap">
+          <button class="popup-button change-card-button">Выбрать</button>
+        </div>
+      </div>
     </div>
+  </div>
     <div class="back-delivery-tooltip hidden">
         Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно
     </div>
