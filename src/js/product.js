@@ -19,7 +19,7 @@ export default class Product {
     this.unavailableImg = unavailableImg;
     this.color = color;
     this.size = size;
-    this.selected = false;
+    this.isSelected = false;
   }
   
   increaseQuantity () {

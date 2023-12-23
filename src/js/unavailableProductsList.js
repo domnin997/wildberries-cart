@@ -1,7 +1,8 @@
 const unavailList = document.querySelector('.unavailable-list');
 
-export const createUnavailableProductsList = function (productsArray) {
-  productsArray.forEach((product) => {
+export const createUnavailableProductsList = function (state) {
+
+  state.getData().forEach((product) => {
     const productCard = unavailableProductTemplate.content.cloneNode(true);
     const productPicture = productCard.querySelector('.product__picture');
     const productName = productCard.querySelector('.product-info__name');
