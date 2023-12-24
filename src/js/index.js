@@ -1,8 +1,9 @@
 import productData from '../productData.json' assert {type: "json"};
-import Product from './product.js';
+import Product from './productConstructor.js';
 import { createUnavailableProductsList } from './unavailableProductsList.js';
 import {handleAddressChange} from './addressChanger.js';
 import { handleCardChanges } from './cardChanger.js';
+import { manageOrderBtn } from './orderBtnManager.js';
 import renderProductsList from './availableProductsList.js';
 
 function createState (products) {
@@ -32,7 +33,7 @@ function createState (products) {
 const state = createState(productData);
 handleAddressChange();
 handleCardChanges();
-
+manageOrderBtn();
 createUnavailableProductsList(state)
 
 renderProductsList(state)

@@ -57,7 +57,7 @@
   }
 
   .added-products-total__closed {
-    display: none;
+    display: block;
     width: 100%;
     gap: 11px;
     font-size: 16px;

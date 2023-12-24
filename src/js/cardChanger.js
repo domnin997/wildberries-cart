@@ -16,6 +16,12 @@ export const handleCardChanges = function () {
     changeCardModal.classList.remove('hidden');
       createCardsList(cardsData);
   })
+  modalOverlay.addEventListener('click', (e) => {
+    if (e.target.classList.contains('modal-overlay')) {
+      modalOverlay.classList.remove('displayed');
+      changeCardModal.classList.add('hidden');
+    }
+  })
   confirmChange[1].addEventListener('click', () => {
     cardsData.forEach((card) => {
       if (card.number !== currentSelected.number) {

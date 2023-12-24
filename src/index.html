@@ -79,12 +79,12 @@
                 <div class="products-header__text">
                   <span>Выбрать все</span>
                 </div>
-                <div class="added-products-total__closed">
+                <div class="added-products-total__closed hidden">
                   <span class="added-products-total__closed-number"></span>   
                   <span class="added-products-total__closed-price"></span>
                 </div>
                 <div class="products-header__icon">
-                  <img  class="show-hide-icon"
+                  <img  class="show-hide-icon js__show-hide-available"
                         src="./icons/show-hide-icon.svg"
                         alt="show-hide icon">
                 </div>
@@ -111,12 +111,12 @@
                       <div class="product-info__name-price-wrap">
                         <div class="product-price-mobile">
                           <div class="product-price-mobile__current">
-                            <p class="product-price__value-mobile">522</p>
+                            <p class="product-price__value-mobile js__discounted-price">522</p>
                             <p class="product-price__currency">&nbspсом</p>
                           </div>
                           <div class="product-price-mobile__old">
                             <p class="product-price__old">
-                            <span class="product-price__old-value-mobile">1 051</span><span>сом</span>
+                            <span class="product-price__old-value-mobile js__standard-price">1 051</span><span>сом</span>
                             </p>
                           </div>
                         </div>
@@ -158,11 +158,11 @@
                     </div>
                     <div class="product-price">
                       <p class="product-price__current">
-                        <span class="product-price__value">522</span>
+                        <span class="product-price__value js__discounted-price">522</span>
                         <span class="product-price__currency">&nbspсом</span>
                       </p>
                       <p class="product-price__old old-desktop">
-                        <span class="product-price__old-value-desktop">1 051</span>
+                        <span class="product-price__old-value-desktop js__standard-price">1 051</span>
                         <span>сом</span>
                       </p>
                     </div>
@@ -187,9 +187,9 @@
             </div>
           <div class="cart__products-container products-container">
             <div class="products-header">           
-              <div class="products-header__text unavailable-header">Отсутствуют · 3 товара</div>
+              <div class="products-header__text js__unavailable-list-header">Отсутствуют · 3 товара</div>
               <div class="products-header__icon">
-                <img class="show-hide-icon"
+                <img class="show-hide-icon js__show-hide-unavailable"
                      src="./icons/show-hide-icon.svg"
                      alt="show-hide icon">
               </div>
@@ -254,7 +254,7 @@
               <div class="delivery-header-info-wrapper">
                 <div class="delivery-header">
                   <h2 class="delivery-header__h2">Способ доставки</h2>
-                  <button class="delivery-header__change-btn change-btn">Изменить</button>
+                  <button class="delivery-header__change-btn change-btn js__change-address-btn">Изменить</button>
                 </div>
                 <div class="delivery-info delivery-desktop">
                   <div class="delivery-subheaders">
@@ -353,7 +353,7 @@
                       <span class="card-details__expiration">01/30</span>
                     </div>
                   </div>
-                  <div class="payment-card-outro">Спишем оплату с карты при получении</div>
+                  <div class="payment-card-outro js__card-outro">Спишем оплату с карты при получении</div>
                 </div>
               </div>
             </div>
@@ -449,7 +449,7 @@
                 <p class="total-delivery__text total-subheader-txt">
                     Доставка в пункт выдачи
                 </p>
-                <img class="change-img change-address-btn"
+                <img class="change-img js__change-address-btn"
                      src="./icons/change-img.svg"
                      alt="Change image">
               </div>   
@@ -493,7 +493,7 @@
                 <label  class="order-label" for="6"></label>
                 <p class="total-card__payment-option-text">Списать оплату сразу</p>
               </div>
-              <div class="total-card__payment-option-info">
+              <div class="total-card__payment-option-info js__card-outro">
                 Спишем оплату с карты при получении
               </div>
             </div>

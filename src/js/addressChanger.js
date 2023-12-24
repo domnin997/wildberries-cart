@@ -1,10 +1,11 @@
 import addressData from '../deliveryAddresses.json' assert {type: "json"};
 
+const changeAddressModal = document.querySelector('.change-address');
 const linesContainer = document.querySelector('.change-address__list-addresses');
 const pointsBtn = document.querySelector('.pick-points');
 const courierBtn = document.querySelector('.courier-address');
 const modalOverLay = document.querySelector('.modal-overlay');
-const changeAddressBtns = document.querySelectorAll('.change-address-btn');
+const changeAddressBtns = document.querySelectorAll('.js__change-address-btn');
 const pointAddressContainer = document.querySelector('.pick-point-info__address');
 const totalAddressContainer = document.querySelector('.total-delivery__address');
 const confirmAddress = document.querySelector('.confirm-address-btn');
@@ -109,12 +110,14 @@ export const handleAddressChange = function () {
   changeAddressBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       modalOverLay.classList.add('displayed');
+      changeAddressModal.classList.toggle('hidden');
       createAddressList(pointsAddresses, handlePointDelete, handlePointSelection);
     })
   })
   modalOverLay.addEventListener('click', (e) => {
     if (e.target.classList.contains('modal-overlay')) {
       modalOverLay.classList.remove('displayed');
+      changeAddressModal.classList.remove('hidden')
       courierBtn.classList.remove('selected');
       pointsBtn.classList.add('selected');
       isCourierAddress = false;

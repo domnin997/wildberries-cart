@@ -1,9 +1,7 @@
 import { getDOMElements } from "./DOMElements.js";
-
 const {inputFields, inputUpLabels, inputDownLabels, orderBtn} = getDOMElements();
 
 let userName, userSurname, userEmail, userTel, userTIN, clicked = false;
-
 const userData = [userName, userSurname, userEmail, userTel, userTIN];
 const validated = [false, false, false, false, false];
 
