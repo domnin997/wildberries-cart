@@ -1,8 +1,6 @@
-const deliveryDatesBlock = document.querySelector('.delivery-subheaders__dates');
-const deliveryProductsContainer = document.querySelector('.delivery-products-container');
-const mobileProductsContainers = document.querySelectorAll('.delivery-products-container-mobile');
-// В контейнер добавляем линии в зависимости от числа товаров
-// В линии добавляем товары
+import { getDOMElements } from "./DOMEls.js";
+const {deliveryDatesBlock, deliveryProductsContainer, mobileProductsContainers} = getDOMElements();
+
 export const updateDeliveryBlock = function (productsArray) {
   deliveryDatesBlock.innerHTML = '';
   deliveryProductsContainer.innerHTML = '';

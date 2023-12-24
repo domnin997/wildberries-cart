@@ -7,6 +7,7 @@
     "discount": "51",
     "quantity": "2",
     "maxAvailable": "2",
+    "isSelected": true,
     "delivaryData": {
       "isSeveralDates": false
     },
@@ -25,6 +26,7 @@
     "currency": "сом",
     "discount": "8",
     "maxAvailable": "230",
+    "isSelected": true,
     "delivaryData": {
       "isSeveralDates": true,
       "warehouseLimit": "184"
@@ -45,6 +47,7 @@
     "currency": "сом",
     "discount": "48",
     "maxAvailable": "2",
+    "isSelected": true,
     "delivaryData": {
       "isSeveralDates": false
     },

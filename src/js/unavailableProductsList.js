@@ -10,11 +10,9 @@ export const createUnavailableProductsList = function (state) {
     const deleteBtns = productCard.querySelectorAll('.delete-icon');
 
     deleteBtns.forEach((btn) => {
-        btn.addEventListener('click', () => {
-        //   deleteProduct(goodsArray, good.id);
-          btn.closest('.products-list-item').remove();
-        //   updateDeliveryBlock(goodsArray);
-        })
+      btn.addEventListener('click', () => {
+        btn.closest('.products-list-item').remove();
+      })
     })
 
     if (product.size) {
@@ -30,5 +28,4 @@ export const createUnavailableProductsList = function (state) {
 
     unavailList.append(productCard);
   })
-
 }

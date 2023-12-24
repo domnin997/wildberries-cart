@@ -1,15 +1,15 @@
 export default class Product {
   constructor(id, name, price, discount, quantity,
-    maxAvailable, isSeveralWarehouses = false, deliveryData,
+    maxAvailable, isSelected, isSeveralWarehouses = false, deliveryData,
     color, size, img, unavailableImg, warehouse, entity) {
     this.id = id;
     this.name = name;
-    this.price = +price;
+    this.price = (price*100)/100;
     this.discount = +discount;
-    this.discountedPrice = price*((100 - discount)/100);
+    this.discountedPrice = ((price*100)/100)*((100 - discount)/100);
     this.quantity = +quantity;
-    this.totalDiscountedPrice = this.discountedPrice * this.quantity;
-    this.totalStandardPrice = this.price * this.quantity;
+    this.totalDiscountedPrice = this.quantity * this.discountedPrice;
+    this.totalStandardPrice = this.quantity * this.price;
     this.maxAvailable = +maxAvailable;
     this.deliveryData = deliveryData;
     this.isSeveralWarehouses = isSeveralWarehouses;
@@ -19,7 +19,7 @@ export default class Product {
     this.unavailableImg = unavailableImg;
     this.color = color;
     this.size = size;
-    this.isSelected = false;
+    this.isSelected = isSelected;
   }
   
   increaseQuantity () {
@@ -37,12 +37,11 @@ export default class Product {
   }
 
   _updateTotalPrices () {
-    this.totalDiscountedPrice = this.discountedPrice * this.quantity;
-    this.totalStandardPrice = this.price * this.quantity;
+    this.totalDiscountedPrice = this.quantity * (this.discountedPrice*100)/100;
+    this.totalStandardPrice = this.quantity * (this.price*100)/100;
   }
 
   toggleSelected () {
-    this.selected = !this.selected;
+    this.isSelected = !this.isSelected;
   }
-
 }
