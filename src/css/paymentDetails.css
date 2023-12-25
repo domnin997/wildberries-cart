@@ -63,6 +63,19 @@
   line-height: 16px;
   color: var(--system-gray);
 }
+.payment-method__change-btn {
+  display: flex;
+  padding-top: 3px;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+  text-align: right;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  color: var(--system-magenta);
+}
 @media (max-width: 1023px) {
   .payment-details {
     padding: 16px 16px 24px 16px;
@@ -93,5 +106,8 @@
     font-size: 24px;
     line-height: 32px;
     letter-spacing: -0.24px;
+  }
+  .payment-method__change-btn {
+    padding-top: 7px;
   }
 }

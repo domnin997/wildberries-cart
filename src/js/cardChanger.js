@@ -1,4 +1,4 @@
-import cardsData from '../cardsData.json' assert {type: "json"};
+import cardsData from '../data/cardsData.json' assert {type: "json"};
 
 const changeCardBtn = document.querySelector('.payment-method__change-btn');
 const modalOverlay = document.querySelector('.modal-overlay');

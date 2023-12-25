@@ -6,6 +6,7 @@ export const getDOMElements = function () {
     totalQuantityBlock: document.querySelector('.total-price__details-num'),
     totalQuantityTextBlock: document.querySelector('.total-price__details-text'),
     
+    cartCounter: document.querySelector('.menu-icons__number-of-items'),
     payNowLabel: document.querySelector('.order-label'),
     btnNoSum: document.querySelector('.no-sum'),
     btnWithSum: document.querySelector('.with-sum'),

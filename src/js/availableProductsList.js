@@ -3,7 +3,8 @@ import { updateTotalPrice } from './totalBlock.js';
 import { updateDeliveryBlock } from './deliveryBlock.js';
 import { getDOMElements } from './DOMEls.js';
 
-const {showHideAvailableIcon, openHeaderText, openHeaderCheckbox, closedHeader} = getDOMElements();
+const {showHideAvailableIcon, openHeaderText, 
+       openHeaderCheckbox, closedHeader, cartCounter} = getDOMElements();
 
 export default function renderProductsList (appState) {
   
@@ -48,13 +49,13 @@ export default function renderProductsList (appState) {
         appState.deleteProduct(product.id);
         btn.closest('.products-list-item').remove();
         updatePageInfo(appState.getData());
+        updateCartCounter();
       })
     })
 
     if (product.isSelected) {
         checkBox.checked = true;
     }
-
     if (product.size) {
       productSpecifications[1].innerText = `Размер: ${product.size}`;
     }
@@ -73,6 +74,11 @@ export default function renderProductsList (appState) {
     function updateProductCardInfo () {
       discountedPriceBlock.forEach((container) => {
         container.innerText = product.totalDiscountedPrice.toLocaleString();
+        if (product.totalDiscountedPrice.toLocaleString().length > 11) {
+          container.classList.add('small-letters');
+        } else {
+          container.classList.remove('small-letters');
+        }
       })
       standardPrice.forEach((container) => {
         container.innerText = product.totalStandardPrice.toLocaleString();
@@ -90,6 +96,15 @@ export default function renderProductsList (appState) {
   function updatePageInfo (productsArray) {
     updateDeliveryBlock(productsArray);
     updateTotalPrice(productsArray);
+  }
+  function updateCartCounter () {
+    const numberOfProducts = appState.getData().length;
+    if (numberOfProducts > 0) {
+      cartCounter.innerText = numberOfProducts;
+
+    } else if (numberOfProducts === 0) {
+      cartCounter.classList.add('hidden');
+    }
   }
   updatePageInfo(appState.getData());
 }

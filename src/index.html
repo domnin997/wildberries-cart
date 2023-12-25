@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/reset_styles.css">
   <link rel="stylesheet" href="./css/fonts.css">
-  <link rel="stylesheet" href="reset_styles.css">
   <link rel="stylesheet" href="./css/main.css">
   <title>WB</title>
 </head>
@@ -83,8 +83,8 @@
                   <span class="added-products-total__closed-number"></span>   
                   <span class="added-products-total__closed-price"></span>
                 </div>
-                <div class="products-header__icon">
-                  <img  class="show-hide-icon js__show-hide-available"
+                <div class="products-header__icon js__show-hide-available">
+                  <img  class="show-hide-icon"
                         src="./icons/show-hide-icon.svg"
                         alt="show-hide icon">
                 </div>
@@ -93,7 +93,7 @@
               <div class="products-container__products-list products-list">
                 <template id="productCardTemplate">
                 <div class="products-list-item available-item">                            
-                  <div class="product prod-1">                                
+                  <div class="product">                                
                     <div class="product-checkbox-pic">                                    
                       <div class="product-checkbox-cont"> 
                         <input class="wb-checkbox product__checkbox"
@@ -105,10 +105,10 @@
                              src="./img/UZCotton.png"
                              alt="Product picture">
                       </div>
-                      <p class="product-size mobile-only">56</p>
+                      <p class="product-size-mobile">56</p>
                     </div>                             
                     <div class="product-info">                                  
-                      <div class="product-info__name-price-wrap">
+                      <div class="product-name-price-wrap">
                         <div class="product-price-mobile">
                           <div class="product-price-mobile__current">
                             <p class="product-price__value-mobile js__discounted-price">522</p>
@@ -188,8 +188,8 @@
           <div class="cart__products-container products-container">
             <div class="products-header">           
               <div class="products-header__text js__unavailable-list-header">Отсутствуют · 3 товара</div>
-              <div class="products-header__icon">
-                <img class="show-hide-icon js__show-hide-unavailable"
+              <div class="products-header__icon js__show-hide-unavailable">
+                <img class="show-hide-icon"
                      src="./icons/show-hide-icon.svg"
                      alt="show-hide icon">
               </div>
@@ -204,7 +204,7 @@
                         <img class="product__picture unavail"
                              src="./img/UZCotton_amended.jpeg"
                              alt="Product picture">
-                        <p class="product-size mobile-only"></p>
+                        <p class="product-size-mobile"></p>
                       </div>
                     </div>
                     <div class="product-info unavailable-info">
@@ -254,14 +254,14 @@
               <div class="delivery-header-info-wrapper">
                 <div class="delivery-header">
                   <h2 class="delivery-header__h2">Способ доставки</h2>
-                  <button class="delivery-header__change-btn change-btn js__change-address-btn">Изменить</button>
+                  <button class="delivery-header__change-btn js__change-address-btn">Изменить</button>
                 </div>
                 <div class="delivery-info delivery-desktop">
                   <div class="delivery-subheaders">
                     <div class="delivery-subheaders__type">Пункт выдачи</div>
                     <div class="delivery-subheaders__price">Стоимость доставки</div>
                     <div class="delivery-subheaders__dates">
-                <!-- Контейнер под динамически выставляемые даты -->
+                
                     </div>
                   </div>
                   <div class="delivery-details">
@@ -341,7 +341,7 @@
               <div class="payment-method">
                 <div class="payment-method__header">
                   <h2 class="payment-method__h2">Способ оплаты</h2>
-                  <button class="payment-method__change-btn change-btn">Изменить</button>
+                  <button class="payment-method__change-btn">Изменить</button>
                 </div>
                 <div class="payment-card-wrapper">
                   <div class="payment-card">
@@ -357,8 +357,9 @@
                 </div>
               </div>
             </div>
+
             <div class="client">
-              <h2 class="client__header">Получатель</h2>
+              <h2 class="client__h2">Получатель</h2>
               <form class="client-form" action="">
                   <div class="client-inputs-wrap">
                     <div class="client-input-block">

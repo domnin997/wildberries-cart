@@ -1,10 +1,11 @@
-import productData from '../productData.json' assert {type: "json"};
+import productData from '../data/productData.json' assert {type: "json"};
 import Product from './productConstructor.js';
 import { createUnavailableProductsList } from './unavailableProductsList.js';
 import {handleAddressChange} from './addressChanger.js';
 import { handleCardChanges } from './cardChanger.js';
 import { manageOrderBtn } from './orderBtnManager.js';
 import renderProductsList from './availableProductsList.js';
+import { manageClientInputs } from './inputsValidator.js';
 
 function createState (products) {
   let productsArray = products.map((product) => {
@@ -37,3 +38,4 @@ manageOrderBtn();
 createUnavailableProductsList(state)
 
 renderProductsList(state)
+manageClientInputs();

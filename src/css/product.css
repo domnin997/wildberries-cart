@@ -6,53 +6,44 @@
   gap: 20px;
   align-self: stretch;
 }
-
 .product {
   width: 100%;
   display: grid;
   grid-template-columns: 22px 72px 1fr 226px;
   gap: 13px;
 }
-
 .product__checkbox-cont {
   position: relative;
 }
-
 .product__checkbox + label {
   position: absolute;
 }
-
 .counter {
   display: grid;
 }
-
 .counter__field {
   position: relative;
   background-color: rgb(255, 255, 255);
   border-radius: 8px;
 }
-
 .counter__number {
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 .minus-img {
   position: absolute;
   top: 50%;
   left: 4%;
   transform: translateY(-50%);
 }
-
 .plus-img {
   position: absolute;
   top: 50%;
   right: 4%;
   transform: translateY(-50%);
 }
-
 @media (min-width: 1024px) {
   .product__checkbox-cont {
     width: 22px;

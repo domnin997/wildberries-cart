@@ -1,4 +1,4 @@
-import addressData from '../deliveryAddresses.json' assert {type: "json"};
+import addressData from '../data/deliveryAddresses.json' assert {type: "json"};
 
 const changeAddressModal = document.querySelector('.change-address');
 const linesContainer = document.querySelector('.change-address__list-addresses');
@@ -66,8 +66,6 @@ function changeSelected () {
   pointAddressContainer.innerText = currentSelected.address;
   totalAddressContainer.innerText = currentSelected.address;
   modalOverLay.classList.remove('displayed');
-  // courierBtn.classList.remove('selected');
-  // pointsBtn.classList.add('selected');
 }
 
 export const createAddressList = function (addressesArray, deleteHandler, selectionHandler) {
