@@ -24,6 +24,7 @@ export default function renderProductsList (appState) {
     const entityBlock = productCard.querySelector('.product-info__entity');
     const checkBox = productCard.querySelector('.product__checkbox');
     const checkBoxLabel = productCard.querySelector('.product__label');
+    const productsLeft = productCard.querySelector('.quantity-container__prod-left');
 
     plusBtn.addEventListener('click', () => {
       product.increaseQuantity();
@@ -56,13 +57,18 @@ export default function renderProductsList (appState) {
     })
 
     if (product.isSelected) {
-        checkBox.checked = true;
+      checkBox.checked = true;
     }
     if (product.size) {
       productSpecifications[1].innerText = `Размер: ${product.size}`;
     }
     if (product.color) {
       productSpecifications[0].innerText = `Цвет: ${product.color}`;
+    }
+    if (product.maxAvailable < 5) {
+      productsLeft.innerText = `Осталось ${product.maxAvailable} шт.`;
+    } else {
+      productsLeft.innerText = null;
     }
 
     img.src = product.img;
@@ -145,5 +151,5 @@ export default function renderProductsList (appState) {
   }
   updatePageInfo(appState.getData());
   updateHeaderCheckbox();
-  handleHeaderCheckboxClick()
+  handleHeaderCheckboxClick();
 }

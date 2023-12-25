@@ -6,6 +6,7 @@
   background-color: var(--background-white);
 }
 .client-form {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -15,7 +16,7 @@
   font-weight: 700;
   color: var(--text-black);
 }
-.client-inputs-wrap {
+.client-inputs-wrapper {
   display: flex;
   align-items: flex-start;
   align-self: stretch;
@@ -27,7 +28,7 @@
   align-items: flex-start;
   align-self: stretch;
 }
-.client-input-block__up-label {
+.input-upper-label {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,7 +39,7 @@
   font-style: normal;
   font-weight: 400;
 }
-.client-input-block__wrap {
+.input-label-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -46,7 +47,7 @@
   gap: 4px;
   align-self: stretch;
 }
-.client-input-block__type-field {
+.client-input {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,7 +58,7 @@
   border-color: var(--rulers-rulers-input);
   padding-bottom: 3px;
 }
-.client-input-block__down-label {
+.input-lower-label {
   color: var(--system-orange);
   display: flex;
   flex-direction: column;
@@ -70,19 +71,19 @@
   font-weight: 400;
   line-height: 14px;
 }
-.client-input-block__type-field[type=text],
-.client-input-block__type-field[type=tel],
-.client-input-block__type-field[type=email]  {
+.client-input-block__input[type=text],
+.client-input-block__input[type=tel],
+.client-input-block__input[type=email]  {
   color: var(--text-black);
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
 }
-.client-input-block__type-field::-moz-placeholder,
-.client-input-block__type-field[type=text]::-moz-placeholder,
-.client-input-block__type-field::placeholder,
-.client-input-block__type-field[type=text]::placeholder {
+.client-input-block__input::-moz-placeholder,
+.client-input-block__input[type=text]::-moz-placeholder,
+.client-input-block__input::placeholder,
+.client-input-block__input[type=text]::placeholder {
   color: var(--system-gray);
   font-size: 16px;
   font-style: normal;
@@ -96,7 +97,7 @@
   font-weight: 400;
   line-height: 14px;
 }
-.label-not-displayed {
+.hidden-label {
   opacity: 0;
 }
 .incorrect-input {
@@ -114,10 +115,9 @@
     letter-spacing: -0.2px;
   }
   .client-form {
-    width: 100%;
     gap: 16px;
   }
-  .client-inputs-wrap {
+  .client-inputs-wrapper {
     flex-direction: column;
     gap: 16px;
   }
@@ -125,7 +125,7 @@
     height: 56px;
     gap: 3px;
   }
-  .client-input-block__up-label {
+  .input-upper-label {
     font-size: 12px;
     line-height: 14px;
   }
@@ -145,7 +145,7 @@
     max-width: 700px;
     gap: 0px;
   }
-  .client-inputs-wrap {
+  .client-inputs-wrapper {
     max-width: 100%;
     flex-direction: row;
     gap: 24px;
@@ -156,7 +156,7 @@
     gap: 2px;
     flex: 1 0 0;
   }
-  .client-input-block__up-label {
+  .input-upper-label {
     font-size: 13px;
     line-height: 16px;
   }

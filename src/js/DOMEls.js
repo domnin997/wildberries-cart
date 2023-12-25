@@ -11,6 +11,7 @@ export const getDOMElements = function () {
     btnNoSum: document.querySelector('.no-sum'),
     btnWithSum: document.querySelector('.with-sum'),
     cardOutroBlocks: document.querySelectorAll('.js__card-outro'),
+    totalOrderBtns: document.querySelectorAll('.total-order-btn'),
 
     deliveryDatesBlock: document.querySelector('.delivery-subheaders__dates'),
     deliveryProductsContainer: document.querySelector('.delivery-products-container'),
@@ -29,5 +30,9 @@ export const getDOMElements = function () {
     unavailableList: document.querySelector('.unavailable-list'),
     unavailableListHeader: document.querySelector('.js__unavailable-list-header'),
     showHideUnavailableIcon: document.querySelector('.js__show-hide-unavailable'),
+
+    upperInputLabel: document.querySelectorAll('.input-upper-label'),
+    lowerInputLabel: document.querySelectorAll('.input-lower-label'),
+    clientInputFields: document.querySelectorAll('.client-input'),
   }
 }
