@@ -4,7 +4,8 @@ import { updateDeliveryBlock } from './deliveryBlock.js';
 import { getDOMElements } from './DOMEls.js';
 
 const {showHideAvailableIcon, openHeaderText, 
-       openHeaderCheckbox, closedHeader, cartCounter} = getDOMElements();
+       openHeaderCheckbox, closedHeader, cartCounter,
+       availableHeaderCheckbox} = getDOMElements();
 
 export default function renderProductsList (appState) {
   
@@ -42,6 +43,7 @@ export default function renderProductsList (appState) {
       product.toggleSelected();
       checkBox.checked = !checkBox.checked;
       updatePageInfo(appState.getData());
+      updateHeaderCheckbox();
     })
 
     deleteBtns.forEach((btn) => {
@@ -93,10 +95,12 @@ export default function renderProductsList (appState) {
     showHideAvailableIcon.classList.toggle('rotate180');
     productsList.classList.toggle('hidden');
   })
+
   function updatePageInfo (productsArray) {
     updateDeliveryBlock(productsArray);
     updateTotalPrice(productsArray);
   }
+
   function updateCartCounter () {
     const numberOfProducts = appState.getData().length;
     if (numberOfProducts > 0) {
@@ -106,5 +110,40 @@ export default function renderProductsList (appState) {
       cartCounter.classList.add('hidden');
     }
   }
+
+  function updateHeaderCheckbox () {
+    if (appState.getData().every((product) => {return product.isSelected === true})) {
+      availableHeaderCheckbox.checked = true;
+    } else {
+      availableHeaderCheckbox.checked = false;
+    }
+  }
+
+  function handleHeaderCheckboxClick () {
+    openHeaderCheckbox.addEventListener('click', () => {
+      const checkboxes = document.querySelectorAll('.product__checkbox');
+      if (availableHeaderCheckbox.checked === true) {
+        checkboxes.forEach((checkbox) => {
+          checkbox.checked = false;
+        })
+        appState.getData().forEach((product) => {
+          product.isSelected = false;
+        })
+        openHeaderCheckbox.checked = !openHeaderCheckbox.checked;
+        console.log(availableHeaderCheckbox.checked)
+      } else {
+        checkboxes.forEach((checkbox) => {
+          checkbox.checked = true;
+        })
+        appState.getData().forEach((product) => {
+          product.isSelected = true;
+        })
+        openHeaderCheckbox.checked = !openHeaderCheckbox.checked;
+      }
+    updatePageInfo(appState.getData());
+    })
+  }
   updatePageInfo(appState.getData());
+  updateHeaderCheckbox();
+  handleHeaderCheckboxClick()
 }

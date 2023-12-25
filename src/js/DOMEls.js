@@ -22,6 +22,7 @@ export const getDOMElements = function () {
     closedHeader: document.querySelector('.added-products-total__closed'),
     openHeaderText: document.querySelector('.products-header__text'),
     openHeaderCheckbox: document.querySelector('.header__label'),
+    availableHeaderCheckbox: document.querySelector('.products-header__checkbox'),
 
     orderBtnSum: document.querySelector('.order-sum'),
 
