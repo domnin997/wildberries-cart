@@ -1,34 +1,32 @@
 import cardsData from '../data/cardsData.json' assert {type: "json"};
+import {getDOMElements} from './DOMElements.js';
 
-const changeCardBtn = document.querySelector('.payment-method__change-btn');
-const modalOverlay = document.querySelector('.modal-overlay');
-const changeCardModal = document.querySelector('.change-card');
-const cardsList = document.querySelector('.cards-list');
-const confirmChange = document.querySelectorAll('.change-card-button');
-const paymentSystemIcons = document.querySelectorAll('.payment-system');
-const cardNumbers = document.querySelectorAll('.js__card-number');
+const {changeCardBtns, modalOverLay, changeCardModal, cardsList,
+       confirmCardChange, paymentSystemIcons, cardsNumbers, closeModalBtns} = getDOMElements();
 
-let currentSelected = null;
+let currentSelectedCard = null;
 
-export const handleCardChanges = function () {
-  changeCardBtn.addEventListener('click', () => {
-    modalOverlay.classList.toggle('displayed');
-    changeCardModal.classList.remove('hidden');
+export const handleCardChange = function () {
+  changeCardBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      modalOverLay.classList.add('displayed');
+      changeCardModal.classList.remove('hidden');
       createCardsList(cardsData);
+    })
   })
-  modalOverlay.addEventListener('click', (e) => {
-    if (e.target.classList.contains('modal-overlay')) {
-      modalOverlay.classList.remove('displayed');
-      changeCardModal.classList.add('hidden');
-    }
+
+  modalOverLay.addEventListener('click', handleModalClose);
+  closeModalBtns.forEach((btn) => {
+    btn.addEventListener('click', handleModalClose)
   })
-  confirmChange[1].addEventListener('click', () => {
+
+  confirmCardChange.addEventListener('click', () => {
     cardsData.forEach((card) => {
-      if (card.number !== currentSelected.number) {
+      if (card.number !== currentSelectedCard.number) {
         card.isSelected = false;
       } else {
         card.isSelected = true;
-        cardNumbers.forEach((field) => {
+        cardsNumbers.forEach((field) => {
           field.innerText = card.number;
         })
         paymentSystemIcons.forEach((icon) => {
@@ -36,9 +34,16 @@ export const handleCardChanges = function () {
         })
       }
     })
-    modalOverlay.classList.toggle('displayed');
+    modalOverLay.classList.remove('displayed');
     changeCardModal.classList.add('hidden');
   })
+}
+
+function handleModalClose (e) {
+  if (e.target.classList.contains('modal-overlay') || e.target.classList.contains('close-modal-icon')) {
+    modalOverLay.classList.remove('displayed');
+    changeCardModal.classList.add('hidden');
+  }
 }
 
 function createCardsList () {
@@ -54,10 +59,10 @@ function createCardsList () {
     cardNumber.innerText = card.number;
     cardRadio.checked = card.isSelected;
     if (card.isSelected) {
-        currentSelected = card;
+      currentSelectedCard = card;
     }
     label.addEventListener('click', () => {
-      currentSelected = card;
+      currentSelectedCard = card;
     })
     cardsList.append(cardTemplate);
   })

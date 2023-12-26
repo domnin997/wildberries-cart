@@ -1,5 +1,6 @@
 import { getDOMElements } from "./DOMElements.js";
-const {deliveryDatesBlock, deliveryProductsContainer, mobileProductsContainers} = getDOMElements();
+const {deliveryDatesBlock, deliveryProductsContainer, mobileProductsContainers,
+       freeBackDelivery, backdeliveryTooltips} = getDOMElements();
 
 export const updateDeliveryBlock = function (productsArray) {
   deliveryDatesBlock.innerHTML = '';
@@ -60,6 +61,14 @@ export const updateDeliveryBlock = function (productsArray) {
       deliveryDatesBlock.append(deliveryLines2);
     }
   }
+}
+
+export const handleBackDeliveryTooltip = function () {
+  freeBackDelivery.forEach((icon) => {
+    icon.addEventListener('mouseover', () => {
+      console.log('Yep')
+    })
+  })
 }
 
 function createProductCard (img, quantity) {

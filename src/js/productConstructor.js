@@ -1,7 +1,7 @@
 export default class Product {
   constructor(id, name, price, discount, quantity,
     maxAvailable, isSelected, isSeveralWarehouses = false, deliveryData,
-    color, size, img, unavailableImg, warehouse, entity) {
+    color, size, img, unavailableImg, warehouse, entity, entityNum, entityAddress) {
     this.id = id;
     this.name = name;
     this.price = (price*100)/100;
@@ -20,6 +20,8 @@ export default class Product {
     this.color = color;
     this.size = size;
     this.isSelected = isSelected;
+    this.entityNum = entityNum;
+    this.entityAddress = entityAddress;
   }
   
   increaseQuantity () {

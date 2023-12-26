@@ -131,8 +131,14 @@
                           <img class="product-info__location-icon"
                                src="./icons/info_icon.svg"
                                alt="Location icon">
+                          <div class="entity-tooltip hidden">
+                            <h3 class="entity-name"></h3>
+                            <p class="entity-number"></p>
+                            <p class="entity-address"></p>
+                          </div>
                         </div>    
-                      </div>    
+                      </div>
+                         
                     </div>
                   </div>
                   <div class="quantity-and-price">
@@ -156,6 +162,10 @@
                       <p class="product-price__old old-desktop">
                         <span class="product-price__old-value-desktop js__standard-price">1 051</span>
                         <span>сом</span>
+                        <div class="discount-tooltip hidden">
+                          <span class="discount-percent">200</span>
+                          <span class="discount-sum">14</span>
+                        </div>
                       </p>
                     </div>
                     <div class="fav-del-mobile">
@@ -232,7 +242,7 @@
                 </div>
                 <div class="delivery-info delivery-desktop">
                   <div class="delivery-subheaders">
-                    <div class="delivery-subheaders__type">Пункт выдачи</div>
+                    <div class="delivery-subheaders__type js__delivery-type">Пункт выдачи</div>
                     <div class="delivery-subheaders__price">Стоимость доставки</div>
                     <div class="delivery-subheaders__dates">
                 
@@ -240,7 +250,7 @@
                   </div>
                   <div class="delivery-details">
                     <div class="delivery-address">
-                      <div class="delivery-address__text">Бишкек, улица Ахматбека Суюмбаева, 12/1</div>
+                      <div class="delivery-address__text js__delivery-address">Бишкек, улица Ахматбека Суюмбаева, 12/1</div>
                       <div class="pick-point-info">
                         <div class="rating-info">
                           <div class="star-container">
@@ -268,8 +278,8 @@
                   <div class="delivery-point-price-wrapper">
                     <div class="delivery-point">
                       <div class="delivery-point__address">
-                        <p class="delivery-point__address-type">Пункт выдачи</p>
-                        <p class="delivery-point__address-text">Бишкек, улица Ахматбека Суюмбаева, 12/1</p>
+                        <p class="delivery-point__address-type js__delivery-type">Пункт выдачи</p>
+                        <p class="delivery-point__address-text js__delivery-address">Бишкек, улица Ахматбека Суюмбаева, 12/1</p>
                       </div>
                       <div class="pick-point-info">
                         <div class="rating-info">
@@ -306,8 +316,11 @@
                 <div class="back-delivery__wrapper">
                   <img src="./icons/back-shipping.svg" alt="freeDeliveryIcon">
                   <p class="back-delivery__main-text">Обратная доставка товаров на склад при отказе —
-                    <span class="back-delivery__green-text">бесплатно</span>
-                  </p>     
+                    <span class="back-delivery__green-text js__total-back-delivery">бесплатно</span>
+                  </p>
+                  <div class="back-delivery-tooltip js__total-back-delivery-tooltip hidden">
+                    Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно
+                  </div>
                 </div>
               </div>
             </div>
@@ -315,7 +328,7 @@
               <div class="payment-method">
                 <div class="payment-method__header">
                   <h2 class="payment-method__h2">Способ оплаты</h2>
-                  <button class="payment-method__change-btn">Изменить</button>
+                  <button class="payment-method__change-btn change-card-btn">Изменить</button>
                 </div>
                 <div class="payment-card-wrapper">
                   <div class="payment-card">
@@ -421,14 +434,14 @@
           <div class="total-delivery-wrap">
             <div class="total-delivery">                       
               <div class="total-delivery__header total-subheader">
-                <p class="total-delivery__text total-subheader-txt">
+                <p class="total-delivery__text js__total-delivery-type">
                     Доставка в пункт выдачи
                 </p>
                 <img class="change-img js__change-address-btn"
                      src="./icons/change-img.svg"
                      alt="Change image">
               </div>   
-              <div class="total-delivery__address">
+              <div class="total-delivery__address js__delivery-address">
                     Бишкек, улица Ахматбека Суюмбаева, 12/1
               </div>   
               <div class="total-delivery__date">
@@ -439,17 +452,24 @@
               <img class="back-delivery-img"
                    src="./icons/ship-back-img.svg"
                    alt="Ship back img">
+              <div>
               <p class="total-back-delivery__text-main">
                 Обратная доставка товаров на склад при отказе —
-                <span class="total-back-delivery__text-green">бесплатно</span>
+                <div class="delivery-tooltip-wrapper js__free-back-delivery js__total-back-delivery">
+                  <span class="total-back-delivery__text-green">бесплатно</span>
+                </div>
               </p>
+            </div>
+            <div class="back-delivery-tooltip total-tooltip hidden">
+              Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно
+            </div>
             </div>
           </div>             
           <div class="total-card">                       
             <div class="total-card__card-info">                           
               <div class="total-subheader">
                 <p class="total-subheader-txt">Оплата картой</p>
-                <img class="change-img change-card-button"
+                <img class="change-img change-card-btn"
                      src="./icons/change-img.svg"
                      alt="Change image">
               </div>
@@ -595,7 +615,7 @@
     
         </div>
       </div>
-      <div class="popup-button-container change-card-btn">
+      <div class="popup-button-container confirm-card-change">
         <div class="popup-button-wrap">
           <button class="popup-button change-card-button">Выбрать</button>
         </div>
@@ -605,15 +625,6 @@
   <div class="back-delivery-tooltip hidden">
     Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно
   </div>
-  <div class="entity-info-tooltip hidden">
-    <p class="entity-name"></p>
-    <p class="entity-number"></p>
-    <p class="entity-address"></p>
-  </div>
-  <div class="discount-tooltip hidden">
-    <span class="discount-percent"></span><span class="discount-sum"></span>
-  </div>
-
   <div class="mobile-menu">
     <img class="mobile-menu-icon"
          src="./icons/home_mobile.svg"
@@ -628,7 +639,7 @@
       <p class="menu-icons__number-of-items">3</p>
     </div>
     <img class="mobile-menu-icon"
-         src="./icons/fav_mobile.svg"
+         src="./icons/favoriteMobileMenu.svg"
          alt="favIcon">
     <img class="mobile-menu-icon"
          src="./icons/profile_mobile.svg"

@@ -25,6 +25,16 @@ export default function renderProductsList (appState) {
     const checkBox = productCard.querySelector('.product__checkbox');
     const checkBoxLabel = productCard.querySelector('.product__label');
     const productsLeft = productCard.querySelector('.quantity-container__prod-left');
+    const locationIcon = productCard.querySelector('.product-info__location-icon');
+
+    const tooltip = productCard.querySelector('.entity-tooltip');
+    const tooltipName = productCard.querySelector('.entity-name');
+    const tooltipNumber = productCard.querySelector('.entity-number');
+    const tooltipAddress = productCard.querySelector('.entity-address');
+
+    const discountTooltip = productCard.querySelector('.discount-tooltip');
+    const discountPercent = productCard.querySelector('.discount-percent');
+    const discountSum = productCard.querySelector('.discount-sum');
 
     plusBtn.addEventListener('click', () => {
       product.increaseQuantity();
@@ -56,6 +66,22 @@ export default function renderProductsList (appState) {
       })
     })
 
+    standardPrice.forEach((price) => {
+      price.addEventListener('mouseover', () => {
+        discountTooltip.classList.remove('hidden');
+      })
+      price.addEventListener('mouseout', () => {
+        discountTooltip.classList.add('hidden');
+      })
+    })
+
+    locationIcon.addEventListener('mouseover', () => {
+      tooltip.classList.remove('hidden');
+    })
+    locationIcon.addEventListener('mouseout', () => {
+      tooltip.classList.add('hidden');
+    })
+
     if (product.isSelected) {
       checkBox.checked = true;
     }
@@ -76,6 +102,14 @@ export default function renderProductsList (appState) {
     quantity.innerText = product.quantity;
     warehouseBlock.innerText = product.warehouse;
     entityBlock.innerText = product.entity;
+
+    tooltipName.innerText = product.entity;
+    tooltipNumber.innerText = product.entityNum;
+    tooltipAddress.innerText = product.entityAddress;
+
+    discountPercent.innerText = `Скидка ${product.discount}%`;
+    discountSum.innerText = `${(product.price*(product.discount/100)).toLocaleString()} сом`;
+    
     updateProductCardInfo();
     productsList.append(productCard);
 
@@ -136,7 +170,6 @@ export default function renderProductsList (appState) {
           product.isSelected = false;
         })
         openHeaderCheckbox.checked = !openHeaderCheckbox.checked;
-        console.log(availableHeaderCheckbox.checked)
       } else {
         checkboxes.forEach((checkbox) => {
           checkbox.checked = true;

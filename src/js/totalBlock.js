@@ -3,8 +3,8 @@ import getWordForm from "../utils/utils.js";
 
 const {totalDiscountedPriceBlock, totalStandardPriceBlock, 
        totalDiscountBlock, closedListHeaderNumber, 
-       closedListHeaderPrice, totalQuantityBlock,
-       totalQuantityTextBlock, orderBtnSum} = getDOMElements();
+       closedListHeaderPrice, totalQuantityBlock, totalDeliveryTooltip, 
+       totalQuantityTextBlock, orderBtnSum, totalBackDelivery} = getDOMElements();
 
 export const updateTotalPrice = function (goodsArray) {
   let totalDiscountedPrice = 0;
@@ -34,4 +34,13 @@ export const updateTotalPrice = function (goodsArray) {
 function updateListHeader (price, quantity) {
   closedListHeaderPrice.innerText = `${price} сом`;
   closedListHeaderNumber.innerText = `${quantity} товаров`;
+}
+
+export const handleTotalTooltip = function () {
+  totalBackDelivery.addEventListener('mouseover', () => {
+    totalDeliveryTooltip.classList.remove('hidden');
+  })
+  totalBackDelivery.addEventListener('mouseout', () => {
+    totalDeliveryTooltip.classList.add('hidden');
+  })
 }

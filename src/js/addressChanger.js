@@ -1,15 +1,12 @@
 import addressData from '../data/deliveryAddresses.json' assert {type: "json"};
 import { getDOMElements } from "./DOMElements.js";
 
-const {changeAddressModal, linesContainer, pointsBtn, courierBtn,
-       modalOverLay, changeAddressBtns, pointAddressContainer,
-       totalAddressContainer, confirmAddress, pointRatingContainer, addressHeader } = getDOMElements();
+const {changeAddressBtns, changeAddressModal, linesContainer, pointsListSelector, courierListSelector,
+       modalOverLay, confirmAddress, pointRatingContainer, deliveryTypeContainers,
+       deliveryAddressContainers, deliveryTypeContainerTotal } = getDOMElements();
 
 let pointsAddresses = [...addressData.pointAddresses];
 let courierAddresses = [...addressData.courierAddresses];
-
-let isCourierAddress = false;
-let currentSelected;
 
 function handlePointDelete (id) {
   const updatedArray = pointsAddresses.filter((address) => {
@@ -33,9 +30,43 @@ function handleCourierSelection (index) {
   currentSelected = courierAddresses[index];
 }
 
-function changeSelected () {
+let isCourierListSelected = false;
+let currentSelected;
 
-  if (isCourierAddress) {
+export const handleAddressChange = function () {
+  changeAddressBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      modalOverLay.classList.add('displayed');
+      changeAddressModal.classList.remove('hidden');
+      createAddressList(pointsAddresses, handlePointDelete, handlePointSelection);
+    })
+  })
+  modalOverLay.addEventListener('click', (e) => {
+    if (e.target.classList.contains('modal-overlay')) {
+      modalOverLay.classList.remove('displayed');
+      changeAddressModal.classList.add('hidden');
+      courierListSelector.classList.remove('selected');
+      pointsListSelector.classList.add('selected');
+      isCourierListSelected = false;
+    }
+  })
+  pointsListSelector.addEventListener('click', () => {
+    courierListSelector.classList.remove('selected');
+    pointsListSelector.classList.add('selected');
+    isCourierListSelected = false;
+    createAddressList(pointsAddresses, handlePointDelete, handlePointSelection);
+  })
+  courierListSelector.addEventListener('click', () => {
+    courierListSelector.classList.add('selected');
+    pointsListSelector.classList.remove('selected');
+    isCourierListSelected = true;
+    createAddressList(courierAddresses, handleCourierDelete, handleCourierSelection);
+  })
+  confirmAddress.addEventListener('click', handleChangeSelected);
+}
+
+function handleChangeSelected () {
+  if (isCourierListSelected) {
     courierAddresses.forEach((address) => {
       if (address.id === currentSelected.id) {
         address.isSelected = true;
@@ -43,7 +74,10 @@ function changeSelected () {
         address.isSelected = false;
       }
       pointRatingContainer.classList.add('hidden')
-      addressHeader.innerText = 'Курьером'
+      deliveryTypeContainers.forEach((container) => {
+        container.innerText = 'Курьером';
+      })
+      deliveryTypeContainerTotal.innerText = 'Доставка курьером';
     })
   } else {
     pointsAddresses.forEach((address) => {
@@ -52,16 +86,20 @@ function changeSelected () {
       } else {
         address.isSelected = false;
       }
-      pointRatingContainer.classList.remove('hidden')
-      addressHeader.innerText = 'Пункт выдачи'
+      pointRatingContainer.classList.remove('hidden');
+      deliveryTypeContainers.forEach((container) => {
+        container.innerText = 'Пункт выдачи';
+      })
+      deliveryTypeContainerTotal.innerText = 'Доставка в пункт выдачи';
     })
   }
-  pointAddressContainer.innerText = currentSelected.address;
-  totalAddressContainer.innerText = currentSelected.address;
+  deliveryAddressContainers.forEach((container) => {
+    container.innerText = currentSelected.address;
+  })
   modalOverLay.classList.remove('displayed');
 }
 
-export const createAddressList = function (addressesArray, deleteHandler, selectionHandler) {
+function createAddressList (addressesArray, deleteHandler, selectionHandler) {
   linesContainer.innerHTML = '<h3 class="change-address__list-addresses-h3">Мои адреса</h3>'
   addressesArray.forEach((data, index) => {
     const addressLine = addressLineTemplate.content.cloneNode(true);
@@ -75,13 +113,12 @@ export const createAddressList = function (addressesArray, deleteHandler, select
 
     deleteIcon.addEventListener('click', (e) => {
       e.target.closest('.change-address__list-item').remove();
+     
       deleteHandler(data.id); 
     })
-
     if (data.isSelected) {
       radioSelector.checked = true;
     }
-
     if (data.rating !== undefined && data.rating === null) {
         ratingScoreContainer.innerText = '';
     } else if (data.rating) {
@@ -90,41 +127,8 @@ export const createAddressList = function (addressesArray, deleteHandler, select
         ratingContainer.classList.add('hidden');
     }
     linesContainer.append(addressLine);
-
     radioSelector.addEventListener('click', () => {
       selectionHandler(index);
     })
   })
-}
-
-export const handleAddressChange = function () {
-  changeAddressBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      modalOverLay.classList.add('displayed');
-      changeAddressModal.classList.toggle('hidden');
-      createAddressList(pointsAddresses, handlePointDelete, handlePointSelection);
-    })
-  })
-  modalOverLay.addEventListener('click', (e) => {
-    if (e.target.classList.contains('modal-overlay')) {
-      modalOverLay.classList.remove('displayed');
-      changeAddressModal.classList.remove('hidden')
-      courierBtn.classList.remove('selected');
-      pointsBtn.classList.add('selected');
-      isCourierAddress = false;
-    }
-  })
-  pointsBtn.addEventListener('click', () => {
-    isCourierAddress = false;
-    courierBtn.classList.remove('selected');
-    pointsBtn.classList.add('selected');
-    createAddressList(pointsAddresses, handlePointDelete, handlePointSelection);
-  })
-  courierBtn.addEventListener('click', () => {
-    isCourierAddress = true;
-    courierBtn.classList.add('selected');
-    pointsBtn.classList.remove('selected');
-    createAddressList(courierAddresses, handleCourierDelete, handleCourierSelection);
-  })
-  confirmAddress.addEventListener('click', changeSelected);
 }
