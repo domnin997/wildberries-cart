@@ -1,16 +1,9 @@
 import addressData from '../data/deliveryAddresses.json' assert {type: "json"};
+import { getDOMElements } from "./DOMElements.js";
 
-const changeAddressModal = document.querySelector('.change-address');
-const linesContainer = document.querySelector('.change-address__list-addresses');
-const pointsBtn = document.querySelector('.pick-points');
-const courierBtn = document.querySelector('.courier-address');
-const modalOverLay = document.querySelector('.modal-overlay');
-const changeAddressBtns = document.querySelectorAll('.js__change-address-btn');
-const pointAddressContainer = document.querySelector('.pick-point-info__address');
-const totalAddressContainer = document.querySelector('.total-delivery__address');
-const confirmAddress = document.querySelector('.confirm-address-btn');
-const pointRatingContainer = document.querySelector('.pick-point-info__time-rating');
-const addressHeader =  document.querySelector('.pick-point');
+const {changeAddressModal, linesContainer, pointsBtn, courierBtn,
+       modalOverLay, changeAddressBtns, pointAddressContainer,
+       totalAddressContainer, confirmAddress, pointRatingContainer, addressHeader } = getDOMElements();
 
 let pointsAddresses = [...addressData.pointAddresses];
 let courierAddresses = [...addressData.courierAddresses];

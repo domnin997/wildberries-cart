@@ -1,5 +1,6 @@
-import {getDOMElements} from "./DOMEls.js";
+import { getDOMElements } from "./DOMElements.js";
 import getWordForm from "../utils/utils.js";
+
 const {totalDiscountedPriceBlock, totalStandardPriceBlock, 
        totalDiscountBlock, closedListHeaderNumber, 
        closedListHeaderPrice, totalQuantityBlock,

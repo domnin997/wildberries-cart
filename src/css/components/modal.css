@@ -19,6 +19,7 @@
 .change-address__header {
   display: flex;
   align-self: stretch;
+  justify-content: space-between;
 }
 .change-address__h2 {
   display: flex;
@@ -28,7 +29,10 @@
   align-self: stretch;
   letter-spacing: -0.2px; 
 }
-.change-address__close-icon {
+.close-modal-icon {
+  width: 24px;
+  height: 24px;
+  background-image: url(../../icons/closeWindowIcon.svg);
   cursor: pointer;
 }
 .change-address__wrap {
@@ -162,6 +166,15 @@
   align-self: stretch;
   display: flex;
 }
+.change-address__delete-icon {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background-image: url(../../icons/deleteIcon.svg);
+}
+.change-address__delete-icon:hover {
+  background-image: url(../../icons/deleteIconHover.svg);
+}
 .change-address__list-addresses {
   display: flex;
   width: 100%;
@@ -237,9 +250,6 @@
   font-style: normal;
   line-height: 28px;
   letter-spacing: -0.2px;
-}
-.change-card__close-icon {
-  cursor: pointer;
 }
 .cards-list-container {
   display: flex;

@@ -1,4 +1,4 @@
-import { getDOMElements } from "./DOMEls.js";
+import { getDOMElements } from "./DOMElements.js";
 import getWordForm from '../utils/utils.js';
 const {unavailableListHeader, unavailableList, showHideUnavailableIcon} = getDOMElements();
 

@@ -1,7 +1,7 @@
 const productsList = document.querySelector('.products-container__products-list');
 import { updateTotalPrice } from './totalBlock.js';
 import { updateDeliveryBlock } from './deliveryBlock.js';
-import { getDOMElements } from './DOMEls.js';
+import { getDOMElements } from "./DOMElements.js";
 
 const {showHideAvailableIcon, openHeaderText, 
        openHeaderCheckbox, closedHeader, cartCounter,

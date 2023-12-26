@@ -1,4 +1,4 @@
-import { getDOMElements } from "./DOMEls.js";
+import { getDOMElements } from "./DOMElements.js";
 const {deliveryDatesBlock, deliveryProductsContainer, mobileProductsContainers} = getDOMElements();
 
 export const updateDeliveryBlock = function (productsArray) {
