@@ -1,7 +1,5 @@
-@charset "UTF-8";
 .products-container {
   width: 100%;
-  /* overflow: hidden; */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -29,7 +27,7 @@
   flex: 1 0 0;
 }
 .products-header__text span {
-  color: black;
+  color: var(--text-black);
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -213,7 +211,7 @@
   line-height: 16px;
   letter-spacing: 0px;
   text-align: left;
-  color: var(--system-orange);
+  color: var(--orange);
 }
 .product-price__currency {
   font-size: 16px;
@@ -244,7 +242,10 @@
 }
 .fav-icon:hover {
   background-image: url(../../icons/favoriteIconHover.svg);
-} 
+}
+.added-to-favorite {
+  background-image: url(../../icons/favoriteIconHover.svg);
+}
 .delete-icon {
   cursor: pointer;
   width: 20px;
@@ -268,7 +269,7 @@
     flex-direction: column;
     border-top: solid;
     border-width: 1px;
-    border-color: var(--rulers-rulers);
+    border-color: var(--ruler);
   }
   .product {
     padding-top: 11px;
@@ -288,7 +289,7 @@
     bottom: 4px;
     left: 4px;
     border-radius: 6px;
-    background-color: var(--system-white);
+    background-color: var(--background-white);
     display: flex;
     padding: 1px 4px 3px 3px;
     justify-content: center;
@@ -340,6 +341,9 @@
     align-items: center;
   }
   .product-info__location-entity {
+    display: none;
+  }
+  .desktop-only {
     display: none;
   }
 }
@@ -445,7 +449,7 @@
   .products-container__products-list {
     border-top: solid;
     border-width: 1px;
-    border-color: rgba(0, 0, 0, 0.1);
+    border-color: var(--ruler);
   }
   .products-list {
     gap: 20px;
@@ -507,9 +511,6 @@
   .product-info__location-icon .info {
     padding-top: 4px;
   }
-  /* .product-info {
-    /* position: relative; */
-  /* } */
   .entity-tooltip {
     padding: 16px 16px 13px 16px;
     position: absolute;
@@ -520,9 +521,19 @@
     width: 100%;
     height: auto;
     background-color: var(--background-white);
+    color: var(--text-black);
+    font-size: 13px;
+    font-style: normal;
+    line-height: 16px;
     bottom: -115px;
     z-index: 50;
     box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.30), 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
+  }
+  .entity-name {
+    font-weight: 700;
+  }
+  .entity-number, .entity-address {
+    font-weight: 400;
   }
   .quantity-and-price {
     height: auto;
@@ -575,7 +586,6 @@
     justify-content: center;
     align-items: center;
   }
-  
   .product-price {
     position: relative;
     min-width: 110px;
@@ -619,5 +629,8 @@
     font-style: normal;
     font-weight: 700;
     line-height: 22px;
+  }
+  .desktop-only {
+    display: block;
   }
 }

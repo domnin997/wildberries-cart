@@ -17,9 +17,13 @@ export default function renderProductsList (appState) {
     const discountedPriceBlock = productCard.querySelectorAll('.js__discounted-price');
     const quantity = productCard.querySelector('.counter__number');
     const plusBtn = productCard.querySelector('.plus-button');
+
+    const favIcons = productCard.querySelectorAll('.fav-icon');
+
     const deleteBtns = productCard.querySelectorAll('.delete-icon');
     const minusBtn = productCard.querySelector('.minus-button');
     const productSpecifications = productCard.querySelectorAll('.product-info__specs-item');
+    const productSpecsContainer = productCard.querySelector('.product-info__specs');
     const warehouseBlock = productCard.querySelector('.product-info__location-warehouse');
     const entityBlock = productCard.querySelector('.product-info__entity');
     const checkBox = productCard.querySelector('.product__checkbox');
@@ -66,6 +70,12 @@ export default function renderProductsList (appState) {
       })
     })
 
+    favIcons.forEach((icon) => {
+      icon.addEventListener('click', () => {
+        icon.classList.toggle('added-to-favorite');
+      })
+    })
+
     standardPrice.forEach((price) => {
       price.addEventListener('mouseover', () => {
         discountTooltip.classList.remove('hidden');
@@ -91,10 +101,13 @@ export default function renderProductsList (appState) {
     if (product.color) {
       productSpecifications[0].innerText = `Цвет: ${product.color}`;
     }
+    if (!product.color && !product.size) {
+      productSpecsContainer.classList.add('hidden');
+    }
     if (product.maxAvailable < 5) {
       productsLeft.innerText = `Осталось ${product.maxAvailable} шт.`;
     } else {
-      productsLeft.innerText = null;
+      productsLeft.classList.add('hidden');
     }
 
     img.src = product.img;
@@ -108,7 +121,7 @@ export default function renderProductsList (appState) {
     tooltipAddress.innerText = product.entityAddress;
 
     discountPercent.innerText = `Скидка ${product.discount}%`;
-    discountSum.innerText = `${(product.price*(product.discount/100)).toLocaleString()} сом`;
+    discountSum.innerText = `−${(product.price*(product.discount/100)).toLocaleString()} сом`;
     
     updateProductCardInfo();
     productsList.append(productCard);

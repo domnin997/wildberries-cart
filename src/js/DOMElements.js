@@ -52,6 +52,8 @@ export const getDOMElements = function () {
     
     totalDeliveryTooltip: document.querySelector('.total-tooltip'),
     totalBackDelivery: document.querySelector('.js__total-back-delivery'),
+    backDelivery: document.querySelector('.js__back-delivery'),
+    backDeliveryTooltip: document.querySelector('.delivery-tooltip'),
 
     changeCardBtns: document.querySelectorAll('.change-card-btn'),
     changeCardModal: document.querySelector('.change-card'),

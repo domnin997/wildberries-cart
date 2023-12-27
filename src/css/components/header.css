@@ -1,5 +1,5 @@
 .header {
-  background-color: var(--system-violet);
+  background-color: var(--violet);
 }
 .header-wrapper {
   display: flex;
@@ -17,7 +17,7 @@
   position: relative;
 }
 .logo { 
-  color: var(--system-white);
+  color: var(--text-white);
   font-style: normal;
   font-weight: 600;
 }
@@ -121,7 +121,7 @@
     border-radius: 8px;
     position: absolute;
     top: 9px;
-    background-color: var(--system-white);
+    background-color: var(--background-white);
   }
   .catalog-btn__burger-item::before,
   .catalog-btn__burger-item::after {
@@ -130,7 +130,7 @@
     width: 28px;
     height: 4px;
     border-radius: 8px;
-    background-color: var(--system-white);
+    background-color: var(--background-white);
   }
   .catalog-btn__burger-item::before {
     top: 10px;
@@ -139,7 +139,7 @@
     top: -10px;
   }
   .catalog-btn:hover {
-    border-color: var(--system-white);
+    border-color: var(--text-white);
     cursor: pointer;
   }
   .header-rounding {

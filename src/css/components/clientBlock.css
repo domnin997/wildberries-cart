@@ -59,7 +59,7 @@
   padding-bottom: 3px;
 }
 .input-lower-label {
-  color: var(--system-orange);
+  color: var(--orange);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -101,7 +101,7 @@
   opacity: 0;
 }
 .incorrect-input {
-  border-color: var(--system-orange);
+  border-color: var(--orange);
 }
 @media (max-width: 1023px) {
   .client {

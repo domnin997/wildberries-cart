@@ -1,6 +1,12 @@
 .search-panel {
   display: none;
 }
+@media (max-width: 1023px) {
+  .mobile-only {
+    display: block;
+  }
+}
+
 @media (min-width: 1024px) {
   .search-panel {
     display: flex;
@@ -31,17 +37,20 @@
     line-height: 24px;
   }
   .search-panel__input[type=text] {
-    color: var(--system-white);
-    color: var(--system-white);
+    color: var(--text-white);
+    color: var(--text-white);
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
   }
   .search-panel__input[type=text]::-moz-placeholder {
-    color: var(--system-white);
+    color: var(--text-white);
   }
   .search-panel__input[type=text]::placeholder {
-    color: var(--system-white);
+    color: var(--text-white);
   }
+  .mobile-only {
+    display: none;
+  } 
 }

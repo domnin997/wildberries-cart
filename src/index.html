@@ -64,31 +64,30 @@
     <div class="header-rounding"></div>
   </header>
   <main class="main-block">
-    <section class="basket">
-      <h2 class="basket__header">Корзина</h2>
-        <div class="wrapper"> 
-          <div class="products-block">
-            <div class="cart__products-container products-container">
-              <div class="products-header">
-                <input  class="wb-checkbox products-header__checkbox"
-                        type="checkbox"
-                        id="0">
-                <label class="header__label" for="0"></label>
-                <div class="products-header__text">
-                  <span>Выбрать все</span>
-                </div>
-                <div class="added-products-total__closed hidden">
-                  <span class="added-products-total__closed-number"></span>   
-                  <span class="added-products-total__closed-price"></span>
-                </div>
-                <div class="products-header__icon js__show-hide-available">
-                  <img  class="show-hide-icon"
-                        src="./icons/show-hide-icon.svg"
-                        alt="show-hide icon">
-                </div>
+    <section class="cart">
+      <h2 class="cart__header">Корзина</h2>
+      <div class="cart-wrapper">
+        <div class="products-block">
+          <div class="products-container">
+            <div class="products-header">
+              <input  class="wb-checkbox products-header__checkbox"
+                      type="checkbox"
+                      id="0">
+              <label class="header__label" for="0"></label>
+              <div class="products-header__text">
+                <span>Выбрать все</span>
               </div>
-              
-              <div class="products-container__products-list products-list">
+              <div class="added-products-total__closed hidden">
+                <span class="added-products-total__closed-number"></span>   
+                <span class="added-products-total__closed-price"></span>
+              </div>
+              <div class="products-header__icon js__show-hide-available">
+                <img  class="show-hide-icon"
+                      src="./icons/show-hide-icon.svg"
+                      alt="show-hide icon">
+              </div>
+            </div>    
+            <div class="products-container__products-list products-list">
                 <template id="productCardTemplate">
                 <div class="products-list-item available-item">                            
                   <div class="product">                                
@@ -137,8 +136,7 @@
                             <p class="entity-address"></p>
                           </div>
                         </div>    
-                      </div>
-                         
+                      </div> 
                     </div>
                   </div>
                   <div class="quantity-and-price">
@@ -148,7 +146,7 @@
                         <div class="counter__number">1</div>
                         <button class="counter__button plus-button">+</button>
                       </div>
-                      <div class="quantity-container__prod-left">Осталось 2 шт.</div>
+                      <div class="quantity-container__prod-left"></div>
                       <div class="fav-del-container">
                         <button class="fav-icon"></button>
                         <button class="delete-icon"></button>
@@ -181,7 +179,7 @@
                 </template>
               </div>
             </div>
-          <div class="cart__products-container products-container">
+          <div class="products-container">
             <div class="products-header">           
               <div class="products-header__text js__unavailable-list-header">Отсутствуют · 3 товара</div>
               <div class="products-header__icon js__show-hide-unavailable">
@@ -191,7 +189,6 @@
               </div>
             </div>
             <div class="products-container__products-list products-list unavailable-list">
-              
               <template id="unavailableProductTemplate">
                 <div class="products-list-item unavailable-item">
                   <div class="product">
@@ -244,9 +241,7 @@
                   <div class="delivery-subheaders">
                     <div class="delivery-subheaders__type js__delivery-type">Пункт выдачи</div>
                     <div class="delivery-subheaders__price">Стоимость доставки</div>
-                    <div class="delivery-subheaders__dates">
-                
-                    </div>
+                    <div class="delivery-subheaders__dates"></div>
                   </div>
                   <div class="delivery-details">
                     <div class="delivery-address">
@@ -262,9 +257,7 @@
                       </div>
                     </div>
                     <div class="delivery-price">Бесплатно</div>
-                    <div class="delivery-products-container">
-
-                    </div>
+                    <div class="delivery-products-container"></div>
                     <template id="deliveryProductCardTemplate">
                       <div class="delivery-products__img-cont">
                         <img class="product-img-delivery" src="./img/UZCotton.png" alt="Product picture">
@@ -273,7 +266,6 @@
                     </template>
                   </div>
                 </div>
-                
                 <div class="delivery-info delivery-mobile">
                   <div class="delivery-point-price-wrapper">
                     <div class="delivery-point">
@@ -299,15 +291,11 @@
                   <div class="delivery-dates">
                     <div class="date-product-wrapper">
                       <div class="delivery-date">5—6 февраля</div>
-                      <div class="delivery-products-container-mobile">
-                        
-                      </div>
+                      <div class="delivery-products-container-mobile"></div>
                     </div>
                     <div class="date-product-wrapper">
                       <div class="delivery-date">7—8 февраля</div>
-                      <div class="delivery-products-container-mobile">
-
-                      </div>
+                      <div class="delivery-products-container-mobile"></div>
                     </div>
                   </div>
                 </div>
@@ -316,9 +304,9 @@
                 <div class="back-delivery__wrapper">
                   <img src="./icons/back-shipping.svg" alt="freeDeliveryIcon">
                   <p class="back-delivery__main-text">Обратная доставка товаров на склад при отказе —
-                    <span class="back-delivery__green-text js__total-back-delivery">бесплатно</span>
+                    <span class="back-delivery__green-text js__back-delivery">бесплатно</span>
                   </p>
-                  <div class="back-delivery-tooltip js__total-back-delivery-tooltip hidden">
+                  <div class="back-delivery-tooltip delivery-tooltip hidden">
                     Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно
                   </div>
                 </div>
@@ -344,7 +332,6 @@
                 </div>
               </div>
             </div>
-
             <div class="client">
               <h2 class="client__h2">Получатель</h2>
               <form class="client-form" action="">
@@ -394,18 +381,18 @@
               </form>
             </div>   
           </div>
-        </div>
+      </div>
     </section>
-    <section class="total-cont">        
+    <section class="total-container">
       <div class="total">
         <div class="total-order-info">
           <div class="total-price">
             <div class="total-price__header">
               <h2 class="total-price__h2">Итого</h2>
-                <p>
-                  <span class="total-price__value">2 101 063</span>
-                  <span class="total-price__currency">сом</span>
-                </p>
+              <p>
+                <span class="total-price__value">2 101 063</span>
+                <span class="total-price__currency">сом</span>
+              </p>
             </div>
             <div class="total-price__details">
               <div class="total-price__details-sum">
@@ -433,16 +420,16 @@
           </div>                    
           <div class="total-delivery-wrap">
             <div class="total-delivery">                       
-              <div class="total-delivery__header total-subheader">
+              <div class="total-subheader">
                 <p class="total-delivery__text js__total-delivery-type">
-                    Доставка в пункт выдачи
+                  Доставка в пункт выдачи
                 </p>
                 <img class="change-img js__change-address-btn"
                      src="./icons/change-img.svg"
-                     alt="Change image">
+                     alt="changeIcon">
               </div>   
               <div class="total-delivery__address js__delivery-address">
-                    Бишкек, улица Ахматбека Суюмбаева, 12/1
+                Бишкек, улица Ахматбека Суюмбаева, 12/1
               </div>   
               <div class="total-delivery__date">
                 <span class="total-delivery__date-text">5–8 фев</span>
@@ -451,7 +438,7 @@
             <div class="total-back-delivery">
               <img class="back-delivery-img"
                    src="./icons/ship-back-img.svg"
-                   alt="Ship back img">
+                   alt="backDeliveryIcon">
               <div>
               <p class="total-back-delivery__text-main">
                 Обратная доставка товаров на склад при отказе —
@@ -459,7 +446,7 @@
                   <span class="total-back-delivery__text-green">бесплатно</span>
                 </div>
               </p>
-            </div>
+              </div>
             <div class="back-delivery-tooltip total-tooltip hidden">
               Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно
             </div>
@@ -471,7 +458,7 @@
                 <p class="total-subheader-txt">Оплата картой</p>
                 <img class="change-img change-card-btn"
                      src="./icons/change-img.svg"
-                     alt="Change image">
+                     alt="changeIcon">
               </div>
               <div class="total-card__card-cont">
                 <img class="payment-system"
@@ -479,13 +466,13 @@
                      alt="Payment system">
                 <span class="total__card-number js__card-number">1234 56•• •••• 1234</span>
               </div>
-            </div>                   
+            </div>
             <div class="total-card__payment-option">
               <div class="total-card__payment-option-cont">
                 <input class="wb-checkbox total-checkbox"
                        type="checkbox"
                        id="6">
-                <label  class="order-label" for="6"></label>
+                <label class="order-label" for="6"></label>
                 <p class="total-card__payment-option-text">Списать оплату сразу</p>
               </div>
               <div class="total-card__payment-option-info js__card-outro">
@@ -562,7 +549,6 @@
                   </div>
                   <p class="change-address__point-name">Пункт выдачи</p>
                 </div>
-            
               </div>
               <div class="change-address__delete-container">
                 <button class="change-address__delete-icon"></button>
@@ -570,9 +556,7 @@
             </label>
           </template>
           <div class="change-address__list-addresses">
-            
-            <h3 class="change-address__list-addresses-h3">Мои адреса</h3>
-                    
+            <h3 class="change-address__list-addresses-h3">Мои адреса</h3>     
             <div class="empty-point-list-notification hidden"> Список пуст </div>
             <div class="empty-courier-list-notification hidden"> Список пуст </div>                 
           </div>
@@ -611,9 +595,7 @@
             </div>
           </label>
         </template>
-        <div class="cards-list"> 
-    
-        </div>
+        <div class="cards-list"></div>
       </div>
       <div class="popup-button-container confirm-card-change">
         <div class="popup-button-wrap">
@@ -644,7 +626,7 @@
     <img class="mobile-menu-icon"
          src="./icons/profile_mobile.svg"
          alt="profileIcon">
-    </div>
+  </div>
 <script type="module" src="./js/index.js"></script>
 </body>
 </html>

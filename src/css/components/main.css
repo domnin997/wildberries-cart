@@ -1,31 +1,9 @@
-
-
 html {
-    font-family: Segoe UI;
+  font-family: Segoe UI;
 }
-
-.hidden {
-    display: none;
-  }
-
-@media (min-width: 1px) {
-
 body {
-    background-color: var(--background-smoky);
+  background-color: var(--background-smoky);
 }
-.desktop-only {
-    display: none;
-}   
-.mobile-only {
-    display: block;
-}
-}
-    
-@media (min-width: 1024px) {
-.desktop-only {
-    display: block;
-}   
-.mobile-only {
-    display: none;
-}  
+.hidden {
+  display: none;
 }

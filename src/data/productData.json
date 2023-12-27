@@ -5,7 +5,7 @@
     "price": "1051",
     "currency": "сом",
     "discount": "51",
-    "quantity": "2",
+    "quantity": "1",
     "maxAvailable": "2",
     "isSelected": true,
     "delivaryData": {
@@ -17,7 +17,7 @@
     "color": "белый",
     "size": "56",
     "warehouse": "Коледино WB",
-    "entity": "ООО Вайлдберриз",
+    "entity": "ООО «ВАЙЛДБЕРРИЗ»",
     "entityNum": "ОГРН: 1067746062449",
     "entityAddress": "142181, Московская область, д Коледино, д. 6 стр. 1"
   },
@@ -40,13 +40,13 @@
     "color": "прозрачный",
     "size": null,
     "warehouse": "Коледино WB",
-    "entity": "ООО Мегапрофстиль",
+    "entity": "ООО «МЕГАПРОФСТИЛЬ»",
     "entityNum": "ОГРН: 5167746237148",
     "entityAddress": "129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34"
   },
   {
     "id": "dd641054-843b-469d-bd35-bb96d6ce8c0e",
-    "name": "Карандаши цветные Faber-Castell 'Замок', набор 24 цвета, заточенные, шестигранные, Faber-Castell",
+    "name": "Карандаши цветные Faber-Castell \"Замок\", набор 24 цвета, заточенные, шестигранные, Faber-Castell",
     "price": "475",
     "currency": "сом",
     "discount": "48",
@@ -62,7 +62,7 @@
     "color": null,
     "size": null,
     "warehouse": "Коледино WB",
-    "entity": "ООО Вайлдберриз",
+    "entity": "ООО «ВАЙЛДБЕРРИЗ»",
     "entityNum": "ОГРН: 1067746062449",
     "entityAddress": "142181, Московская область, д Коледино, д. 6 стр. 1"
   }

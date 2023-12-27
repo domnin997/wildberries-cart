@@ -1,6 +1,6 @@
 import { getDOMElements } from "./DOMElements.js";
-const {deliveryDatesBlock, deliveryProductsContainer, mobileProductsContainers,
-       freeBackDelivery, backdeliveryTooltips} = getDOMElements();
+const {deliveryDatesBlock, deliveryProductsContainer,
+       mobileProductsContainers, backDelivery, backDeliveryTooltip} = getDOMElements();
 
 export const updateDeliveryBlock = function (productsArray) {
   deliveryDatesBlock.innerHTML = '';
@@ -38,9 +38,7 @@ export const updateDeliveryBlock = function (productsArray) {
       mobileProductsContainers[1].append(createProductCard('./img/iphone-case.png', 16))
     }
   }
-
-
-
+  
   productsArray.forEach((product) => {
     if (product.deliveryData.isSeveralDates) {
       isSeveralWarehouses = true;
@@ -64,10 +62,11 @@ export const updateDeliveryBlock = function (productsArray) {
 }
 
 export const handleBackDeliveryTooltip = function () {
-  freeBackDelivery.forEach((icon) => {
-    icon.addEventListener('mouseover', () => {
-      console.log('Yep')
-    })
+  backDelivery.addEventListener('mouseover', () => {
+    backDeliveryTooltip.classList.remove('hidden');
+  })
+  backDelivery.addEventListener('mouseout', () => {
+    backDeliveryTooltip.classList.add('hidden');
   })
 }
 

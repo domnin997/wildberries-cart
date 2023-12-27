@@ -19,12 +19,19 @@ export const createUnavailableProductsList = function (state) {
     const productName = productCard.querySelector('.product-info__name');
     const productSpecifications = productCard.querySelectorAll('.product-info__specs-item');
     const deleteBtns = productCard.querySelectorAll('.delete-icon');
+    const favIcons = productCard.querySelectorAll('.fav-icon');
 
     deleteBtns.forEach((btn) => {
       btn.addEventListener('click', () => {
         _deleteProduct(productsArray.indexOf((el) => {el.id === product.id}));
         _updateHeader();
         btn.closest('.products-list-item').remove();
+      })
+    })
+
+    favIcons.forEach((icon) => {
+      icon.addEventListener('click', () => {
+        icon.classList.toggle('added-to-favorite');
       })
     })
 

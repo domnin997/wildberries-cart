@@ -1,34 +1,28 @@
 .hidden {
   display: none;
 }
-
 .closed-header-displayed {
   display: flex;
 }
-
 .item-list-hidden {
   display: none;
 }
-
 .rotate180 {
   transform: rotate(-180deg);
 }
-
 .footer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   align-self: stretch;
-  background-color: rgb(103, 37, 168);
+  background-color: var(--violet);
 }
-
 .footer-rect {
   height: 24px;
   width: 100%;
   background-color: rgb(246, 246, 250);
   border-radius: 0 0 24px 24px;
 }
-
 .footer-block {
   display: flex;
   padding: 24px;
@@ -37,7 +31,6 @@
   gap: 40px;
   align-self: stretch;
 }
-
 .footer-text {
   display: flex;
   flex-direction: column;
