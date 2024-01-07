@@ -1,13 +1,16 @@
 import { getDOMElements } from "./DOMElements.js";
-const {deliveryDatesBlock, deliveryProductsContainer,
-       mobileProductsContainers, backDelivery, backDeliveryTooltip} = getDOMElements();
+const {deliveryDatesBlock, deliveryProductsContainer, backDelivery,
+       mobileProductsContainers, backDeliveryTooltip} = getDOMElements();
 
 export const updateDeliveryBlock = function (productsArray) {
   deliveryDatesBlock.innerHTML = '';
   deliveryProductsContainer.innerHTML = '';
-  mobileProductsContainers[0].innerHTML = '';
+  mobileProductsContainers.forEach((container) => {
+    container.innerHTML = '';
+  });
 
   let isSeveralWarehouses = false;
+  const secondWarehouseProducts = [];
   if (productsArray.length > 0) {
     const productLine = createProductsLine();
 
@@ -22,20 +25,23 @@ export const updateDeliveryBlock = function (productsArray) {
       if (product.deliveryData.isSeveralDates) {
         isSeveralWarehouses = true;
         quantity = product.deliveryData.warehouseLimit;
+        secondWarehouseProducts.push(createProductCard(product.img, product.quantity - product.deliveryData.warehouseLimit, product.id));
       }
-      const newDesktopCard = createProductCard(product.img, quantity);
+      const newDesktopCard = createProductCard(product.img, quantity, product.id);
       productLine.append(newDesktopCard);
 
-      const newMobileCard = createProductCard(product.img, quantity);
+      const newMobileCard = createProductCard(product.img, quantity, product.id);
       mobileProductsContainers[0].append(newMobileCard);   
     })
     deliveryProductsContainer.append(productLine);
 
     if (isSeveralWarehouses) {
       const secondLine = createProductsLine();
-      secondLine.append(createProductCard('./img/iphone-case.png', 16))
-      deliveryProductsContainer.append(secondLine);
-      mobileProductsContainers[1].append(createProductCard('./img/iphone-case.png', 16))
+      secondWarehouseProducts.forEach((product) => {
+        secondLine.append(product);
+        mobileProductsContainers[1].append(product);
+      })
+      deliveryProductsContainer.append(secondLine)
     }
   }
   
@@ -43,7 +49,7 @@ export const updateDeliveryBlock = function (productsArray) {
     if (product.deliveryData.isSeveralDates) {
       isSeveralWarehouses = true;
     }
-    createProductCard(product.img, product.quantity);
+    createProductCard(product.img, product.quantity, product.id);
   })
 
   if (productsArray.length > 0) {
@@ -70,11 +76,15 @@ export const handleBackDeliveryTooltip = function () {
   })
 }
 
-function createProductCard (img, quantity) {
+function createProductCard (img, quantity, id) {
   const productCard = deliveryProductCardTemplate.content.cloneNode(true);
     productCard.querySelector('.product-img-delivery').src = img;
-    productCard.querySelector('.delivery-products__number').innerText = quantity;
-    productCard.querySelector('.delivery-products__number').classList.remove('hidden')
+    if (quantity > 1) {
+      productCard.querySelector('.delivery-products__number').innerText = quantity;
+      productCard.querySelector('.delivery-products__number').classList.remove('hidden');
+    }
+    productCard.querySelector('.delivery-products__img-cont').dataset.id = `${id}`;
+    
     return productCard;
 }
 

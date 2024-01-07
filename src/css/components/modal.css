@@ -358,12 +358,12 @@
     height: 40px;
   }
   .change-address__radio-container {
-    padding: 9px 0px 51px 0px;
+    padding: 9px;
     align-items: center;
   }
   .change-address__delete-container {
     align-items: center;
-    padding: 8px 0px 52px 0px;
+    padding: 8px;
   }
   .popup-button-container {
     padding: 16px;

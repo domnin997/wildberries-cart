@@ -27,6 +27,7 @@
         <div class="search-panel__wrapper">
           <input class="search-panel__input"
                  type="text"
+                 name="search"
                  placeholder="Я ищу..."/>
           <img class="desktop-search-icon"
                src="./icons/desktop-search-icon.svg"
@@ -72,6 +73,7 @@
             <div class="products-header">
               <input  class="wb-checkbox products-header__checkbox"
                       type="checkbox"
+                      name="product-header"
                       id="0">
               <label class="header__label" for="0"></label>
               <div class="products-header__text">
@@ -84,18 +86,19 @@
               <div class="products-header__icon js__show-hide-available">
                 <img  class="show-hide-icon"
                       src="./icons/show-hide-icon.svg"
-                      alt="show-hide icon">
+                      alt="showHide">
               </div>
             </div>    
             <div class="products-container__products-list products-list">
-                <template id="productCardTemplate">
+              <template id="productCardTemplate">
                 <div class="products-list-item available-item">                            
                   <div class="product">                                
                     <div class="product-checkbox-pic">                                    
                       <div class="product-checkbox-cont"> 
                         <input class="wb-checkbox product__checkbox"
+                               name="product-checkbox"
                                type="checkbox">
-                        <label class="product__label" for="2"></label>
+                        <label class="product__label"></label>
                       </div>                                
                       <div class="product__picture-wrap">
                         <img class="product__picture"
@@ -176,16 +179,16 @@
                   </div>
                 </div>             
                 </div>
-                </template>
-              </div>
+              </template>
             </div>
+          </div>
           <div class="products-container">
             <div class="products-header">           
               <div class="products-header__text js__unavailable-list-header">Отсутствуют · 3 товара</div>
               <div class="products-header__icon js__show-hide-unavailable">
                 <img class="show-hide-icon"
                      src="./icons/show-hide-icon.svg"
-                     alt="show-hide icon">
+                     alt="showHide">
               </div>
             </div>
             <div class="products-container__products-list products-list unavailable-list">
@@ -339,14 +342,22 @@
                   <div class="client-input-block">
                     <p class="input-upper-label hidden-label">Имя</p>
                     <div class="input-label-wrapper">
-                      <input class="client-input" type="text" placeholder="Имя">
+                      <input class="client-input"
+                             type="text"
+                             placeholder="Имя"
+                             name="name"
+                             autocomplete="on">
                       <p class="input-lower-label hidden-label">Укажите имя</p>
                     </div>  
                   </div>
                   <div class="client-input-block">
                     <p class="input-upper-label hidden-label">Фамилия</p>
                     <div class="input-label-wrapper">
-                      <input class="client-input" type="text" placeholder="Фамилия">
+                      <input class="client-input"
+                             type="text"
+                             placeholder="Фамилия"
+                             name="surname"
+                             autocomplete="on">
                       <p class="input-lower-label hidden-label">Укажите фамилию</p>
                     </div>
                   </div>
@@ -355,14 +366,23 @@
                     <div class="client-input-block">
                       <p class="input-upper-label hidden-label">Почта</p>
                       <div class="input-label-wrapper">
-                        <input class="client-input" type="email" placeholder="Почта">
+                        <input class="client-input"
+                               type="email"
+                               placeholder="Почта"
+                               name="email"
+                               autocomplete="on">
                         <p class="input-lower-label hidden-label">Укажите почту</p>
                       </div>
                     </div>
                     <div class="client-input-block">
                       <p class="input-upper-label">Телефон</p>
                       <div class="input-label-wrapper">
-                        <input class="client-input" type="tel" placeholder="Телефон" value="+7 988 123-45-67">
+                        <input class="client-input"
+                               type="tel"
+                               placeholder="Телефон"
+                               name="tel"
+                               value="+7 988 123-45-67"
+                               autocomplete="on">
                         <p class="input-lower-label hidden-label">
                             Формат +7 999 999-99-99
                         </p>
@@ -371,7 +391,10 @@
                     <div class="client-input-block">
                       <p class="input-upper-label hidden-label">ИНН</p>
                       <div class="input-label-wrapper">
-                        <input class="client-input" type="text" placeholder="ИНН">
+                        <input class="client-input"
+                               type="text"
+                               name="TIN"
+                               placeholder="ИНН">
                         <p class="input-lower-label TIN">
                             Для таможенного оформления
                         </p>
@@ -530,11 +553,7 @@
             <label class="change-address__list-item courier-add">
               <div class="change-address__radio-container">
                 <div class="change-address__radio">
-                  <input class="change-address__stock-radio"
-                         type="radio"
-                         name="courier-address"
-                         value="1"
-                         data-address="Бишкек, улица Табышалиева, 57">
+                  <input class="change-address__stock-radio" type="radio" name="courier-address">
                   <span class="change-address__custom-radio"></span>
                 </div>
               </div>
@@ -579,10 +598,7 @@
         <template id="cardsListItem">
           <label class="cards-list-item">
             <div class="cards-list-item__radio-wrapper">
-              <input class="cards-list-item__stock-radio"
-                     type="radio"
-                     name="card"
-                     value="1">
+              <input class="cards-list-item__stock-radio" type="radio" name="card">
               <span class="cards-list-item__custom-radio"></span>
             </div>
             <div class="card-info">

@@ -124,7 +124,7 @@
   text-decoration: line-through;
   color: var(--system-gray);
   border-bottom: dashed;
-  border-color: var(--rulers-rulers-input);
+  border-color: var(--ruler-input);
   border-width: 1px;
 }
 .product-price-mobile__old {
@@ -383,7 +383,7 @@
     height: 24px;
   }
   .counter__button-light {
-    color: var(--rulers-rulers-input);
+    color: var(--ruler-input);
   }
   .product-info__name {
     font-size: 16px;
@@ -406,7 +406,7 @@
     color: var(--system-gray);
   }
   .number-limit {
-    color: var(--rulers-rulers-input);
+    color: var(--ruler-input);
   }
   .lower-font {
     font-size: 16px;
@@ -569,7 +569,7 @@
     justify-content: center;
   }
   .counter__button-light {
-    color: var(--rulers-rulers-input);
+    color: var(--ruler-input);
   }
   .minus-button {
     left: 4px;

@@ -1,6 +1,7 @@
 import { getDOMElements } from "./DOMElements.js";
 import getWordForm from '../utils/utils.js';
-const {unavailableListHeader, unavailableList, showHideUnavailableIcon} = getDOMElements();
+const {unavailableListHeader, unavailableList,
+       showHideUnavailableIcon} = getDOMElements();
 
 export const createUnavailableProductsList = function (state) {
   const productsArray = state.getData();
@@ -50,8 +51,10 @@ export const createUnavailableProductsList = function (state) {
   })
 
   showHideUnavailableIcon.addEventListener('click', () => {
-    unavailableList.classList.toggle('hidden');
-    showHideUnavailableIcon.classList.toggle('rotate180');
+    if (productsArray.length) {
+      unavailableList.classList.toggle('hidden');
+      showHideUnavailableIcon.classList.toggle('rotate180');
+    }
   })
   _updateHeader();
 }

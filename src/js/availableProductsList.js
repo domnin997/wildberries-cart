@@ -1,7 +1,7 @@
 const productsList = document.querySelector('.products-container__products-list');
-import { updateTotalPrice } from './totalBlock.js';
-import { updateDeliveryBlock } from './deliveryBlock.js';
-import { getDOMElements } from "./DOMElements.js";
+import {updateTotalPrice} from './totalBlock.js';
+import {updateDeliveryBlock} from './deliveryBlock.js';
+import {getDOMElements} from "./DOMElements.js";
 
 const {showHideAvailableIcon, openHeaderText, 
        openHeaderCheckbox, closedHeader, cartCounter,
@@ -44,6 +44,7 @@ export default function renderProductsList (appState) {
       product.increaseQuantity();
       quantity.innerText = product.quantity;
       updateProductCardInfo();
+      // updateProdCard(product.id)
       updatePageInfo(appState.getData());
     })
 
@@ -66,6 +67,11 @@ export default function renderProductsList (appState) {
         appState.deleteProduct(product.id);
         btn.closest('.products-list-item').remove();
         updatePageInfo(appState.getData());
+        if (!appState.getData().length) {
+          openHeaderText.classList.toggle('hidden');
+          openHeaderCheckbox.classList.toggle('hidden');
+          closedHeader.classList.toggle('hidden');
+        }
         updateCartCounter();
       })
     })
@@ -142,11 +148,13 @@ export default function renderProductsList (appState) {
   })  
 
   showHideAvailableIcon.addEventListener('click', () => {
-    openHeaderText.classList.toggle('hidden');
-    openHeaderCheckbox.classList.toggle('hidden');
-    closedHeader.classList.toggle('hidden');
-    showHideAvailableIcon.classList.toggle('rotate180');
-    productsList.classList.toggle('hidden');
+    if (appState.getData().length) {
+      openHeaderText.classList.toggle('hidden');
+      openHeaderCheckbox.classList.toggle('hidden');
+      closedHeader.classList.toggle('hidden');
+      showHideAvailableIcon.classList.toggle('rotate180');
+      productsList.classList.toggle('hidden');
+    }
   })
 
   function updatePageInfo (productsArray) {

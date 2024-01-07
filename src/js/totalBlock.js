@@ -26,14 +26,14 @@ export const updateTotalPrice = function (goodsArray) {
   totalDiscountedPriceBlock.innerText = totalDiscountedPrice.toLocaleString();
   orderBtnSum.innerText = totalDiscountedPrice.toLocaleString();
   totalStandardPriceBlock.innerText = totalStandardPrice.toLocaleString();
-  updateListHeader(totalDiscountedPrice.toLocaleString(), totalQuantity)
+  updateListHeader(totalDiscountedPrice.toLocaleString(), totalQuantity, totalProductsText)
   totalQuantityBlock.innerText = totalQuantity;
   totalQuantityTextBlock.innerText = totalProductsText;
 }
 
-function updateListHeader (price, quantity) {
+function updateListHeader (price, quantity, wordForm) {
   closedListHeaderPrice.innerText = `${price} сом`;
-  closedListHeaderNumber.innerText = `${quantity} товаров`;
+  closedListHeaderNumber.innerText = `${quantity} ${wordForm}`;
 }
 
 export const handleTotalTooltip = function () {
